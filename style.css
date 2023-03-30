@@ -1,0 +1,22 @@
+
+.aplicacion{
+  font-size: 20px;
+  
+}
+header a{
+    padding: 20px;  
+    text-decoration: none;
+     
+}
+
+.formulario-container {
+    width: 20%; 
+    margin: 0 auto;
+    background-color: #0c5cd4;
+      
+  }
+  /*
+  body{
+    background-image: url("css/pexels-pixabay-461960.jpg");
+   
+  }*/ 
