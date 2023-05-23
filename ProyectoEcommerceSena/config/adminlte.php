@@ -311,29 +311,38 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
+        ['header' => 'PANEL DE CONTROL'],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Dashboard',
+            'icon' => 'fas fa-fw fa-user',
+            'submenu'  => [
+                [
+                    'text' => 'Cambiar Contraseña',
+                    'url'  => '/profiles',
+                ],
+                [
+                    'text' => 'Inventario',
+                    'url'  => '/profiles/create',
+                ],
+            ],
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'CONFIGURACIÓN DE CUENTA'],
         [
             'text' => 'Perfil',
             'icon' => 'fas fa-fw fa-user',
             'submenu'  => [
                 [
                     'text' => 'Cambiar Contraseña',
-                    'url'  => '',
+                    'url'  => '/profiles',
                 ],
                 [
                     'text' => 'Inventario',
-                    'url'  => '',
+                    'url'  => '/profiles/create',
                 ],
+        ],   
         ],
-            
-        ],
+
         [
             'text' => 'Cambiar Contraseña',
             'url'  => 'admin/settings',
@@ -344,17 +353,15 @@ return [
             'icon' => 'fas fa-tools',
             'submenu'  => [
                 [
-                    'text' => 'Insertar Producto',
-                    'url'  => '',
+                    'text' => 'Ver productos',
+                    'url'  => '/products',
                 ],
                 [
-                    'text' => 'Inventario',
-                    'url'  => '',
+                    'text' => 'Crear Producto',
+                    'url'  => '/products/create',
                 ],
         ],
             
-            
-
         ],
         [
             'text'    => 'multilevel',
@@ -409,6 +416,13 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
+        ],
+        [
+            'text'        => 'pages',
+            'url'         => 'admin/pages',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 4,
+            'label_color' => 'success',
         ],
     ],
 
