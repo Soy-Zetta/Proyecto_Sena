@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Victor Mamon',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => 'administrador <b>LTE</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -320,19 +320,41 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Perfil',
             'icon' => 'fas fa-fw fa-user',
+            'submenu'  => [
+                [
+                    'text' => 'Cambiar Contraseña',
+                    'url'  => '',
+                ],
+                [
+                    'text' => 'Inventario',
+                    'url'  => '',
+                ],
+        ],
+            
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Cambiar Contraseña',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Inventario',
-            'url'  => 'inventario',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Gestor de Productos',
+            'icon' => 'fas fa-tools',
+            'submenu'  => [
+                [
+                    'text' => 'Insertar Producto',
+                    'url'  => '',
+                ],
+                [
+                    'text' => 'Inventario',
+                    'url'  => '',
+                ],
+        ],
+            
+            
+
         ],
         [
             'text'    => 'multilevel',
