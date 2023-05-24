@@ -39,6 +39,15 @@ Route::get('/products/create', function () {
     return view('products-create');
 });
 
+Route::get('/users', function () {
+    return view('users');
+});
+
+Route::get('/users/create', function () {
+    return view('users-create');
+});
+
+
 
 
     

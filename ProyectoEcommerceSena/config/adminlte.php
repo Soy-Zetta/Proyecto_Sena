@@ -360,8 +360,21 @@ return [
                     'text' => 'Crear Producto',
                     'url'  => '/products/create',
                 ],
+            ],
         ],
-            
+        [
+            'text' => 'Gestor de Usuarios',
+            'icon' => 'fas fa-tools',
+            'submenu'  => [
+                [
+                    'text' => 'Ver Usuarios',
+                    'url'  => '/users',
+                ],
+                [
+                    'text' => 'Crear Usuarios',
+                    'url'  => '/users/create',
+                ],
+            ],
         ],
         [
             'text'    => 'multilevel',
