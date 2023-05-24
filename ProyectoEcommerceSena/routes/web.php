@@ -27,6 +27,28 @@ Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
-Route::get('/new', function () {
-    return 'master gonorrea';
+Route::get('/profiles', function () {
+    return view('profiles');
 });
+
+Route::get('/products', function () {
+    return view('products');
+});
+
+Route::get('/products/create', function () {
+    return view('products-create');
+});
+
+Route::get('/users', function () {
+    return view('users');
+});
+
+Route::get('/users/create', function () {
+    return view('users-create');
+});
+
+
+
+
+    
+
