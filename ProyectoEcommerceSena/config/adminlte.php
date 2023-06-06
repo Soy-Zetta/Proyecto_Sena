@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -312,69 +312,58 @@ return [
             'can'  => 'manage-blog',
         ],
 
-        ['header' => 'PANEL DE CONTROL'],
+        // ['header' => 'PANEL DE CONTROL'],
         [
             'text' => 'Dashboard',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu'  => [
-                [
-                    'text' => 'Cambiar Contraseña',
-                    'url'  => '/profiles',
-                ],
-                [
-                    'text' => 'Inventario',
-                    'url'  => '/profiles/create',
-                ],
-            ],
+            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'url'  => 'admin/blog',
         ],
-        ['header' => 'CONFIGURACIÓN DE CUENTA'],
+        // ['header' => 'CONFIGURACIÓN DE CUENTA'],
         [
-            'text' => 'Perfil',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu'  => [
-                [
-                    'text' => 'Cambiar Contraseña',
-                    'url'  => '/profiles',
-                ],
-                [
-                    'text' => 'Inventario',
-                    'url'  => '/profiles/create',
-                ],
-        ],   
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon' => 'fas fa-fw fa-users',
+  
         ],
 
         [
             'text' => 'Cambiar Contraseña',
-            'url'  => 'admin/settings',
+            'can'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Gestor de Productos',
+            'text' => 'Clientes',
+            'icon' => 'fas fa-user-tag',
+            'route'  => 'admin.users.index',
+        ],
+        [
+            'text' => 'Productos',
             'icon' => 'fas fa-tools',
             'submenu'  => [
                 [
                     'text' => 'Ver productos',
-                    'url'  => '/products',
+                    'route'  => 'products.index',
                 ],
                 [
                     'text' => 'Crear Producto',
-                    'url'  => '/products/create',
+                    'route' => 'products.create',
                 ],
             ],
         ],
         [
-            'text' => 'Gestor de Usuarios',
-            'icon' => 'fas fa-tools',
-            'submenu'  => [
-                [
-                    'text' => 'Ver Usuarios',
-                    'url'  => '/users',
-                ],
-                [
-                    'text' => 'Crear Usuarios',
-                    'url'  => '/users/create',
-                ],
-            ],
+            'text' => 'Proveedores',
+            'icon' => 'fas fa-user-friends',
+            'url'  => 'admin/blog',
+        ],
+        [
+            'text' => 'Empleados',
+            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'url'  => 'admin/blog',
+        ],
+        [
+            'text' => 'Reportes',
+            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'url'  => 'admin/blog',
         ],
         [
             'text'    => 'multilevel',
