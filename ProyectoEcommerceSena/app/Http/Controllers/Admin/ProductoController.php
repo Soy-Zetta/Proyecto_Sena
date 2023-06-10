@@ -26,7 +26,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $proveedores = proveedore::all();
+        
         $categorias= categoria::all();
         return view('products.create',compact('categorias','proveedores'));
     }

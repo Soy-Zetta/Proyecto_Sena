@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Victor Mamon',
+    'title' => 'alfonso mamon',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -354,6 +354,17 @@ return [
             'text' => 'Proveedores',
             'icon' => 'fas fa-user-friends',
             'url'  => 'admin/blog',
+        ],
+        [
+            'text' => 'categorias',
+            'icon' => 'fas fa-tools',
+            'submenu'  => [
+                [
+                    'text' => 'Ver categorias',
+                    'route'  => 'Admin/categories.index',
+                ],
+              
+            ],
         ],
         [
             'text' => 'Empleados',
