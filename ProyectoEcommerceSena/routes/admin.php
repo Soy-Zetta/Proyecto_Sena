@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
+//rutas crud usuarios panel de administracion
 Route::resource('users', UserController::class)->names('admin.users');
-
 
 //rutas crud productos panel de administracion
 Route::resource('/products', ProductoController::class)->names('products')->middleware('auth'); 

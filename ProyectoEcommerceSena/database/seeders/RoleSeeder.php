@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Database\Seeders;
 
@@ -28,6 +28,6 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=> 'admin.users.edit'])->syncRoles([$role1, $role2]);
         Permission::create(['name'=> 'admin.users.destroy'])->syncRoles([$role1, $role2]);
 
- 
+       
     }
 }
