@@ -15,7 +15,7 @@ class categoriaController extends Controller
     public function index()
     {
         $categorias = categoria::all();
-        return view('categories.index',compact('categorias'));
+        return view('admin.categories.index',compact('categorias'));
 
     }
 
@@ -25,7 +25,7 @@ class categoriaController extends Controller
     public function create()
     {
        $categorias = categoria::all();
-       return view('categories.create',compact('categorias'));
+       return view('admin.categories.create',compact('categorias'));
     }
 
     /**
@@ -62,7 +62,7 @@ class categoriaController extends Controller
     public function edit(string $id)
     {
         $categoria =categoria::findorfail($id);
-        return view('categories.edit',compact('categoria'));
+        return view('admin.categories.edit',compact('categoria'));
     }
 
     /**
