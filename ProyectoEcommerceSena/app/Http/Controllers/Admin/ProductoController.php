@@ -26,7 +26,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        
+        $proveedores =proveedore::all();
         $categorias= categoria::all();
         return view('products.create',compact('categorias','proveedores'));
     }
@@ -35,8 +35,8 @@ class ProductoController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        
+    {  
+       // dd($request);
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',

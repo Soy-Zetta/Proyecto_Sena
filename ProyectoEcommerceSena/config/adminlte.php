@@ -357,14 +357,8 @@ return [
         ],
         [
             'text' => 'categorias',
-            'icon' => 'fas fa-tools',
-            'submenu'  => [
-                [
-                    'text' => 'Ver categorias',
-                    'route'  => 'Admin/categories.index',
-                ],
-              
-            ],
+            'icon' => 'fas fa-list',
+            'route'  => 'categories.index',
         ],
         [
             'text' => 'Empleados',

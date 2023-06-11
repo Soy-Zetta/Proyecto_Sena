@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\categoria;
 
+
 class categoriaController extends Controller
 {
     /**
@@ -23,8 +24,8 @@ class categoriaController extends Controller
      */
     public function create()
     {
-       $categoria = categoria::all();
-       return view('categorias.create');
+       $categorias = categoria::all();
+       return view('categories.create',compact('categorias'));
     }
 
     /**
@@ -32,7 +33,19 @@ class categoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        
+        $validarDatos = $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
+        $categoria = new categoria();
+        $categoria->nombre = $validarDatos['nombre'];
+        $categoria->descripcion = $validarDatos['descripcion'];
+        $categoria->save();
+
+       return redirect()->route('categories.index');
     }
 
     /**
@@ -48,7 +61,8 @@ class categoriaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categoria =categoria::findorfail($id);
+        return view('categories.edit',compact('categoria'));
     }
 
     /**
@@ -56,7 +70,18 @@ class categoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+       
+
+        $validarDatos = $request->validate([
+            'nombre'=>'required',
+            'descripcion'=>'required',
+        ]);
+        $categoria=categoria::findOrFail($id);
+        $categoria->nombre= $validarDatos['nombre'];
+        $categoria->descripcion= $validarDatos['descripcion'];
+        $categoria->update();
+        
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -64,6 +89,10 @@ class categoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $categoria = Categoria::findOrFail($id);
+        $categoria->productos()->delete();
+        $categoria->delete();
+
+        return redirect()->route('categories.index');
     }
 }

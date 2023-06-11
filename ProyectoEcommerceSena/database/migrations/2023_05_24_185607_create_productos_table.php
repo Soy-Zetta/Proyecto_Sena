@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('existencias');
             $table->string('imagen');
             $table->timestamps();
-            $table->integer('categorias_id')->index('fk_productos_categorias_idx');
+            $table->integer('categorias_id')->index('fk_productos_categorias_idx')->onDelete('cascada');
             $table->integer('proveedores_id')->index('fk_productos_proveedores1_idx');
         });
     }
