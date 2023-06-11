@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\categoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
+use App\Models\Admin\categoria;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -18,6 +20,9 @@ Route::resource('/products', ProductoController::class)->names('products')->midd
 
 //buscador de productos panel de administracion 
 Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.search');
+
+//ruta crud categorias panel de  control
+route::resource('Admin/categories',categoriaController::class)->names('Admin/categories');
 
 
 // //rutas crud productos panel de administracion
