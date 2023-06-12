@@ -25,7 +25,7 @@ Route::resource('/products', ProductoController::class)->names('products')->midd
 Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.search');
 
 //ruta crud categorias panel de  control
-route::resource('categories',categoriaController::class)->names('categories');
+route::resource('/categories',categoriaController::class)->names('categories');
 
 
 // //rutas crud productos panel de administracion
