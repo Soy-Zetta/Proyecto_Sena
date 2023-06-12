@@ -18,7 +18,7 @@ class ProductoController extends Controller
         $productos = producto::all();
         
 
-        return view('products.index',compact('productos'));
+        return view('admin.products.index',compact('productos'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductoController extends Controller
     {
         $proveedores =proveedore::all();
         $categorias= categoria::all();
-        return view('products.create',compact('categorias','proveedores'));
+        return view('admin.products.create',compact('categorias','proveedores'));
     }
 
     /**
@@ -87,7 +87,7 @@ class ProductoController extends Controller
         $categorias= categoria::all();
         $producto = Producto::findOrFail($id);
         // dd($categorias  );
-        return view('products.edit', compact('producto','categorias','proveedores'));
+        return view('admin.products.edit', compact('producto','categorias','proveedores'));
     }
 
     /**

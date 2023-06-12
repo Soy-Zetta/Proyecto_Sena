@@ -17,6 +17,14 @@ class producto extends Model
         'categorias_id',
         'proveedor_id',
     ];
+    protected $table = 'productos';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categorias_id');
+    }
 
   
 }
