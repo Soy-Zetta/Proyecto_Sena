@@ -8,7 +8,8 @@
 
 @section('content')
  
-
+<a href="{{route('products.create')}}" class="btn btn-primary">crear categoria </a>
+<br><br>
 
 <div class="container">
     <div class="row">   
