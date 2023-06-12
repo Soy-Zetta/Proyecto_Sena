@@ -339,16 +339,7 @@ return [
         [
             'text' => 'Productos',
             'icon' => 'fas fa-tools',
-            'submenu'  => [
-                [
-                    'text' => 'Ver productos',
-                    'route'  => 'products.index',
-                ],
-                [
-                    'text' => 'Crear Producto',
-                    'route' => 'products.create',
-                ],
-            ],
+            'route'  => 'products.index'
         ],
         [
             'text' => 'Proveedores',
