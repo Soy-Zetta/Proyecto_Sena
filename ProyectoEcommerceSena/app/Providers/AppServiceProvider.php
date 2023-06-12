@@ -5,10 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-=======
 use Illuminate\Pagination\Paginator;
->>>>>>> badfdc2b0a37cdcfcbe675247302dc040a44b054
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,9 +28,6 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
         Model::reguard();
     
-<<<<<<< HEAD
-=======
         Paginator::useBootstrap();
->>>>>>> badfdc2b0a37cdcfcbe675247302dc040a44b054
     }
 }
