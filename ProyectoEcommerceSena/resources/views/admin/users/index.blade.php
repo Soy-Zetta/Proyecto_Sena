@@ -26,6 +26,14 @@
                             <td>{{$usuario->id}}</td>
                             <td>{{$usuario->name}}</td>
                             <td>{{$usuario->email}}</td>
+                            <td><a href="{{route('admin.users.edit',$usuario->id)}}"class="btn btn-primary" >editar</a></td>      
+                            <td>
+                                <form action="{{route('admin.users.destroy',$usuario->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">eliminar</button>
+                                </form>
+                            </td>                      
                         </tr>
                         @endforeach
                     </tbody>
