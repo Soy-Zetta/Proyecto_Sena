@@ -17,7 +17,10 @@ return new class extends Migration
             $table->integer('id', true);
             $table->string('nombre', 45);
             $table->text('descripcion');
+<<<<<<< HEAD
            
+=======
+>>>>>>> 0f6a78387bfffa1d692b6c5a09e1f9666c759011
             $table->timestamps();
         });
     }

@@ -3,20 +3,20 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">categorias</h1>
+    <h1 class="m-0 text-dark">proveedor</h1>
 @stop
 
 @section('content')
  
-<a href="{{route('categories.create')}}" class="btn btn-primary">crear categoria</a>
+<a href="{{route('proveedores.create')}}" class="btn btn-warning">CREAR PROVEEDORES --- :-)</a>
 <br><br>
 <form action="#" method="GET">
     @csrf
-    <input type="text" name="buscadorcategorias">
+    <input type="text" name="buscadorproveedores">
     <button type="submit">buscar</button>
 </form>
 
-<form action="{{route('categories.store')}}">
+<form action="{{route('proveedores.store')}}">
 
 </form>
 
@@ -30,15 +30,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($categorias as $categoria)
+            @foreach ($proveedores as $proveedor)
                 <tr>
                     
-                    <td>{{$categoria->id}}</td>
-                    <td>{{$categoria->nombre}}</td>
-                    <td>{{$categoria->descripcion}}</td>
-                    <td><a href="{{route('categories.edit',$categoria->id)}}"class="btn btn-primary" >editar</a></td>
+                    <td>{{$proveedor->id}}</td>
+                    <td>{{$proveedor->nombre}}</td>
+                    <td>{{$proveedor->descripcion}}</td>
+                    <td><a href="{{route('proveedores.edit',$proveedor->id)}}"class="btn btn-primary" >editar</a></td>
                     <td>
-                        <form action="{{route('categories.destroy',$categoria->id)}}" method="POST">
+                        <form action="{{route('categories.destroy',$proveedor->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
                                 <button type="submit" class="btn btn-danger">eliminar</button>
@@ -48,9 +48,6 @@
             @endforeach
         </tbody>
     </table>
-    <div class = "d-flex justify-content-end">
-        {!! $categorias->links() !!}
-    </div>
 </div>
   
 
@@ -61,4 +58,3 @@
 @section('css')
    
 @stop
-

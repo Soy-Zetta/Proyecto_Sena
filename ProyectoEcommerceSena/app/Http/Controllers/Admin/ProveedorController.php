@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Admin\proveedore;
 class ProveedorController extends Controller
 {
     
     public function index()
     {
-        //
+        $proveedores=proveedore::all();
+        return view('admin.proveedores.index',compact('proveedores'));
     }
 
    
