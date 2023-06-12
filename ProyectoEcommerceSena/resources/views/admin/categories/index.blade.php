@@ -16,9 +16,7 @@
     <button type="submit">buscar</button>
 </form>
 
-<form action="{{route('categories.store')}}">
-
-</form>
+<form action="{{route('categories.store')}}"></form>
 
 <div>
     <table class="table table-striped table-dark mt-5">

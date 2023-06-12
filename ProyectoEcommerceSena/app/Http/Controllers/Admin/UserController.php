@@ -19,7 +19,7 @@ class UserController extends Controller
 
         //Con Paginación
         $usuarios = User::paginate(10);
-        return view('admin.users.users', compact('usuarios'));
+        return view('admin.users.index', compact('usuarios'));
     }
 
     /**

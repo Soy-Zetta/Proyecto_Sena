@@ -115,7 +115,7 @@ class ProductoController extends Controller
         $producto->precio=$request['precio'];
         $producto->existencias = $request ['existencias'];
         $producto->categorias_id = $request['categoria'];
-        $producto->proveedor_id = $request['proveedor'];
+        $producto->proveedores_id = $request['proveedor'];
         $producto->update();
 
         // $producto = Producto::findOrFail($id);
