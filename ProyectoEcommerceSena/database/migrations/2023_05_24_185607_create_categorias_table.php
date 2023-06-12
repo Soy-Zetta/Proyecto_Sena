@@ -17,10 +17,7 @@ return new class extends Migration
             $table->integer('id', true);
             $table->string('nombre', 45);
             $table->text('descripcion');
-<<<<<<< HEAD
-=======
-            // $table->string('estado',45);
->>>>>>> 0ec1633711a303fdb1d8de36cb49c64831b9f6fe
+           
             $table->timestamps();
         });
     }
