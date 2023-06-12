@@ -5,12 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
-
+use App\Http\Controllers\Admin\ProveedorController;
 use Illuminate\Support\Facades\Auth;
 
 
 Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
+
+//rutas crud proveedores panel de administracion
+Route::resource('proveedores', ProveedorController::class)->names('proveedores');
 
 //rutas crud usuarios panel de administracion
 Route::resource('users', UserController::class)->names('admin.users');

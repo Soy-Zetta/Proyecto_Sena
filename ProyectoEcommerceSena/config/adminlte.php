@@ -353,7 +353,10 @@ return [
         [
             'text' => 'Proveedores',
             'icon' => 'fas fa-user-friends',
-            'url'  => 'admin/blog',
+            'route'  => 'proveedores.index',
+            
+
+
         ],
         [
             'text' => 'categorias',
