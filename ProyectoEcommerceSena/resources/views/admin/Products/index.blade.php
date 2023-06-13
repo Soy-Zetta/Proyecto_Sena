@@ -11,13 +11,17 @@
 <a href="{{route('products.create')}}" class="btn btn-primary">Crear producto</a>
 <br><br>
 
-<div>
-    <form action="{{ route('buscador.search') }}" method="GET">
+<form action="{{ route('buscador.search') }}" method="GET">
+    <fieldset enable>
         @csrf
-        <input type="text" name="buscador">
-        <button type="submit">Buscar</button>
-    </form>
-</div>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por Codigo de producto">
+      </div>
+      <div class="mb-3">
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </fieldset>
+  </form>
+  
 <br><br>
 <div class="container">
     <div class="row">   
