@@ -47,6 +47,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    // [configuacion de perfil]
+
+    // Metodo imagen de perfil la cual está aleatoria
+    public function adminlte_image()
+    {
+        return 'https://picsum.photos/300/300';
+    }
+    // Metodo del rol
+    public function adminlte_desc()
+    {
+        return 'Administrador';
+    }
+    // Metodo de edicion del perfil del usuario
+    public function adminlte_profile_url()
+    {
+        return 'profile/username';
+    }
 }
 
 

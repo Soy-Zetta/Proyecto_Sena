@@ -13,10 +13,19 @@
 
 <a href="{{route('products.create')}}" class="btn btn-primary">Crear Usuario</a>
 <br><br>
+
+<form action="{{ route('buscador.search') }}" method="GET">
+    <fieldset enable>
+        @csrf
+        <input name ="buscadorusuario" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por numero de identificación o correo electronico">
+      </div>
+      <div class="mb-3">
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </fieldset>
+  </form>
+
     <div class="container">
-        <div class="card-heder">
-            <input type="form-control" placeholder="Ingrese el nombre o cedula del usuario">
-        </div>
         <div class="row">
             <div class="col">
                 <table class="table table-striped table-dark mt-5">

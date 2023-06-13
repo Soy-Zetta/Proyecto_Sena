@@ -69,4 +69,9 @@ class UserController extends Controller
     {
         //
     }
+    /**
+     * Imagen de perfil de usuarios.
+     */
+
+
 }
