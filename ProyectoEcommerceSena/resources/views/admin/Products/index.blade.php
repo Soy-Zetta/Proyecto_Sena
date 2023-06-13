@@ -14,14 +14,14 @@
 <form action="{{ route('buscador.search') }}" method="GET">
     <fieldset enable>
         @csrf
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por Codigo de producto">
+        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por Codigo de producto">
       </div>
       <div class="mb-3">
       </div>
       <button type="submit" class="btn btn-primary">Buscar</button>
     </fieldset>
   </form>
-  
+
 <br><br>
 <div class="container">
     <div class="row">   
