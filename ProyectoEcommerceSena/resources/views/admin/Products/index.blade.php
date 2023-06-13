@@ -11,17 +11,16 @@
 <a href="{{route('products.create')}}" class="btn btn-primary">Crear producto</a>
 <br><br>
 
+<div>
+    <form action="{{ route('buscador.search') }}" method="GET">
+        @csrf
+        <input type="text" name="buscador">
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+<br><br>
 <div class="container">
     <div class="row">   
-      
-        <div>
-            <form action="{{ route('buscador.search') }}" method="GET">
-                @csrf
-                <input type="text" name="buscador">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
-
         @foreach ($productos as $producto)
             <div class="col-md-4">
                 <div class="card" style="width: 20rem">

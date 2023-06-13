@@ -15,7 +15,7 @@ class BuscadorController extends Controller
         $productos = producto::where('nombre', 'LIKE', "%$buscador%")
                             ->orWhere('precio', 'LIKE', "%$buscador%")
                             ->get();
-        return view('products.index', compact('productos'));
+        return view('admin.products.index', compact('productos'));
     }
     
 }

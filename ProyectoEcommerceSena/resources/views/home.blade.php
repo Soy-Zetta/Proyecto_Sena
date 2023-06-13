@@ -2,6 +2,7 @@
 
 @section('title', 'AdminLTE')
 
+@section ('Sweetalert2')
 @section('content_header')
     <h1 class="m-0 text-dark">Dashboard</h1>
 @stop
@@ -16,4 +17,13 @@
             </div>
         </div>
     </div>
+@stop
+
+@section ('js')
+<script>
+    Swal.fire(
+'Bienvenido',
+'',
+'success')
+</script>
 @stop

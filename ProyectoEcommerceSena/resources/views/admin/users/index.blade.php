@@ -8,6 +8,11 @@
 @stop
 
 @section('content')
+
+
+
+<a href="{{route('products.create')}}" class="btn btn-primary">Crear Usuario</a>
+<br><br>
     <div class="container">
         <div class="card-heder">
             <input type="form-control" placeholder="Ingrese el nombre o cedula del usuario">
@@ -45,3 +50,5 @@
         </div>
     </div>
 @stop
+
+
