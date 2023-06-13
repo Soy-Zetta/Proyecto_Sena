@@ -10,7 +10,9 @@ class BuscadorController extends Controller
 {
     
     public function search(Request $request)
+
     {
+        
         $buscador = $request->input('buscador');
         $productos = producto::where('nombre', 'LIKE', "%$buscador%")
                             ->orWhere('precio', 'LIKE', "%$buscador%")

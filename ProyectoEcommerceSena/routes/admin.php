@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ProveedorController;
+use App\Http\Controllers\Admin\BuscadorController;
 use Illuminate\Support\Facades\Auth;
 
 
