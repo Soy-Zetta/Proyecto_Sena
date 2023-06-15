@@ -11,7 +11,7 @@
 
 
 
-<a href="{{route('products.create')}}" class="btn btn-primary">Crear Usuario</a>
+<a href="{{route('admin.users.create')}}" class="btn btn-primary">Crear Usuario</a>
 <br><br>
 
 <form action="{{ route('buscador.search') }}" method="GET">

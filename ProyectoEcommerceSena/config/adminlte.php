@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'alfonso mamon',
+    'title' => 'master mamon',
     'title_prefix' => '',
     'title_postfix' => '',
 
