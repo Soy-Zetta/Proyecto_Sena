@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Victor Mamon',
+    'title' => 'master mamon',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -130,11 +130,11 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -312,131 +312,119 @@ return [
             'can'  => 'manage-blog',
         ],
 
-        ['header' => 'PANEL DE CONTROL'],
+        // ['header' => 'PANEL DE CONTROL'],
         [
             'text' => 'Dashboard',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu'  => [
-                [
-                    'text' => 'Cambiar Contraseña',
-                    'url'  => '/profiles',
-                ],
-                [
-                    'text' => 'Inventario',
-                    'url'  => '/profiles/create',
-                ],
-            ],
+            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'url'  => 'admin/blog',
         ],
-        ['header' => 'CONFIGURACIÓN DE CUENTA'],
+        // ['header' => 'CONFIGURACIÓN DE CUENTA'],
         [
-            'text' => 'Perfil',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu'  => [
-                [
-                    'text' => 'Cambiar Contraseña',
-                    'url'  => '/profiles',
-                ],
-                [
-                    'text' => 'Inventario',
-                    'url'  => '/profiles/create',
-                ],
-        ],   
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon' => 'fas fa-fw fa-users',
+  
         ],
 
         [
             'text' => 'Cambiar Contraseña',
-            'url'  => 'admin/settings',
+            'can'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Gestor de Productos',
+            'text' => 'Clientes',
+            'icon' => 'fas fa-user-tag',
+            'url'  => '#',
+        ],
+        [
+            'text' => 'Productos',
             'icon' => 'fas fa-tools',
-            'submenu'  => [
-                [
-                    'text' => 'Ver productos',
-                    'url'  => '/products',
-                ],
-                [
-                    'text' => 'Crear Producto',
-                    'url'  => '/products/create',
-                ],
-            ],
+            'route'  => 'products.index'
         ],
         [
-            'text' => 'Gestor de Usuarios',
-            'icon' => 'fas fa-tools',
-            'submenu'  => [
-                [
-                    'text' => 'Ver Usuarios',
-                    'url'  => '/users',
-                ],
-                [
-                    'text' => 'Crear Usuarios',
-                    'url'  => '/users/create',
-                ],
-            ],
+            'text' => 'Proveedores',
+            'icon' => 'fas fa-user-friends',
+            'route'  => 'proveedores.index',
+            
+
+
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'categorias',
+            'icon' => 'fas fa-list',
+            'route'  => 'categories.index',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Empleados',
+            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'url'  => 'admin/blog',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Reportes',
+            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'url'  => 'admin/blog',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+        // [
+        //     'text'    => 'multilevel',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text'    => 'level_one',
+        //             'url'     => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url'  => '#',
+        //                 ],
+        //                 [
+        //                     'text'    => 'level_two',
+        //                     'url'     => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
     ],
 
     /*
@@ -520,7 +508,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

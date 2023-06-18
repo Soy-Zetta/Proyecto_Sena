@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,34 +20,19 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('auth');
+// Route::get('/home', function() {
+//     return view('admin.users.index');
+// })->name('home')->middleware('auth');
 
-Route::get('/profiles', function () {
-    return view('profiles');
-});
+// Route::resource('admin', UserController::class);
 
-Route::get('/products', function () {
-    return view('products');
-});
 
-Route::get('/products/create', function () {
-    return view('products-create');
-});
 
-Route::get('/users', function () {
-    return view('users');
-});
-
-Route::get('/users/create', function () {
-    return view('users-create');
-});
 
 
 
