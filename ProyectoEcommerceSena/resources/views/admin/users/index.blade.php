@@ -34,15 +34,19 @@
                     <thead>
                         <th>ID</th>
                         <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>ROL</th>
                         <th>NUMERO DOCUMENTO</th>
                         <th>E-MAIL</th>
-                        <th>NUMERO DOCUMENTO</th>
+                        
                     </thead>
                     <tbody>
                         @foreach ($usuarios as $usuario)
                             <tr>
                                 <td>{{ $usuario->id }}</td>
                                 <td>{{ $usuario->name }}</td>
+                                <td>{{ $usuario->apellido }}</td>
+                                <td>{{ $usuario->rol }}</td>
                                 <td>{{ $usuario->num_documento }}</td>
                                 <td>{{ $usuario->email }}</td>
                                 <td><a href="{{ route('admin.users.edit', $usuario->id) }}"class="btn btn-primary">editar</a>

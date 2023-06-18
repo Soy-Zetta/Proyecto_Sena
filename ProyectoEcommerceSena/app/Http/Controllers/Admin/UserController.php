@@ -60,7 +60,7 @@ class UserController extends Controller
         $usuario->password = bcrypt($request['password']);
         $usuario->save();
 
-        return view("admin.users.message",['msg' =>"registro guardado con exito"]);
+        return view("admin.users.message",['msg' =>"Registro guardado con exito"]);
         // return redirect()->route('admin.users.index');
     }
 
