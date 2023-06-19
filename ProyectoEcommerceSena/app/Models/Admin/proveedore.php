@@ -13,6 +13,15 @@ class proveedore extends Model
         'Tipo_Documento',
         'Direccion',
         'telefono',
-        
+        'Correo',
     ];
+    protected $table = 'proveedores';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
+
+    public function proveedor()
+    {
+        return $this->belongsTo(proveedore::class, 'proveedores_id');
+    }
+
 }

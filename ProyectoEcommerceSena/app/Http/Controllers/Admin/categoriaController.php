@@ -40,6 +40,7 @@ class categoriaController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
         ]);
+       // dd($validarDatos);
 
         $categoria = new categoria();
         $categoria->nombre = $validarDatos['nombre'];

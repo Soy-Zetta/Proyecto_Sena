@@ -8,8 +8,9 @@
 
 @section('content')
  
-<a href="{{route('proveedores.create')}}" class="btn btn-warning">CREAR PROVEEDORES --- :-)</a>
+<a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
 <br><br>
+
 <form action="#" method="GET">
     @csrf
     <input type="text" name="buscadorproveedores">
@@ -38,7 +39,7 @@
                     <td>{{$proveedor->descripcion}}</td>
                     <td><a href="{{route('proveedores.edit',$proveedor->id)}}"class="btn btn-primary" >editar</a></td>
                     <td>
-                        <form action="{{route('categories.destroy',$proveedor->id)}}" method="POST">
+                        <form action="{{route('proveedores.destroy',$proveedor->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
                                 <button type="submit" class="btn btn-danger">eliminar</button>

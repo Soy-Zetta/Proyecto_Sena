@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin\producto;
 use App\Models\Admin\categoria;
 use App\Models\Admin\proveedore;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class ProductoController extends Controller
 {
@@ -41,6 +42,7 @@ class ProductoController extends Controller
             $validarDatos = $request->validate([
                 'nombre' => 'required',
                 'descripcion' => 'required',
+                'codigo'=>   'required',
                 'precio' => 'required|numeric',
                 'existencias' => 'required|integer',
                 'imagen' => 'required',
@@ -54,6 +56,7 @@ class ProductoController extends Controller
             $producto = new Producto();
             $producto->nombre = $validarDatos['nombre'];
             $producto->descripcion = $validarDatos['descripcion'];
+            $producto->codigo = $validarDatos['codigo'];
             $producto->precio = $validarDatos['precio'];
             $producto->existencias = $validarDatos['existencias'];
             $producto->imagen = $validarDatos['imagen'];
@@ -107,6 +110,9 @@ class ProductoController extends Controller
             'categoria' => 'required',
             'proveedor' => 'required',
         ]);
+
+        
+        dd($validarDatos);
 
         //inserta los datos actualizados  en la tabla productos 
         $producto = Producto::findOrFail($id);

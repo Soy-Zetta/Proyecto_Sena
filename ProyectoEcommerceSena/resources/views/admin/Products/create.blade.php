@@ -20,8 +20,12 @@
         <input type="text" class="form-control" name="descripcion" id="descripcion">
       </div>
       <div class="mb-3">
+        <label for="codigo" class="form-label">codigo</label>
+        <input type="text" class="form-control" name="codigo" id="codigo">
+      </div>
+      <div class="mb-3">
         <label for="precio" class="form-label">Precio</label>
-        <input type="text" class="form-control" name="precio" id="precio">
+        <input type="number" class="form-control" name="precio" id="precio">
       </div>
       <div class="mb-3">
         <label for="existencias" class="form-label">Existencias</label>

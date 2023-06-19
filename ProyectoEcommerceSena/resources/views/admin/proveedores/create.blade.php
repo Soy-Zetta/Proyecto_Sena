@@ -25,21 +25,14 @@
       </div>
       <div class="mb-3">
         <label for="existencias" class="form-label">telefono</label>
-        <input type="text" class="form-control" name="telefono "id="telefono">
+        <input type="text" class="form-control" name="telefono"id="telefono">
       </div>
       <div class="mb-3">
         <label for="imagen" class="form-label">Correo</label>
         <input type="text" class="form-control" name="Correo" id="Correo">
       </div>
        
-    <div class="form-group">
-        <label for="proveedor">Proveedor</label>
-        <select name="proveedor" id="proveedor" class="form-control">
-            @foreach($proveedores as $proveedor)
-                <option value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
-            @endforeach
-        </select>
-    </div>
+   
       <button type="submit" class="btn btn-info">Guardar</button>
     </div>
   </div>
