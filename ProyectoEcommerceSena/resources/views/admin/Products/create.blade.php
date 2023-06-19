@@ -33,7 +33,7 @@
       </div>
       <div class="mb-3">
         <label for="imagen" class="form-label">Imagen</label>
-        <input type="text" class="form-control" name="imagen" id="imagen">
+        <input type="file" class="form-control" name="imagen" id="imagen">
       </div>
       <div class="form-group">
         <label for="categoria">Categoría</label>
