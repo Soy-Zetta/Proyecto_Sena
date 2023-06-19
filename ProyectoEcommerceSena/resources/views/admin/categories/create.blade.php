@@ -14,16 +14,19 @@
         
               <div class="mb-3">
                       <label for="nombre" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" name="nombre" id="nombre">
+                      <input type="text" class="form-control" name="nombre" id="nombre"
+                       value="{{ old('nombre') }}" required>
                   </div>
             
                   <div class="mb-3">
                       <label for="descripcion" class="form-label">Descripción</label>
-                      <input type="text" class="form-control" name="descripcion" id="descripcion">
+                      <input type="text" class="form-control" name="descripcion" id="descripcion" 
+                      value="{{ old('descripcion') }}" required>
                   </div>
             
                   <div>
                       <button type="submit" class="btn btn-primary">Guardar</button>
+                      
               </div>
             </div>
     

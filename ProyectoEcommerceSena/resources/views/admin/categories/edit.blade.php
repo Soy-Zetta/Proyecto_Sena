@@ -15,12 +15,12 @@
         
               <div class="mb-3">
                       <label for="nombre" class="form-label">nombre</label>
-                      <input type="text" class="form-control" name="nombre" id="nombre" value="{{$categoria->nombre}}">
+                      <input type="text" class="form-control" name="nombre" id="nombre" value="{{$categoria->nombre}}"required>
                   </div>
             
                   <div class="mb-3">
                       <label for="descripcion" class="form-label">descripcion</label>
-                      <input type="text" class="form-control" name="descripcion" id="descripcion" value="{{$categoria->descripcion}}">
+                      <input type="text" class="form-control" name="descripcion" id="descripcion" value="{{$categoria->descripcion}}"required>
                   </div>
             
                   <div>
