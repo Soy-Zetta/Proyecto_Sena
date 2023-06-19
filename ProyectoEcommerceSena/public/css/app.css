@@ -1,0 +1,254 @@
+
+/* MAIN
+                      _______
+    |\  /|     /\        |      |\   |
+    | \/ |    /  \       |      | \  |
+    |    |   /----\      |      |  \ |
+    |    |  /      \  ___|___   |   \|
+==========================================================================================
+*/
+
+.main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 200px 5px;
+}
+
+.main__container-wspp {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+
+.main__container-wspp-btn {
+    height: 50px;
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+.main__container-wspp-btn i {
+    font-size: 2.2em;
+    color: rgb(3, 255, 11);
+}
+
+.main__container-wspp-btn__spanOn {
+    position: relative;
+    display: initial;
+    margin: 0 10px;
+    inset: 0;
+    color: rgb(50, 253, 50);
+}
+
+.main__container-wspp-btn__spanOff {
+    display: none;
+    color: rgb(50, 253, 50);
+}
+
+.main__container-wspp__chatDiv {
+    display: none;
+    background-color: rgba(178, 178, 178, 0.98);
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 30px;
+    transition: all 2s;
+}
+
+.main__container-wspp__chatDivOn {
+    display: block;
+    width: 350px;
+    height: 550px;
+    transition: all 2s;
+    z-index: 100;
+}
+
+.main__container-wspp__chatDiv h3 {
+    width: 100px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+}
+
+.main__container-wspp__chatDiv input {
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    position: absolute;
+    height: 40px;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 10px;
+    color: #000;
+}
+
+.main__container-wspp__chatDiv-Close {
+    background-color: var(--colorLetra);
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px 15px;
+    color: #000;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 10px;
+}
+
+.main__container-wspp__chatDiv input::placeholder {
+    color: #777;
+}
+
+.main__container-wspp__chatDiv button i {
+    color: #000;
+}
+
+.main__container-wspp__chatDiv-Close:hover {
+    background-color: #f00;
+}
+
+.main__section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__section1_container-form {
+    min-width: 250px;
+    width: auto;
+    max-width: 1000px;
+    height: auto;
+    box-shadow: 8px 8px 20px #fff;
+    background-color: #0005;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    z-index: -100;
+}
+
+.main__section1_container-form h2 {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.main__section1_container-form__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__section1_container-form__form__label {
+    display: none;
+    position: absolute;
+    top: 10px;
+}
+
+.main__section1_container-form__form__input {
+    min-width: 200px;
+    width: auto;
+    max-width: 500px;
+    border-radius: 20px;
+    margin: 7px;
+    padding: 5px 10px;
+}
+
+.main__section1_container-form__form__input::placeholder {
+    color: #aaa;
+}
+
+.main__section1_container-form__form__input-sbtm {
+    background-color: var(--colorLetra);
+    color: var(--fondoHeader);
+}
+
+/*
+
+INICIO MEDIA QUERYS
+=============================================================================================
+
+*/
+
+@media screen and (min-width: 768px) {
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        padding: 200px 50px;
+    }
+
+    .main__section1_container-form {
+        width: 500px;
+    }
+
+    .main__section1_container-form h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .main__section1_container-form__form__input {
+        padding: 5px 20px;
+    }
+
+
+}
+
+@media screen and (min-width: 1024px) {
+
+/* MAIN
+================================================= */
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        padding: 200px 50px;
+    }
+    .main__section1_container-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 600px;
+        height: 400px;
+    }
+
+    .main__section1_container-form h2 {
+        font-size: 2em;
+        margin-bottom: 50px;
+    }
+
+    .main__section1_container-form__form__input {
+        width: 400px;
+        margin: 10px;
+        transform: scale(1);
+        transition: transform 1s;
+    }
+
+    .main__section1_container-form__form__input:hover {
+        transform: scale(1.10);
+        transition: transform 1s;
+    }
+
+    .main__section1_container-form__form__input::placeholder {
+        color: #aaa;
+    }
+    .main__section1_container-form__form__label {
+        position: relative;
+        display: initial;
+        margin-left: 0;
+        color: #fff;
+    }
+
+}
+
+
