@@ -112,7 +112,7 @@ class ProductoController extends Controller
         ]);
 
         
-        dd($validarDatos);
+        
 
         //inserta los datos actualizados  en la tabla productos 
         $producto = Producto::findOrFail($id);

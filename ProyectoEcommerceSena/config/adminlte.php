@@ -351,7 +351,7 @@ return [
         ],
         [
             'text' => 'categorias',
-            'icon' => 'fas fa-list',
+            'icon' => 'fad fa-users-class',
             'route'  => 'categories.index',
         ],
         [
