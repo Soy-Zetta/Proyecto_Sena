@@ -30,6 +30,7 @@ class ProveedorController extends Controller
             $validarDatos = $request->validate([
                 'nombre' => 'required',
                 'tipo_documento' => 'required',
+                'numero_documento' => 'required',
                 'direccion' => 'required',
                 'telefono' => 'required',
                 'correo' => 'required',
@@ -47,6 +48,7 @@ class ProveedorController extends Controller
             $proveedor = new proveedore();
             $proveedor->nombre = $validarDatos['nombre'];
             $proveedor->tipo_documento = $validarDatos['tipo_documento'];
+            $proveedor->numero_documento = $validarDatos['numero_documento'];
             $proveedor->direccion = $validarDatos['direccion'];
             $proveedor->telefono = $validarDatos['telefono'];
             $proveedor->correo = $validarDatos['correo'];
@@ -81,6 +83,7 @@ class ProveedorController extends Controller
 
         $validarDatos = $request->validate([
             'nombre' => 'required',
+            'numero_documento'=>'required',
             'tipo_documento' => 'required',
             'direccion' => 'required',
             'telefono' => 'required',
@@ -90,6 +93,7 @@ class ProveedorController extends Controller
         $proveedor=proveedore::findOrFail($id);
         $proveedor->nombre= $validarDatos['nombre'];
         $proveedor->tipo_documento= $validarDatos['tipo_documento'];
+        $proveedor->numero_documento= $validarDatos['numero_documento'];
         $proveedor->direccion = $validarDatos['direccion'];
         $proveedor->telefono = $validarDatos['telefono'];
         $proveedor->correo = $validarDatos['correo'];

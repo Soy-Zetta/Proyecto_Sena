@@ -17,9 +17,9 @@
         value="{{ old('nombre') }}" required>
       </div>
       <div class="mb-3">
-        <label for="descripcion" class="form-label">Tipo Documento</label>
-        <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento"
-        value="{{ old('Tipo_Documento') }}" required>
+        <label for="tipo_documento" class="form-label">Tipo Documento</label>
+        <input type="text" class="form-control" name="tipo_documento" id="tipo_documento"
+        value="{{ old('tipo_documento') }}" required>
       </div>
       <div class="mb-3">
         <label for="numero_documento" class="form-label"> numero de documento</label>
@@ -27,19 +27,19 @@
         value="{{ old('numero_documento') }}" required>
       </div>
       <div class="mb-3">
-        <label for="precio" class="form-label">Direccion</label>
-        <input type="text" class="form-control" name="Direccion" id="Direccion"
-        value="{{ old('Direccion') }}" required>
+        <label for="direccion" class="form-label">Direccion</label>
+        <input type="text" class="form-control" name="direccion" id="direccion"
+        value="{{ old('direccion') }}" required>
       </div>
       <div class="mb-3">
-        <label for="existencias" class="form-label">telefono</label>
+        <label for="telefono" class="form-label">Telefono</label>
         <input type="text" class="form-control" name="telefono"id="telefono"
         value="{{ old('telefono') }}" required>
       </div>
       <div class="mb-3">
-        <label for="imagen" class="form-label">Correo</label>
-        <input type="text" class="form-control" name="Correo" id="Correo"
-        value="{{ old('Correo') }}" required>
+        <label for="correo" class="form-label">Correo</label>
+        <input type="text" class="form-control" name="correo" id="correo"
+        value="{{ old('correo') }}" required>
       </div>
        
    

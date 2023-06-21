@@ -27,6 +27,7 @@
             <tr>
                 <th>id</th>
                 <th>nombre</th>
+                <th>Tipo Documento</th>
              
                 
             </tr>
@@ -37,7 +38,7 @@
                     
                     <td>{{$proveedor->id}}</td>
                     <td>{{$proveedor->nombre}}</td>
-                    <td>{{$proveedor->descripcion}}</td>
+                    <td>{{$proveedor->tipo_documento}}</td>
                     <td><a href="{{route('proveedores.edit',$proveedor->id)}}"class="btn btn-primary" >editar</a></td>
                     <td>
                         <form action="{{route('proveedores.destroy',$proveedor->id)}}" method="POST">
