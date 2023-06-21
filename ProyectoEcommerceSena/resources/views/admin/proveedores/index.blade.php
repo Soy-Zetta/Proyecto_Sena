@@ -11,11 +11,16 @@
 <a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
 <br><br>
 
-<form action="#" method="GET">
-    @csrf
-    <input type="text" name="buscadorproveedores">
-    <button type="submit">buscar</button>
-</form>
+<form action="{{ route('buscador.searchproveedor') }}" method="GET">
+    <fieldset enable>
+        @csrf
+        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por id de proveedor">
+      </div>
+      <div class="mb-3">
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </fieldset>
+  </form>
 
 <form action="{{route('proveedores.store')}}">
 

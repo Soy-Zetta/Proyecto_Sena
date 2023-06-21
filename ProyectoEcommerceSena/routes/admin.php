@@ -30,7 +30,8 @@ Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.se
 route::resource('/categories',categoriaController::class)->names('categories');
 
 
-
+//buscador de productos panel de administracion 
+Route::get('/buscador_proveedores', [BuscadorController::class,'searchproveedor'])->name('buscador.searchproveedor');
 
 
 
