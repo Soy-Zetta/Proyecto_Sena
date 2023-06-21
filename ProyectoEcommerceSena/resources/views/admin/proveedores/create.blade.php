@@ -22,6 +22,11 @@
         value="{{ old('Tipo_Documento') }}" required>
       </div>
       <div class="mb-3">
+        <label for="numero_documento" class="form-label"> numero de documento</label>
+        <input type="number" class="form-control" name="numero_documento" id="numero_documento"
+        value="{{ old('numero_documento') }}" required>
+      </div>
+      <div class="mb-3">
         <label for="precio" class="form-label">Direccion</label>
         <input type="text" class="form-control" name="Direccion" id="Direccion"
         value="{{ old('Direccion') }}" required>

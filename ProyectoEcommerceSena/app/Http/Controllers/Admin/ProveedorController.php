@@ -30,6 +30,7 @@ class ProveedorController extends Controller
             $validarDatos = $request->validate([
                 'nombre' => 'required',
                 'Tipo_Documento' => 'required',
+                'numero_documento'=>'required',
                 'Direccion' => 'required',
                 'telefono' => 'required',
                 'Correo' => 'required',
@@ -47,6 +48,7 @@ class ProveedorController extends Controller
             $proveedor = new proveedore();
             $proveedor->nombre = $validarDatos['nombre'];
             $proveedor->tipo_documento = $validarDatos['Tipo_Documento'];
+            $proveedor->numero_documento = $validarDatos['numero_documento'];
             $proveedor->direccion = $validarDatos['Direccion'];
             $proveedor->telefono = $validarDatos['telefono'];
             $proveedor->correo = $validarDatos['Correo'];
