@@ -336,6 +336,13 @@ return [
             'icon' => 'fas fa-user-tag',
             'url'  => '#',
         ],
+
+        [
+            'text' => 'Ventas',
+            'icon' => 'fas fa-user-tag',
+            'url'  => '#',
+        ],
+
         [
             'text' => 'Productos',
             'icon' => 'fas fa-tools',
@@ -346,17 +353,17 @@ return [
             'icon' => 'fas fa-user-friends',
             'route'  => 'proveedores.index',
             
-
+         
 
         ],
         [
             'text' => 'categorias',
-            'icon' => 'fad fa-users-class',
+            'icon' => 'fas fa-procedures',
             'route'  => 'categories.index',
         ],
         [
             'text' => 'Empleados',
-            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'icon' => 'fas fa-tachometer-alt',
             'url'  => 'admin/blog',
         ],
         [
@@ -364,6 +371,13 @@ return [
             'icon' => 'fas fa-tachometer-alt fa-fw',
             'url'  => 'admin/blog',
         ],
+
+
+
+
+
+
+
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',

@@ -17,7 +17,7 @@
         value="{{ old('nombre') }}" required>
       </div>
       <div class="mb-3">
-        <label for="descripcion" class="form-label">Tipo_Documento</label>
+        <label for="descripcion" class="form-label">Tipo Documento</label>
         <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento"
         value="{{ old('Tipo_Documento') }}" required>
       </div>

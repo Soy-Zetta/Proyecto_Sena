@@ -11,6 +11,7 @@
 <a href="{{route('categories.create')}}" class="btn btn-primary">crear categoria</a>
 <br><br>
 <form action="#" method="GET">
+    
     @csrf
     <input type="text" name="buscadorcategorias">
     <button type="submit">buscar</button>
