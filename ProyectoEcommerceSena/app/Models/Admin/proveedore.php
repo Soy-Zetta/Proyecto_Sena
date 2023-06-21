@@ -11,6 +11,7 @@ class proveedore extends Model
     protected $fillable = [
         'nombre',
         'Tipo_Documento',
+        'numero_documento',
         'Direccion',
         'telefono',
         'Correo',
