@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
 //rutas crud proveedores panel de administracion
-Route::resource('proveedores', ProveedorController::class)->names('proveedores');
+Route::resource('proveedores',ProveedorController::class)->names('proveedores');
 
 //rutas crud usuarios panel de administracion
 Route::resource('/users', UserController::class)->names('admin.users');

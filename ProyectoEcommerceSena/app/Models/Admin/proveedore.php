@@ -10,7 +10,7 @@ class proveedore extends Model
     use HasFactory;
     protected $fillable = [
         'nombre',
-        'Tipo_Documento',
+        'tipo_documento',
         'numero_documento',
         'Direccion',
         'telefono',

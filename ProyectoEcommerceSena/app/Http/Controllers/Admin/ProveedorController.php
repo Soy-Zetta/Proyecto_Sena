@@ -29,14 +29,8 @@ class ProveedorController extends Controller
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',
-<<<<<<< HEAD
                 'tipo_documento' => 'required',
                 'direccion' => 'required',
-=======
-                'Tipo_Documento' => 'required',
-                'numero_documento'=>'required',
-                'Direccion' => 'required',
->>>>>>> d907fd22c10b8749ea56a4b79a815b2f7b105772
                 'telefono' => 'required',
                 'correo' => 'required',
                 
@@ -52,14 +46,8 @@ class ProveedorController extends Controller
             // Crea un nuevo objeto Producto con los datos validados
             $proveedor = new proveedore();
             $proveedor->nombre = $validarDatos['nombre'];
-<<<<<<< HEAD
             $proveedor->tipo_documento = $validarDatos['tipo_documento'];
             $proveedor->direccion = $validarDatos['direccion'];
-=======
-            $proveedor->tipo_documento = $validarDatos['Tipo_Documento'];
-            $proveedor->numero_documento = $validarDatos['numero_documento'];
-            $proveedor->direccion = $validarDatos['Direccion'];
->>>>>>> d907fd22c10b8749ea56a4b79a815b2f7b105772
             $proveedor->telefono = $validarDatos['telefono'];
             $proveedor->correo = $validarDatos['correo'];
         
