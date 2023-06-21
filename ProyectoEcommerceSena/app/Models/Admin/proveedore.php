@@ -17,7 +17,7 @@ class proveedore extends Model
     ];
     protected $table = 'proveedores';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function proveedor()
     {

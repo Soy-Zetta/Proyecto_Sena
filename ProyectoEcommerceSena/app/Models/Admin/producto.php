@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
+
 class producto extends Model
 {
     use HasFactory;
@@ -20,7 +21,7 @@ class producto extends Model
     ];
     protected $table = 'productos';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function categoria()
     {
