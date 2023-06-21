@@ -29,10 +29,10 @@ class ProveedorController extends Controller
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',
-                'Tipo_Documento' => 'required',
-                'Direccion' => 'required',
+                'tipo_documento' => 'required',
+                'direccion' => 'required',
                 'telefono' => 'required',
-                'Correo' => 'required',
+                'correo' => 'required',
                 
             ]);
           //  dd($validarDatos);
@@ -46,10 +46,10 @@ class ProveedorController extends Controller
             // Crea un nuevo objeto Producto con los datos validados
             $proveedor = new proveedore();
             $proveedor->nombre = $validarDatos['nombre'];
-            $proveedor->tipo_documento = $validarDatos['Tipo_Documento'];
-            $proveedor->direccion = $validarDatos['Direccion'];
+            $proveedor->tipo_documento = $validarDatos['tipo_documento'];
+            $proveedor->direccion = $validarDatos['direccion'];
             $proveedor->telefono = $validarDatos['telefono'];
-            $proveedor->correo = $validarDatos['Correo'];
+            $proveedor->correo = $validarDatos['correo'];
         
             // Guarda el objeto Producto en la base de datos
             $proveedor->save();
@@ -70,7 +70,7 @@ class ProveedorController extends Controller
     public function edit(string $id)
     {
         $proveedor = proveedore::findOrFail($id);
-        // dd($categorias  );
+        // dd($cegoriasat  );
         return view('admin.proveedores.edit',compact('proveedor'));
     }
 
@@ -81,18 +81,18 @@ class ProveedorController extends Controller
 
         $validarDatos = $request->validate([
             'nombre' => 'required',
-            'Tipo_Documento' => 'required',
-            'Direccion' => 'required',
+            'tipo_documento' => 'required',
+            'direccion' => 'required',
             'telefono' => 'required',
-            'Correo' => 'required',
+            'correo' => 'required',
 
         ]);
         $proveedor=proveedore::findOrFail($id);
         $proveedor->nombre= $validarDatos['nombre'];
-        $proveedor->tipo_documento= $validarDatos['Tipo_Documento'];
-        $proveedor->direccion = $validarDatos['Direccion'];
+        $proveedor->tipo_documento= $validarDatos['tipo_documento'];
+        $proveedor->direccion = $validarDatos['direccion'];
         $proveedor->telefono = $validarDatos['telefono'];
-        $proveedor->correo = $validarDatos['Correo'];
+        $proveedor->correo = $validarDatos['correo'];
         $proveedor->update();
         
         return redirect()->route('proveedores.index');

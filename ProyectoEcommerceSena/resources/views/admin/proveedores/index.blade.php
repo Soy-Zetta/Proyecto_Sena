@@ -27,6 +27,8 @@
             <tr>
                 <th>id</th>
                 <th>nombre</th>
+             
+                
             </tr>
         </thead>
         <tbody>

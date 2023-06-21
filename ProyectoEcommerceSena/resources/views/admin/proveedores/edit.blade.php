@@ -16,17 +16,17 @@
                 <div class="mb-3">
                     <label for="nombre" class="form-label">nombre</label>
                     <input type="text" class="form-control" name="nombre" id="nombre"
-                    value="{{ $proveedor->nombre}}" required>
+                    value="{{ $proveedor->nombre }}" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="descripcion" class="form-label">Tipo Documento</label>
+                    <label for="tipo_documento" class="form-label">Tipo Documento</label>
                     <input type="text" class="form-control" name="tipo_documento" id="tipo_documento"
                     value="{{ $proveedor->tipo_documento}}" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="Direccion" class="form-label">Direccion</label>
+                    <label for="direccion" class="form-label">Direccion</label>
                     <input type="text" class="form-control" name="direccion" id="direccion"
                     value="{{ $proveedor->direccion}}"required>
                   </div>
@@ -44,7 +44,7 @@
                   </div>
             
                   <div>
-                      <button type="submit" class="btn btn-primary">Guardar</button>
+                      <button type="submit" class="btn btn-dark">Guardar</button>
               </div>
                 
       
