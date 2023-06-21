@@ -13,23 +13,28 @@
     <div class="col-md-6 mx-auto">
       <div class="mb-3">
         <label for="nombre" class="form-label">nombre</label>
-        <input type="text" class="form-control" name="nombre" id="nombre">
+        <input type="text" class="form-control" name="nombre" id="nombre"
+        value="{{ old('nombre') }}" required>
       </div>
       <div class="mb-3">
         <label for="descripcion" class="form-label">Tipo_Documento</label>
-        <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento">
+        <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento"
+        value="{{ old('Tipo_Documento') }}" required>
       </div>
       <div class="mb-3">
         <label for="precio" class="form-label">Direccion</label>
-        <input type="text" class="form-control" name="Direccion" id="Direccion">
+        <input type="text" class="form-control" name="Direccion" id="Direccion"
+        value="{{ old('Direccion') }}" required>
       </div>
       <div class="mb-3">
         <label for="existencias" class="form-label">telefono</label>
-        <input type="text" class="form-control" name="telefono"id="telefono">
+        <input type="text" class="form-control" name="telefono"id="telefono"
+        value="{{ old('telefono') }}" required>
       </div>
       <div class="mb-3">
         <label for="imagen" class="form-label">Correo</label>
-        <input type="text" class="form-control" name="Correo" id="Correo">
+        <input type="text" class="form-control" name="Correo" id="Correo"
+        value="{{ old('Correo') }}" required>
       </div>
        
    

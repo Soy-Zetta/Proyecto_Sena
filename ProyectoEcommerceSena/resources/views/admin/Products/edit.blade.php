@@ -36,7 +36,7 @@
           <label for="categoria">Categoría</label>
           <select name="categoria" id="categoria" class="form-control">
               @foreach ($categorias as $categoria)
-                <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                <option value="{{ $categoria->id }}"required>{{ $categoria->nombre }}</option>
               @endforeach
           </select>
       
@@ -44,7 +44,7 @@
         <label for="proveedor">Proveedor</label>
         <select name="proveedor" id="proveedor" class="form-control">
             @foreach($proveedores as $proveedor)
-                <option value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
+                <option value="{{ $proveedor->id }}"required>{{ $proveedor->nombre }}</option>
             @endforeach
         </select>
     </div>

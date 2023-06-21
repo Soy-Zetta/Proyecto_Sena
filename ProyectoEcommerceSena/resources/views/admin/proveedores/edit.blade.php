@@ -15,27 +15,32 @@
         
                 <div class="mb-3">
                     <label for="nombre" class="form-label">nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre">
+                    <input type="text" class="form-control" name="nombre" id="nombre"
+                    value="{{ $proveedor->nombre}}" required>
                   </div>
 
                   <div class="mb-3">
                     <label for="descripcion" class="form-label">Tipo_Documento</label>
-                    <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento">
+                    <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento"
+                    value="{{ $proveedor->Tipo_Documento}}" required>
                   </div>
 
                   <div class="mb-3">
                     <label for="precio" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" name="Direccion" id="Direccion">
+                    <input type="text" class="form-control" name="Direccion" id="Direccion"
+                    value="{{ $proveedor->Direccion }}"required>
                   </div>
 
                   <div class="mb-3">
                     <label for="existencias" class="form-label">telefono</label>
-                    <input type="text" class="form-control" name="telefono"id="telefono">
+                    <input type="text" class="form-control" name="telefono"id="telefono"
+                    value="{{ $proveedor->telefono }}" required>
                   </div>
 
                   <div class="mb-3">
                     <label for="imagen" class="form-label">Correo</label>
-                    <input type="text" class="form-control" name="Correo" id="Correo">
+                    <input type="text" class="form-control" name="Correo" id="Correo"
+                    value="{{ $proveedor->correo }}" required>
                   </div>
             
                   <div>
