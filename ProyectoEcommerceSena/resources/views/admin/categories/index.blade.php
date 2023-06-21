@@ -10,12 +10,16 @@
  
 <a href="{{route('categories.create')}}" class="btn btn-primary">crear categoria</a>
 <br><br>
-<form action="#" method="GET">
-    
-    @csrf
-    <input type="text" name="buscadorcategorias">
-    <button type="submit">buscar</button>
-</form>
+<form action="{{ route('buscador.searchCategories') }}" method="GET">
+    <fieldset enable>
+        @csrf
+        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por Codigo de producto">
+      </div>
+      <div class="mb-3">
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </fieldset>
+  </form>
 
 <form action="{{route('categories.store')}}"></form>
 
@@ -47,9 +51,9 @@
             @endforeach
         </tbody>
     </table>
-    <div class = "d-flex justify-content-end">
+    {{-- <div class = "d-flex justify-content-end">
         {!! $categorias->links() !!}
-    </div>
+    </div> --}}
 </div>
   
 
