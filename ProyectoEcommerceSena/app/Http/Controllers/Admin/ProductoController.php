@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin\producto;
 use App\Models\Admin\categoria;
 use App\Models\Admin\proveedore;
-use Symfony\Contracts\Service\Attribute\Required;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -37,7 +37,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {  
-       // dd($request);
+
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',
@@ -45,11 +45,25 @@ class ProductoController extends Controller
                 'codigo'=>   'required',
                 'precio' => 'required|numeric',
                 'existencias' => 'required|integer',
-                'imagen' => 'required',
+                'imagen' => 'required|image',
                 'categoria' => 'required',
                 'proveedor' => 'required',
             ]);
 
+           // dd($validarDatos);
+        // Obtener el archivo de imagen
+           if ($request->hasFile('imagen')) {
+             $imagen=$request->file("imagen");
+             $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+             $imagen->move(public_path('images'), $nombreArchivo);
+             // También puedes usar el siguiente código en lugar de move():
+        // $imagen->storeAs('public/images', $nombreArchivo);
+        
+        $validarDatos['imagen'] = $nombreArchivo;
+    
+           } 
+                
+         
           
         
             // Crea un nuevo objeto Producto con los datos validados
@@ -59,6 +73,7 @@ class ProductoController extends Controller
             $producto->codigo = $validarDatos['codigo'];
             $producto->precio = $validarDatos['precio'];
             $producto->existencias = $validarDatos['existencias'];
+           // $producto->imagen = $fileName; // Guarda el nombre del archivo en lugar del objeto UploadedFile
             $producto->imagen = $validarDatos['imagen'];
             $producto->categorias_id = $validarDatos['categoria'];
             $producto->proveedores_id = $validarDatos['proveedor'];
