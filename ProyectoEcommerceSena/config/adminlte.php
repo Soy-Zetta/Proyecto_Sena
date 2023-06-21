@@ -339,7 +339,7 @@ return [
 
         [
             'text' => 'Ventas',
-            'icon' => 'fas fa-user-tag',
+            'icon' => 'fas fa-luggage-cart',
             'url'  => '#',
         ],
 
