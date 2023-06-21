@@ -20,27 +20,27 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="descripcion" class="form-label">Tipo_Documento</label>
-                    <input type="text" class="form-control" name="Tipo_Documento" id="Tipo_Documento"
-                    value="{{ $proveedor->Tipo_Documento}}" required>
+                    <label for="descripcion" class="form-label">Tipo Documento</label>
+                    <input type="text" class="form-control" name="tipo_documento" id="tipo_documento"
+                    value="{{ $proveedor->tipo_documento}}" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="precio" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" name="Direccion" id="Direccion"
-                    value="{{ $proveedor->Direccion }}"required>
+                    <label for="Direccion" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="direccion"
+                    value="{{ $proveedor->direccion}}"required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="existencias" class="form-label">telefono</label>
+                    <label for="telefono" class="form-label">telefono</label>
                     <input type="text" class="form-control" name="telefono"id="telefono"
-                    value="{{ $proveedor->telefono }}" required>
+                    value="{{ $proveedor->telefono}}" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="imagen" class="form-label">Correo</label>
+                    <label for="correo" class="form-label">Correo</label>
                     <input type="text" class="form-control" name="Correo" id="Correo"
-                    value="{{ $proveedor->correo }}" required>
+                    value="{{ $proveedor->correo}}" required>
                   </div>
             
                   <div>
