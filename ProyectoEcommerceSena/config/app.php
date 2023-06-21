@@ -173,6 +173,9 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
     ])->toArray(),
 
+        //Darryldecode\Cart
+        Darryldecode\Cart\CartServiceProvider::class,
+
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -187,5 +190,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    // Darryldecode\Cart
+    'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 
 ];

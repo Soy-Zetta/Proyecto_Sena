@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{route('products.store')}}" method="POST" class="card">
+<form action="{{route('products.store')}}"  method="POST" class="card" enctype="multipart/form-data"  >
   @csrf
   <div class="row">
     <div class="col-md-6 mx-auto">
@@ -23,7 +23,7 @@
       </div>
       <div class="mb-3">
         <label for="codigo" class="form-label">codigo</label>
-        <input type="text" class="form-control" name="codigo" id="codigo" 
+        <input type="number" class="form-control" name="codigo" id="codigo" 
         value="{{ old('codigo') }}" required>
       </div>
       <div class="mb-3">

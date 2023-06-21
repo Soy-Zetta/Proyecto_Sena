@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\BuscadorController;
 use Illuminate\Support\Facades\Auth;
 
 
+
 Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
@@ -27,6 +28,13 @@ Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.se
 
 //ruta crud categorias panel de  control
 route::resource('/categories',categoriaController::class)->names('categories');
+
+
+
+
+
+
+
 
 
 // //rutas crud productos panel de administracion
