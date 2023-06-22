@@ -158,9 +158,17 @@ class ProductoController extends Controller
     public function destroy(string $id)
     {
         $producto = Producto::findOrFail($id);
-        
+            // Obtén el nombre del archivo de imagen del producto
+        $nombreImagen = $producto->imagen;
+        //dd($nombreImagen);
+         // Elimina el registro del producto de la base de datos
         $producto->delete();
-        return redirect()->route('products.index');
-    }
+
+         // Verifica si el archivo de imagen existe y elimínalo
+        if ($nombreImagen && file_exists(public_path('images/' . $nombreImagen))) {
+            unlink(public_path('images/' . $nombreImagen));
+        }
+            return redirect()->route('products.index');
+        }
 }
 
