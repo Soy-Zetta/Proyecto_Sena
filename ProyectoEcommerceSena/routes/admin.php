@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ProveedorController;
 use App\Http\Controllers\Admin\BuscadorController;
+use App\Http\Controllers\Admin\ClienteController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -15,7 +16,10 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
 //rutas crud proveedores panel de administracion
-Route::resource('proveedores',ProveedorController::class)->names('proveedores');
+Route::resource('/customers',ClienteController::class)->names('customers');
+
+//rutas crud proveedores panel de administracion
+Route::resource('/proveedores',ProveedorController::class)->names('proveedores');
 
 //rutas crud usuarios panel de administracion
 Route::resource('/users', UserController::class)->names('admin.users');
@@ -30,8 +34,11 @@ Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.se
 route::resource('/categories',categoriaController::class)->names('categories');
 
 
-//buscador de productos panel de administracion 
+//buscador de productos panel de proveedores
 Route::get('/buscador_proveedores', [BuscadorController::class,'searchproveedor'])->name('buscador.searchproveedor');
+
+//buscador de productos panel de Clientes
+Route::get('/buscador_clientes', [BuscadorController::class,'searchclientes'])->name('buscador.searchclientes');
 
 
 

@@ -3,13 +3,28 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\cliente;
 use Illuminate\Http\Request;
 use App\Models\Admin\producto;
 use App\Models\Admin\proveedore;
 
+
 class BuscadorController extends Controller
 {
-    public function searchproveedor(Request $request)
+
+    public function searchclientes(Request $request)
+
+    {
+        
+        $buscador = $request->input('buscador');
+        $clientes = cliente::where('id', 'LIKE', "%$buscador%")->orWhere('nombre', 'LIKE', "%$buscador%")->orWhere('email', 'LIKE', "%$buscador%") ->get();
+        return view('admin.customers.index', compact('clientes'));
+    }
+
+
+
+
+      public function searchproveedor(Request $request)
 
     {
         
