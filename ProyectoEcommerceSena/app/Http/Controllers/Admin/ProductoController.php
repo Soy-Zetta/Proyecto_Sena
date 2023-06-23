@@ -37,7 +37,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {  
-
+          //  dd($request);
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',
@@ -46,7 +46,6 @@ class ProductoController extends Controller
                 'precio' => 'required|numeric',
                 'existencias' => 'required|integer',
                 'imagen' => 'required|image',
-                'disponible'=>'required',
                 'categoria' => 'required',
                 'proveedor' => 'required',
             ]);
@@ -76,7 +75,7 @@ class ProductoController extends Controller
             $producto->existencias = $validarDatos['existencias'];
            // $producto->imagen = $fileName; // Guarda el nombre del archivo en lugar del objeto UploadedFile
             $producto->imagen = $validarDatos['imagen'];
-            $producto->imagen = $validarDatos['disponible'];
+            
             $producto->categorias_id = $validarDatos['categoria'];
             $producto->proveedores_id = $validarDatos['proveedor'];
         
