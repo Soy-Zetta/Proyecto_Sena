@@ -1,0 +1,43 @@
+.main {
+    background-color: #0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-title {
+    margin: 10px 0;
+}
+
+.container-title__h1 {
+    font-size: 1.5em;
+}
+
+.container-search {
+    margin: 10px 0;
+}
+
+.container-search__input {
+    width: 600px;
+}
+
+.nav__ul-help {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav__li-help {
+    margin: 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

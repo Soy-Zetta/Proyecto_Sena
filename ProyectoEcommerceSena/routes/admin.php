@@ -27,8 +27,10 @@ Route::resource('/users', UserController::class)->names('admin.users');
 //rutas crud productos panel de administracion
 Route::resource('/products', ProductoController::class)->names('products')->middleware('auth'); 
 
-//buscador de productos panel de administracion 
+//buscador de productos,proveedores y categorias
 Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.search');
+Route::get('/buscador/categories', [BuscadorController::class, 'searchCategories'])->name('buscador.searchCategories');
+
 
 //ruta crud categorias panel de  control
 route::resource('/categories',categoriaController::class)->names('categories');

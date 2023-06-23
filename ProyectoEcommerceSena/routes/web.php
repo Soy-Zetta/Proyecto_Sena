@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\CartController;
 
 /*
@@ -20,12 +21,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controller(ServicesController::class)->group(function () {
+    Route::get('/servicios', 'index');
+    Route::get('/servicios/mantenimiento-general', 'mantenimiento');
+    Route::get('/servicios/programacion', 'programacion');
+    Route::get('/servicios/reparacionMovil', 'reparacionMovil');
+    Route::get('/servicios/InstalacionCamaras', 'InstalacionCamaras');
+    Route::get('/servicios/EnsambleEquipos', 'EnsambleEquipos');
+    Route::get('/servicios/ReparacionBisagras', 'ReparacionBisagras');
+});
+
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/nosotros', function () {
     return view('sobre-nosotros');
 });
+
+Route::get('/ayuda-y-soporte', function () {
+    return view('help');
+});
+
+Route::get('/loginn', function () {
+    return view('loginn');
+});
+
+Route::get('/registerr', function () {
+    return view('registerr');
+});
+
 
 //rutas productos
 Route::get('/shop', [CartController::class, 'shop'])->name('shop');
