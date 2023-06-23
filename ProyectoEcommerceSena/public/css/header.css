@@ -1,14 +1,13 @@
 @import "normalize.css";
 
 .header {
-    background-color: #0004;
+    background-color: #0007;
     box-shadow: 1px 3px 30px #686868;
     border-bottom: 1px solid #686868;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 8px 10px;
     z-index: 100;
 }
 
@@ -20,8 +19,14 @@
     transition: transform 1s;
 }
 
-.header__section1__btn1, .header__section1__btn2 {
-    font-size: 0;
+.header__section1__btn1 a, .header__section1__btn2 a,
+.header__section1__btn1 i, .header__section1__btn2 i {
+    color: var(--colorLetra2);
+    text-decoration: none;
+}
+
+.header__section1__btn1 a:hover, .header__section1__btn2 a:hover {
+    color: var(--colorLetraHover);
 }
 
 .header__section1__btn1:hover, .header__section1__btn2:hover {
@@ -125,7 +130,15 @@
     transform: scale(1);
     transition: transform 1s;
     text-shadow: 1px 1px 10px #767676;
-    color: var(--colorLetra2) !important;
+    color: var(--colorLetra2);
+}
+
+.nav__li a {
+    color: var(--colorLetra2);
+    text-decoration: none;
+}
+.nav__li a:hover {
+    color: var(--colorLetraHover);
 }
 
 .nav__li:hover {
@@ -133,24 +146,9 @@
     transition: transform 1s;
 }
 
-.nav__li1 a:hover, .nav__li3 a:hover, .nav__li5 a:hover {
-    color: var(--colorLetra) !important;
-    text-decoration: underline;
-}
-
-.nav__li2 a, .nav__li4 a, .nav__li a i {
-    color: var(--colorLetra2);
-}
-
-.nav__li2 a:hover, .nav__li4 a:hover {
-    color: var(--colorLetra2);
-    text-decoration: underline;
-}
-
 .header__section1__btn2 a {
-    text-decoration: none !important;
+    text-decoration: none;
 }
-
 
 .menu-log {
     display: none;
@@ -356,7 +354,7 @@
         transform: scale(1);
         transition: transform 1s;
         padding: 5px;
-        color: var(--colorLetra2) !important;
+        color: var(--colorLetra2);
     }
 
     .nav__li-act__li a i {
@@ -372,7 +370,7 @@
     .nav__li-act__li1 a, .nav__li-act__li3 a, .nav__li-act__li5 a, .nav__li-act__li7 a,
     .nav__li-act__li1, .nav__li-act__li3, .nav__li-act__li5,
     .nav__li-act__li1 a i, .nav__li-act__li3 a i, .nav__li-act__li5 a i, .nav__li-act__li7 a i {
-        color: var(--colorLetra2) !important;
+        color: var(--colorLetra2);
     }
 
     .nav__li-act__li {
@@ -385,7 +383,7 @@
     .fa-angle-down {
         rotate: 0;
         transition: rotate 1s;
-        color: var(--colorLetra);
+        color: var(--colorLetra2);
     }
     .fa-angle-down-rot1, .fa-angle-down-rot2 {
         rotate: -540deg;
