@@ -17,7 +17,7 @@ class producto extends Model
         'precio',
         'existencias',
         'imagen',
-        
+        'disponible',
         'categorias_id',
         'proveedor_id',
     ];

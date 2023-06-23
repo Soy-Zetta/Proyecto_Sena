@@ -11,9 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
+
     public function index()
     {
         $productos = producto::all();
@@ -22,9 +21,10 @@ class ProductoController extends Controller
         return view('admin.products.index',compact('productos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
+
+
+
     public function create()
     {
         $proveedores =proveedore::all();
@@ -32,9 +32,11 @@ class ProductoController extends Controller
         return view('admin.products.create',compact('categorias','proveedores'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
+
+
+
+    
     public function store(Request $request)
     {  
           //  dd($request);
@@ -89,18 +91,24 @@ class ProductoController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
+
+
+
+
+
+
     public function show(string $id)
     {
         $producto = Producto::findOrFail($id);
         return view('products.show', compact('producto'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+ 
+
+
+
+
     public function edit(string $id)
     {
         $proveedores = proveedore::all();
@@ -110,9 +118,10 @@ class ProductoController extends Controller
         return view('admin.products.edit', compact('producto','categorias','proveedores'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
+
+
+
     public function update(Request $request, string $id)
     {
         //validar datos del formulario, se hace nuevamente para no permitir
@@ -124,6 +133,7 @@ class ProductoController extends Controller
             'precio' => 'required|numeric',
             'existencias' => 'required|integer',
             'imagen' => 'required',
+            'disponible' => 'required',
             'categoria' => 'required',
             'proveedor' => 'required',
         ]);
@@ -137,6 +147,12 @@ class ProductoController extends Controller
         $producto->descripcion = $request['descripcion'];
         $producto->precio=$request['precio'];
         $producto->existencias = $request ['existencias'];
+        $producto->imagen = $validarDatos['imagen'];
+        if ($request->disponible == '1') {
+            $producto->disponible = true;
+        } else {
+            $producto->disponible = false;
+        }
         $producto->categorias_id = $request['categoria'];
         $producto->proveedores_id = $request['proveedor'];
         $producto->update();
@@ -154,9 +170,10 @@ class ProductoController extends Controller
         return redirect()->route('products.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
+
+
+
     public function destroy(string $id)
     {
         $producto = Producto::findOrFail($id);
