@@ -128,7 +128,7 @@ class ProductoController extends Controller
   
         //validar datos del formulario, se hace nuevamente para no permitir
         //que el usuario deje campos sin rellenar 
-        
+
         $validarDatos = $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
@@ -140,14 +140,21 @@ class ProductoController extends Controller
             'proveedor' => 'required',
         ]);
     
+        $producto = Producto::findOrFail($id);
+    
+        $nombreImagenAnterior = $producto->imagen; // Paso 1: Obtén el nombre de la imagen anterior
+    
         if ($request->hasFile('imagen')) {
             $imagen = $request->file("imagen");
-            $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
-            $imagen->move(public_path('images'), $nombreArchivo);
-            $validarDatos['imagen'] = $nombreArchivo;
+             // Paso 2: Verifica si el archivo de imagen nueva se ha cargado correctamente
+            if ($imagen->isValid()) {
+                $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+                $imagen->move(public_path('images'), $nombreArchivo);
+                // Actualiza el nombre de la imagen en los datos validados
+                $validarDatos['imagen'] = $nombreArchivo; 
+            }
         }
     
-        $producto = Producto::findOrFail($id);
         $producto->nombre = $validarDatos['nombre'];
         $producto->descripcion = $validarDatos['descripcion'];
         $producto->precio = $validarDatos['precio'];
@@ -157,6 +164,11 @@ class ProductoController extends Controller
         $producto->categorias_id = $validarDatos['categoria'];
         $producto->proveedores_id = $validarDatos['proveedor'];
         $producto->update();
+    
+        // Elimina la imagen anterior si existe y no es igual a la nueva imagen
+        if ($nombreImagenAnterior && $nombreImagenAnterior !== $producto->imagen && file_exists(public_path('images/' . $nombreImagenAnterior))) {
+            unlink(public_path('images/' . $nombreImagenAnterior)); 
+        }
 
       
 

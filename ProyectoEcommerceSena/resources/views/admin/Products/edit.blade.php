@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{ route('products.update',$producto->id) }}" method="POST" class="card">
+<form action="{{ route('products.update',$producto->id) }}" method="POST" class="card" enctype="multipart/form-data">
   @csrf
   @method('PUT')
   <div class="row">
