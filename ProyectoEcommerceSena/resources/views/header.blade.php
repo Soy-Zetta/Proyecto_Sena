@@ -13,7 +13,7 @@
     <header class="header">
         <div class="header__section1">
             <div class="header__section1__title">
-                <img width="70px" src="{{ asset('img/footerIMG/ramserviceLogo.png') }}" class="header__section1__title-h2">
+                <img width="70px" src="{{ asset('img/logo.png') }}" class="header__section1__title-h2">
             </div>
             <div class="search-container">
                 <input class="header__section1__input" type="search"><i class="fas fa-search"></i>
@@ -23,35 +23,20 @@
                 <input class="header__section1__input-mobile" type="search"><i id="icon-search" class="fas fa-search"></i>
                 <div>
                     <div>
-                        <button class="header__section1__btn1"><i class="fas fa-shopping-cart"></i><a href="#"> Carrito</a></button>
+                        <button class="header__section1__btn1"><i class="fas fa-shopping-cart"></i><a href="./cart"> Carrito</a></button>
                     </div>
                     <div>
-                        <button id="btn-log" class="header__section1__btn2"><i class="fas fa-user"></i><a href="#"> Ingresar</a></button>
+                        <button id="btn-log" class="header__section1__btn2"><i class="fas fa-user"></i><a href="./loginn"> Ingresar</a></button>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- <div>
-            @if (Route::has('login'))
-                <div class="menu-log" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div> --}}
         <nav class="nav">
             <button class="header__menu-mobile-btn header__menu-mobile-btnClose"><i class="fas fa-times"></i></button>
             <ul class="nav__ul">
 
                 <li class="nav__li nav__li1"><a href="./">Casa</a></li>
-                <li class="nav__li nav__li2"><a href="#">Servicios </a><i class="fas fa-angle-down fa-angle-down2"></i>
+                <li class="nav__li nav__li2"><a href="./servicios">Servicios </a><i class="fas fa-angle-down fa-angle-down2"></i>
 
                     <ul class="nav__li-act__ul nav__li-act__ul2">
                         <li class="nav__li-act__li nav__li-act__li1"><a href="#"><i class="fas fa-tools"></i> Mantenimiento de pc</a></li>
@@ -77,9 +62,10 @@
                     </ul>
 
                 </li>
-                <li class="nav__li nav__li5"><a href="#">Ayuda y Soporte</a></li>
+                <li class="nav__li nav__li5"><a href="./ayuda-y-soporte">Ayuda y Soporte</a></li>
             </ul>
         </nav>
     </header>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
