@@ -332,9 +332,9 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Clientes',
+            'text' => 'clientes',
             'icon' => 'fas fa-user-tag',
-            'url'  => '#',
+            'route'  => 'customers.index',
         ],
 
         [
@@ -349,7 +349,7 @@ return [
             'route'  => 'products.index'
         ],
         [
-            'text' => 'Proveedores',
+            'text' => 'proveedores',
             'icon' => 'fas fa-user-friends',
             'route'  => 'proveedores.index',
             

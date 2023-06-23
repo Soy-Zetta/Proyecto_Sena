@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,14 +10,21 @@ class cliente extends Model
     use HasFactory;
     protected $fillable = [
         'nombre',
-        'teleono',
-        'direccion',
-        'email',
+        'mail',
+        'contraseña',
+        'telefono',
+        'tipo_documento',
+        'numero_documento',
+        'producto_id',
     ];
 
-    public function ventas()
+    protected $table = 'clientes';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+
+    public function productos()
     {
-        return $this->hasMany(venta::class);
+        return $this->belongsTo(producto::class, 'productos_id');
     }
 
 
