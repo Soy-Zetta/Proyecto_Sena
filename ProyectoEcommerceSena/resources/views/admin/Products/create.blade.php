@@ -43,7 +43,7 @@
       </div>
 
       <div class="form-group">
-        <label for="#">Disponibilidad:</label>
+        <label for="disponible">Disponibilidad:</label>
           <div class="form-check">
               <input class="form-check-input" type="radio" id="disponible" name="disponible" value="1" {{ old('disponible') ? 'checked' : '' }}>
               <label class="form-check-label" for="disponible">Disponible</label>

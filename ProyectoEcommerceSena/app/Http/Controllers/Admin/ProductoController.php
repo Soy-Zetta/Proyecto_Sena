@@ -124,9 +124,11 @@ class ProductoController extends Controller
 
     public function update(Request $request, string $id)
     {
+
+  
         //validar datos del formulario, se hace nuevamente para no permitir
         //que el usuario deje campos sin rellenar 
-
+        
         $validarDatos = $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
@@ -137,25 +139,59 @@ class ProductoController extends Controller
             'categoria' => 'required',
             'proveedor' => 'required',
         ]);
-
-        
-        
-
-        //inserta los datos actualizados  en la tabla productos 
-        $producto = Producto::findOrFail($id);
-        $producto->nombre = $request['nombre'];
-        $producto->descripcion = $request['descripcion'];
-        $producto->precio=$request['precio'];
-        $producto->existencias = $request ['existencias'];
-        $producto->imagen = $validarDatos['imagen'];
-        if ($request->disponible == '1') {
-            $producto->disponible = true;
-        } else {
-            $producto->disponible = false;
+    
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file("imagen");
+            $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+            $imagen->move(public_path('images'), $nombreArchivo);
+            $validarDatos['imagen'] = $nombreArchivo;
         }
-        $producto->categorias_id = $request['categoria'];
-        $producto->proveedores_id = $request['proveedor'];
+    
+        $producto = Producto::findOrFail($id);
+        $producto->nombre = $validarDatos['nombre'];
+        $producto->descripcion = $validarDatos['descripcion'];
+        $producto->precio = $validarDatos['precio'];
+        $producto->existencias = $validarDatos['existencias'];
+        $producto->imagen = $validarDatos['imagen'];
+        $producto->disponible = $validarDatos['disponible'] == '1';
+        $producto->categorias_id = $validarDatos['categoria'];
+        $producto->proveedores_id = $validarDatos['proveedor'];
         $producto->update();
+
+      
+
+        // $validarDatos = $request->validate([
+        //     'nombre' => 'required',
+        //     'descripcion' => 'required',
+        //     'precio' => 'required|numeric',
+        //     'existencias' => 'required|integer',
+        //     'imagen' => 'required',
+        //     'disponible' => 'required',
+        //     'categoria' => 'required',
+        //     'proveedor' => 'required',
+        // ]);
+
+        // if ($request->hasFile('imagen')) {
+        //     $imagen = $request->file("imagen");
+        //     $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+        //     $imagen->move(public_path('images'), $nombreArchivo);
+          
+        // }
+        
+
+        // //inserta los datos actualizados  en la tabla productos 
+        // $producto = Producto::findOrFail($id);
+        // $producto->nombre = $request['nombre'];
+        // $producto->descripcion = $request['descripcion'];
+        // $producto->precio=$request['precio'];
+        // $producto->existencias = $request ['existencias'];
+        // $producto->imagen =   $nombreArchivo;
+        // $producto->disponible = $request['disponible'] == '1';
+         
+      
+        // $producto->categorias_id = $request['categoria'];
+        // $producto->proveedores_id = $request['proveedor'];
+        // $producto->update();
 
         // $producto = Producto::findOrFail($id);
         // $producto->update([
