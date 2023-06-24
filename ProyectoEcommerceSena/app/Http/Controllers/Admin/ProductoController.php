@@ -29,6 +29,8 @@ class ProductoController extends Controller
     {
         $proveedores =proveedore::all();
         $categorias= categoria::all();
+
+        
         return view('admin.products.create',compact('categorias','proveedores'));
     }
 
@@ -37,7 +39,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {  
-
+        
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',
