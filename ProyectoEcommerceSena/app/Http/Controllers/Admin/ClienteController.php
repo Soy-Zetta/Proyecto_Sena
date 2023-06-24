@@ -15,16 +15,17 @@ class ClienteController extends Controller
     {
          //Con Paginación
          $clientes = cliente::paginate(10);
-         return view('admin.customers.index',compact('clientes'));
-    }
+      //   return view('admin.customers.index',compact('clientes'));
 
+      return 'aqui se visualiza a los clientes';
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //$clientes =cliente::all();
-       // return view('admin.customers.create',compact('clientes'));
+        $clientes =cliente::all();
+        return view('admin.clientes.create',compact('clientes'));
     }
 
     /**

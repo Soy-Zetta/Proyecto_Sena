@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\CartController;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,9 +46,9 @@ Route::get('/loginn', function () {
     return view('loginn');
 });
 
-Route::get('/registerr', function () {
-    return view('registerr');
-});
+// Route::get('/registerr', function () {
+//     return view('registerr');
+// });
 
 
 //rutas productos
