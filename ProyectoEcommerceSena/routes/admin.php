@@ -28,7 +28,7 @@ Route::resource('/users', UserController::class)->names('admin.users');
 //rutas crud productos panel de administracion
 Route::resource('/products', ProductoController::class)->names('products')->middleware('auth'); 
 
-//ruta CRUD roles panel administrativo
+//ruta CRUD roles panel administrativo 123
 Route::resource('roles', RoleController::class)->names('admin.roles');
 
 //buscador de productos,proveedores y categorias
