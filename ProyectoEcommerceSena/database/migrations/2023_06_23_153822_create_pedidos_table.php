@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('cliente_nuemro_docuemto');
+            $table->unsignedBigInteger('producto_id');
+            $table->date('fecha');
+            $table->integer('cantidad');
+            $table->decimal('precio', 8, 2);
             $table->timestamps();
+        
+            $table->foreign('clientes_numero_documento')->references('numero_documento')->on('clientes');
+            $table->foreign('productos_id')->references('id')->on('productos');
         });
     }
 

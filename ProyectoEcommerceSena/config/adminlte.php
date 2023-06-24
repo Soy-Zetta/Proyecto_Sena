@@ -338,7 +338,7 @@ return [
         ],
 
         [
-            'text' => 'Ventas',
+            'text' => 'Pedidos',
             'icon' => 'fas fa-luggage-cart',
             'url'  => '#',
         ],
