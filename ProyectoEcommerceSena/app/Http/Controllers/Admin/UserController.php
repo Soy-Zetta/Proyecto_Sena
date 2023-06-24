@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -15,6 +16,7 @@ class UserController extends Controller
     {
         // Con paginación
         $usuarios = User::paginate(10);
+        $roles = Role::all();
         return view('admin.users.index', compact('usuarios'));
     }
 
@@ -79,8 +81,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $roles = Role::all();
         $usuario = User::findorfail($id);
-        return view('admin.users.edit',compact('usuario'));
+        return view('admin.users.edit',compact('usuario', 'roles'));
     }
     /**
      * Update the specified resource in storage.

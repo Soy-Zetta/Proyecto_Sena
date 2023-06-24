@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ProveedorController;
 use App\Http\Controllers\Admin\BuscadorController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ClienteController;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,6 +27,9 @@ Route::resource('/users', UserController::class)->names('admin.users');
 
 //rutas crud productos panel de administracion
 Route::resource('/products', ProductoController::class)->names('products')->middleware('auth'); 
+
+//ruta CRUD roles panel administrativo
+Route::resource('roles', RoleController::class)->names('admin.roles');
 
 //buscador de productos,proveedores y categorias
 Route::get('/buscador', [BuscadorController::class,'search'])->name('buscador.search');

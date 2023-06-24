@@ -20,13 +20,14 @@ class RoleSeeder extends Seeder
     {
         $role1=Role::create(['name'=> 'Admin']);
         $role2=Role::create(['name'=> 'Empleado']);
+        $role3=Role::create(['name'=> 'Cliente']);
 
-        Permission::create(['name'=> 'admin.home'])->syncRoles([$role1, $role2]);
-
-        Permission::create(['name'=> 'products.index'])->syncRoles([$role1, $role2]);
-        Permission::create(['name'=> 'admin.users.create'])->syncRoles([$role1, $role2]);
-        Permission::create(['name'=> 'admin.users.edit'])->syncRoles([$role1, $role2]);
-        Permission::create(['name'=> 'admin.users.destroy'])->syncRoles([$role1, $role2]);
+        Permission::create(['name'=> 'admin.home', 'description' => 'Ver el dashboard'])->syncRoles([$role1, $role2]);
+        
+        Permission::create(['name'=> 'admin.proveedores.index', 'description' => 'Ver Listado de Proveedores'])->syncRoles([$role1, $role3]);
+        Permission::create(['name'=> 'admin.proveedores.create', 'description' => 'Crear un proveedor'])->syncRoles([$role1, $role3]);
+        Permission::create(['name'=> 'admin.proveedores.edit', 'description' => 'Editar Proveedor'])->syncRoles([$role1, $role2]);
+        Permission::create(['name'=> 'admin.proveedores.destroy', 'description' => 'Eliminar proveedor'])->syncRoles([$role1, $role2]);
 
        
     }

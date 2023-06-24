@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'tipo_documento' => 'Cedula',
             'num_documento' => '1.144.512.549',
             'password' => bcrypt('12345678')
-        ])->assignRole('Admin');
+        ])->assignRole('Empleado');
 
         User::create([
             'name' => 'Victo Hugo',
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
             'num_documento' => '1.144.512.547',
             'password' => bcrypt('12345678')
 
-        ])->assignRole('Admin');
+        ])->assignRole('Cliente');
 
 
 

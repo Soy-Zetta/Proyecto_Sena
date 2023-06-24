@@ -4,17 +4,17 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Editar Usuario {{$usuario->nombre}}</h1>
+    <h1 class="m-0 text-dark">Editar Rol {{$role->nombre}}</h1>
 @stop
 
 @section('content')
 
     <main>
         <div class="container py-4">
-            <h2>Editar Usuario</h2>
+            <h2>Editar Roles</h2>
 
 
-            <form action="{{ route('admin.users.update', ['user' => $usuario->id]) }}" method="POST">
+            <form action="{{ route('admin.roles.update', ['role' => $roles->id]) }}" method="POST">
                 @method("PUT")
 
                 @csrf
