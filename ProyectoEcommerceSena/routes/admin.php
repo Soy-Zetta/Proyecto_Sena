@@ -7,11 +7,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ProveedorController;
 use App\Http\Controllers\Admin\BuscadorController;
-<<<<<<< HEAD
 use App\Http\Controllers\Admin\RoleController;
-=======
 use App\Http\Controllers\Admin\ClienteController;
->>>>>>> 803ebb4a4eaee1d75d08231868149b9aab6e4f62
 use Illuminate\Support\Facades\Auth;
 
 
