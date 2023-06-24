@@ -13,7 +13,7 @@
 <form action="{{ route('buscador.searchclientes') }}" method="GET">
     <fieldset enable>
         @csrf
-        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por id de cliente">
+        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por numero_documento de cliente">
       </div>
       <div class="mb-3">
       </div>
