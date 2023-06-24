@@ -127,12 +127,58 @@ class ProductoController extends Controller
     {
 
 
+        // $validarDatos = $request->validate([
+        //     'nombre' => 'required',
+        //     'descripcion' => 'required',
+        //     'precio' => 'required|numeric',
+        //     'existencias' => 'required|integer',
+        //     'imagen' => 'nullable|image',
+        //     'disponible' => 'required',
+        //     'categoria' => 'required',
+        //     'proveedor' => 'required',
+        // ]);
+    
+        // $producto = Producto::findOrFail($id);
+    
+        // $nombreImagenActual = $request->input('imagen_actual'); // Obtiene el nombre de la imagen actual
+    
+        // if ($request->hasFile('imagen')) {
+        //     // Se cargó un nuevo archivo de imagen
+        //     $imagen = $request->file("imagen");
+        //     $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+        //     $imagen->move(public_path('images'), $nombreArchivo);
+    
+        //     // Actualiza el nombre de la imagen en los datos validados
+        //     $validarDatos['imagen'] = $nombreArchivo;
+    
+        //     // Elimina la imagen anterior si existe y no es igual a la nueva imagen
+        //     if ($nombreImagenActual && $nombreImagenActual !== $nombreArchivo && file_exists(public_path('images/' . $nombreImagenActual))) {
+        //         unlink(public_path('images/' . $nombreImagenActual));
+        //     }
+        // } else {
+        //     // No se cargó un nuevo archivo de imagen, utiliza el nombre de la imagen actual
+        //     $validarDatos['imagen'] = $nombreImagenActual;
+        // }
+    
+        // $producto->nombre = $validarDatos['nombre'];
+        // $producto->descripcion = $validarDatos['descripcion'];
+        // $producto->precio = $validarDatos['precio'];
+        // $producto->existencias = $validarDatos['existencias'];
+        // $producto->imagen = $validarDatos['imagen'];
+        // $producto->disponible = $validarDatos['disponible'] == '1';
+        // $producto->categorias_id = $validarDatos['categoria'];
+        // $producto->proveedores_id = $validarDatos['proveedor'];
+        // $producto->save();
+  
+        // validar datos del formulario, se hace nuevamente para no permitir
+        // que el usuario deje campos sin rellenar 
+
         $validarDatos = $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
             'precio' => 'required|numeric',
             'existencias' => 'required|integer',
-            'imagen' => 'nullable|image',
+            'imagen' => 'required',
             'disponible' => 'required',
             'categoria' => 'required',
             'proveedor' => 'required',
@@ -140,24 +186,17 @@ class ProductoController extends Controller
     
         $producto = Producto::findOrFail($id);
     
-        $nombreImagenActual = $request->input('imagen_actual'); // Obtiene el nombre de la imagen actual
+        $nombreImagenAnterior = $producto->imagen; // Paso 1: Obtén el nombre de la imagen anterior
     
         if ($request->hasFile('imagen')) {
-            // Se cargó un nuevo archivo de imagen
             $imagen = $request->file("imagen");
-            $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
-            $imagen->move(public_path('images'), $nombreArchivo);
-    
-            // Actualiza el nombre de la imagen en los datos validados
-            $validarDatos['imagen'] = $nombreArchivo;
-    
-            // Elimina la imagen anterior si existe y no es igual a la nueva imagen
-            if ($nombreImagenActual && $nombreImagenActual !== $nombreArchivo && file_exists(public_path('images/' . $nombreImagenActual))) {
-                unlink(public_path('images/' . $nombreImagenActual));
+             // Paso 2: Verifica si el archivo de imagen nueva se ha cargado correctamente
+            if ($imagen->isValid()) {
+                $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+                $imagen->move(public_path('images'), $nombreArchivo);
+                // Actualiza el nombre de la imagen en los datos validados
+                $validarDatos['imagen'] = $nombreArchivo; 
             }
-        } else {
-            // No se cargó un nuevo archivo de imagen, utiliza el nombre de la imagen actual
-            $validarDatos['imagen'] = $nombreImagenActual;
         }
     
         $producto->nombre = $validarDatos['nombre'];
@@ -168,52 +207,13 @@ class ProductoController extends Controller
         $producto->disponible = $validarDatos['disponible'] == '1';
         $producto->categorias_id = $validarDatos['categoria'];
         $producto->proveedores_id = $validarDatos['proveedor'];
-        $producto->save();
-  
-        //validar datos del formulario, se hace nuevamente para no permitir
-        //que el usuario deje campos sin rellenar 
-
-    //     $validarDatos = $request->validate([
-    //         'nombre' => 'required',
-    //         'descripcion' => 'required',
-    //         'precio' => 'required|numeric',
-    //         'existencias' => 'required|integer',
-    //         'imagen' => 'required',
-    //         'disponible' => 'required',
-    //         'categoria' => 'required',
-    //         'proveedor' => 'required',
-    //     ]);
+       // $producto->update();
+       $producto->save();
     
-    //     $producto = Producto::findOrFail($id);
-    
-    //     $nombreImagenAnterior = $producto->imagen; // Paso 1: Obtén el nombre de la imagen anterior
-    
-    //     if ($request->hasFile('imagen')) {
-    //         $imagen = $request->file("imagen");
-    //          // Paso 2: Verifica si el archivo de imagen nueva se ha cargado correctamente
-    //         if ($imagen->isValid()) {
-    //             $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
-    //             $imagen->move(public_path('images'), $nombreArchivo);
-    //             // Actualiza el nombre de la imagen en los datos validados
-    //             $validarDatos['imagen'] = $nombreArchivo; 
-    //         }
-    //     }
-    
-    //     $producto->nombre = $validarDatos['nombre'];
-    //     $producto->descripcion = $validarDatos['descripcion'];
-    //     $producto->precio = $validarDatos['precio'];
-    //     $producto->existencias = $validarDatos['existencias'];
-    //     $producto->imagen = $validarDatos['imagen'];
-    //     $producto->disponible = $validarDatos['disponible'] == '1';
-    //     $producto->categorias_id = $validarDatos['categoria'];
-    //     $producto->proveedores_id = $validarDatos['proveedor'];
-    //    // $producto->update();
-    //    $producto->save();
-    
-    //     // Elimina la imagen anterior si existe y no es igual a la nueva imagen
-    //     if ($nombreImagenAnterior && $nombreImagenAnterior !== $producto->imagen && file_exists(public_path('images/' . $nombreImagenAnterior))) {
-    //         unlink(public_path('images/' . $nombreImagenAnterior)); 
-    //     }
+        // Elimina la imagen anterior si existe y no es igual a la nueva imagen
+        if ($nombreImagenAnterior && $nombreImagenAnterior !== $producto->imagen && file_exists(public_path('images/' . $nombreImagenAnterior))) {
+            unlink(public_path('images/' . $nombreImagenAnterior)); 
+        }
 
       
 

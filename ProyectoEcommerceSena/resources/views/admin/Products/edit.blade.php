@@ -35,19 +35,6 @@
         >
       </div>
 
-      {{-- <div class="form-group">
-        <label for="disponible">Disponibilidad:</label>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" id="disponible" name="disponible" value="1" {{ $producto->disponible ? 'checked' : '' }}>
-            <label class="form-check-label" for="disponible">Disponible</label>
-        </div>
-        
-        <div class="form-check">
-            <input class="form-check-input" type="radio" id="no_disponible" name="disponible" value="0" {{ !$producto->disponible ? 'checked' : '' }}>
-            <label class="form-check-label" for="no_disponible">No Disponible</label>
-        </div>
-    </div> --}}
-
     <div class="form-group">
       <label for="disponible">Disponibilidad:</label>
       <select name="disponible" id="disponible" class="form-control">
