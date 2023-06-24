@@ -42,7 +42,7 @@
         value="{{ old('imagen') }}" required>
       </div>
 
-      <div class="form-group">
+      {{-- <div class="form-group">
         <label for="disponible">Disponibilidad:</label>
           <div class="form-check">
               <input class="form-check-input" type="radio" id="disponible" name="disponible" value="1" {{ old('disponible') ? 'checked' : '' }}>
@@ -53,8 +53,15 @@
               <label class="form-check-label" for="no_disponible">No Disponible</label>
           </div>
         
-      </div>
+      </div> --}}
 
+      <div class="form-group">
+        <label for="disponible">Disponibilidad:</label>
+        <select name="disponible" id="disponible" class="form-control">
+            <option value="1" >Disponible</option>
+            <option value="0" >No disponible</option>
+        </select>
+    </div>
 
       <div class="form-group">
         <label for="categoria">Categoría</label>

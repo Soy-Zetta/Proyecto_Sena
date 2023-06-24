@@ -327,6 +327,13 @@ return [
         ],
 
         [
+            'text' => 'Roles',
+            'route'  => 'admin.roles.index',
+            'icon' => 'fas fa-users-cog fa-fw',
+  
+        ],
+
+        [
             'text' => 'Cambiar Contraseña',
             'can'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

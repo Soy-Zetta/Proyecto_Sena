@@ -70,7 +70,7 @@ Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 // Route::resource('admin', UserController::class);
 
-
+//rutas
 
 
 
