@@ -11,20 +11,20 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
+
     public function index()
     {
         $productos = producto::all();
         
-
+            
         return view('admin.products.index',compact('productos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
+
+
+
     public function create()
     {
         $proveedores =proveedore::all();
@@ -34,12 +34,14 @@ class ProductoController extends Controller
         return view('admin.products.create',compact('categorias','proveedores'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
+
+
+
+    
     public function store(Request $request)
     {  
-        
+          //  dd($request);
             //Valida los datos del formulario
             $validarDatos = $request->validate([
                 'nombre' => 'required',
@@ -48,6 +50,7 @@ class ProductoController extends Controller
                 'precio' => 'required|numeric',
                 'existencias' => 'required|integer',
                 'imagen' => 'required|image',
+                'disponible'=>'required',
                 'categoria' => 'required',
                 'proveedor' => 'required',
             ]);
@@ -77,6 +80,7 @@ class ProductoController extends Controller
             $producto->existencias = $validarDatos['existencias'];
            // $producto->imagen = $fileName; // Guarda el nombre del archivo en lugar del objeto UploadedFile
             $producto->imagen = $validarDatos['imagen'];
+            $producto->disponible = $validarDatos['disponible'];
             $producto->categorias_id = $validarDatos['categoria'];
             $producto->proveedores_id = $validarDatos['proveedor'];
         
@@ -89,74 +93,140 @@ class ProductoController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
+
+
+
+
+
+
     public function show(string $id)
     {
         $producto = Producto::findOrFail($id);
         return view('products.show', compact('producto'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+ 
+
+
+
+
     public function edit(string $id)
     {
         $proveedores = proveedore::all();
         $categorias= categoria::all();
         $producto = Producto::findOrFail($id);
+        $imagenActual = $producto->imagen;
         // dd($categorias  );
-        return view('admin.products.edit', compact('producto','categorias','proveedores'));
+        return view('admin.products.edit', compact('producto','categorias','proveedores','imagenActual'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
+
+
+
     public function update(Request $request, string $id)
     {
-        //validar datos del formulario, se hace nuevamente para no permitir
-        //que el usuario deje campos sin rellenar 
+
 
         $validarDatos = $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
             'precio' => 'required|numeric',
             'existencias' => 'required|integer',
-            'imagen' => 'required',
+            'imagen' => 'nullable|image',
+            'disponible' => 'required',
             'categoria' => 'required',
             'proveedor' => 'required',
         ]);
-
-        
-        
-
-        //inserta los datos actualizados  en la tabla productos 
+    
         $producto = Producto::findOrFail($id);
-        $producto->nombre = $request['nombre'];
-        $producto->descripcion = $request['descripcion'];
-        $producto->precio=$request['precio'];
-        $producto->existencias = $request ['existencias'];
-        $producto->categorias_id = $request['categoria'];
-        $producto->proveedores_id = $request['proveedor'];
-        $producto->update();
+    
+        $nombreImagenActual = $request->input('imagen_actual'); // Obtiene el nombre de la imagen actual
+    
+        if ($request->hasFile('imagen')) {
+            // Se cargó un nuevo archivo de imagen
+            $imagen = $request->file("imagen");
+            $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+            $imagen->move(public_path('images'), $nombreArchivo);
+    
+            // Actualiza el nombre de la imagen en los datos validados
+            $validarDatos['imagen'] = $nombreArchivo;
+    
+            // Elimina la imagen anterior si existe y no es igual a la nueva imagen
+            if ($nombreImagenActual && $nombreImagenActual !== $nombreArchivo && file_exists(public_path('images/' . $nombreImagenActual))) {
+                unlink(public_path('images/' . $nombreImagenActual));
+            }
+        } else {
+            // No se cargó un nuevo archivo de imagen, utiliza el nombre de la imagen actual
+            $validarDatos['imagen'] = $nombreImagenActual;
+        }
+    
+        $producto->nombre = $validarDatos['nombre'];
+        $producto->descripcion = $validarDatos['descripcion'];
+        $producto->precio = $validarDatos['precio'];
+        $producto->existencias = $validarDatos['existencias'];
+        $producto->imagen = $validarDatos['imagen'];
+        $producto->disponible = $validarDatos['disponible'] == '1';
+        $producto->categorias_id = $validarDatos['categoria'];
+        $producto->proveedores_id = $validarDatos['proveedor'];
+        $producto->save();
+  
+        //validar datos del formulario, se hace nuevamente para no permitir
+        //que el usuario deje campos sin rellenar 
 
-        // $producto = Producto::findOrFail($id);
-        // $producto->update([
-        //     'nombre' => $request->nombre,
-        //     'descripcion' => $request->descripcion,
-        //     'precio' => $request->precio,
-        //     'existencias' => $request->existencias,
-        //     'categorias_id' => $request->categoria,
-        //     'proveedor_id' => $request->proveedor
-        // ]);
+    //     $validarDatos = $request->validate([
+    //         'nombre' => 'required',
+    //         'descripcion' => 'required',
+    //         'precio' => 'required|numeric',
+    //         'existencias' => 'required|integer',
+    //         'imagen' => 'required',
+    //         'disponible' => 'required',
+    //         'categoria' => 'required',
+    //         'proveedor' => 'required',
+    //     ]);
+    
+    //     $producto = Producto::findOrFail($id);
+    
+    //     $nombreImagenAnterior = $producto->imagen; // Paso 1: Obtén el nombre de la imagen anterior
+    
+    //     if ($request->hasFile('imagen')) {
+    //         $imagen = $request->file("imagen");
+    //          // Paso 2: Verifica si el archivo de imagen nueva se ha cargado correctamente
+    //         if ($imagen->isValid()) {
+    //             $nombreArchivo = uniqid().'.'.$imagen->getClientOriginalExtension();
+    //             $imagen->move(public_path('images'), $nombreArchivo);
+    //             // Actualiza el nombre de la imagen en los datos validados
+    //             $validarDatos['imagen'] = $nombreArchivo; 
+    //         }
+    //     }
+    
+    //     $producto->nombre = $validarDatos['nombre'];
+    //     $producto->descripcion = $validarDatos['descripcion'];
+    //     $producto->precio = $validarDatos['precio'];
+    //     $producto->existencias = $validarDatos['existencias'];
+    //     $producto->imagen = $validarDatos['imagen'];
+    //     $producto->disponible = $validarDatos['disponible'] == '1';
+    //     $producto->categorias_id = $validarDatos['categoria'];
+    //     $producto->proveedores_id = $validarDatos['proveedor'];
+    //    // $producto->update();
+    //    $producto->save();
+    
+    //     // Elimina la imagen anterior si existe y no es igual a la nueva imagen
+    //     if ($nombreImagenAnterior && $nombreImagenAnterior !== $producto->imagen && file_exists(public_path('images/' . $nombreImagenAnterior))) {
+    //         unlink(public_path('images/' . $nombreImagenAnterior)); 
+    //     }
+
+      
+
         
         return redirect()->route('products.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
+
+
+
     public function destroy(string $id)
     {
         $producto = Producto::findOrFail($id);

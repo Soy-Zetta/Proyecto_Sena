@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-   <form action="{{route('categories.update',$proveedor->id)}}" method="POST">
+   <form action="{{route('proveedores.update',$proveedor->id)}}" method="POST">
       @csrf
       @method('PUT')
       <div class="row">

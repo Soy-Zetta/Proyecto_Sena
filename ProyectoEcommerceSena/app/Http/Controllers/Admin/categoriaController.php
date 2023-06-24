@@ -15,6 +15,7 @@ class categoriaController extends Controller
     public function index()
     {
         //Con Paginación
+
         $categorias = categoria::paginate(10);
         return view('admin.categories.index',compact('categorias'));
 
@@ -29,9 +30,8 @@ class categoriaController extends Controller
        return view('admin.categories.create',compact('categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
+
     public function store(Request $request)
     {
         // dd($request);
@@ -50,9 +50,8 @@ class categoriaController extends Controller
        return redirect()->route('categories.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
+    
     public function show(string $id)
     {
         //

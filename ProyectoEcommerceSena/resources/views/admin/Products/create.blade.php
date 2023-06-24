@@ -41,6 +41,28 @@
         <input type="file" class="form-control" name="imagen" id="imagen" 
         value="{{ old('imagen') }}" required>
       </div>
+
+      {{-- <div class="form-group">
+        <label for="disponible">Disponibilidad:</label>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" id="disponible" name="disponible" value="1" {{ old('disponible') ? 'checked' : '' }}>
+              <label class="form-check-label" for="disponible">Disponible</label>
+          </div>
+           <div class="form-check">
+              <input class="form-check-input" type="radio" id="no_disponible" name="disponible" value="0" {{ old('disponible') ? '' : 'checked' }}>
+              <label class="form-check-label" for="no_disponible">No Disponible</label>
+          </div>
+        
+      </div> --}}
+
+      <div class="form-group">
+        <label for="disponible">Disponibilidad:</label>
+        <select name="disponible" id="disponible" class="form-control">
+            <option value="1" >Disponible</option>
+            <option value="0" >No disponible</option>
+        </select>
+    </div>
+
       <div class="form-group">
         <label for="categoria">Categoría</label>
         <select name="categoria" id="categoria" class="form-control" 

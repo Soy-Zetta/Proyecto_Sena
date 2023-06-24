@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{ route('products.update',$producto->id) }}" method="POST" class="card">
+<form action="{{ route('products.update',$producto->id) }}" method="POST" class="card" enctype="multipart/form-data">
   @csrf
   @method('PUT')
   <div class="row">
@@ -28,10 +28,35 @@
          <label for="existencias" class="form-label">Existencias</label>
          <input type="text" class="form-control" name="existencias" id="existencias" value="{{ $producto->existencias }}">
       </div>
+      
       <div class="mb-3">
-         <label for="imagen" class="form-label">Imagen</label>
-         <input type="text" class="form-control" name="imagen" id="imagen" value="{{ $producto->imagen }}">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input type="file" class="form-control" name="imagen" id="imagen" 
+        >
       </div>
+
+      {{-- <div class="form-group">
+        <label for="disponible">Disponibilidad:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="disponible" name="disponible" value="1" {{ $producto->disponible ? 'checked' : '' }}>
+            <label class="form-check-label" for="disponible">Disponible</label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="no_disponible" name="disponible" value="0" {{ !$producto->disponible ? 'checked' : '' }}>
+            <label class="form-check-label" for="no_disponible">No Disponible</label>
+        </div>
+    </div> --}}
+
+    <div class="form-group">
+      <label for="disponible">Disponibilidad:</label>
+      <select name="disponible" id="disponible" class="form-control">
+          <option value="1" >Disponible</option>
+          <option value="0" >No disponible</option>
+      </select>
+  </div>
+
+
       <div class="form-group">
           <label for="categoria">Categoría</label>
           <select name="categoria" id="categoria" class="form-control">
