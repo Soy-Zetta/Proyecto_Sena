@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('precio', 8, 2);
             $table->timestamps();
         
-            $table->foreign('clientes_numero_documento')->references('numero_documento')->on('clientes');
-            $table->foreign('productos_id')->references('id')->on('productos');
+            $table->integer('clientes_numero_documento')->index('fk_pedidos_clientes_numero_documentox')->onDelete('cascada');
+            $table->integer('productos_id')->index('fk_pedidos_productos_idx');
         });
     }
 
