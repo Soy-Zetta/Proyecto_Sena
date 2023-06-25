@@ -12,10 +12,6 @@
 
         <div class="container py-4">
 
-            <h2>Registrar</h2>
-
-
-
             {{-- para generar un error de validacion --}}
 
             {{-- @if ($errors->any())
@@ -55,27 +51,8 @@
                                 {{ $permission->description }}
                         </label>
                     </div>
-                    {{-- <tr>
-                        <td>{{ $role->id }}</td>
-                        <td>{{ $role->name }}</td>
-                        <td width="10px">
-                            <a href="{{ route('admin.roles.edit', $role->id) }}"class="btn btn-primary">editar</a>
-                        </td> --}}
 
-                        <td width="10px">
-                            {{-- <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
-
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit" class="btn btn-danger">eliminar</button>
-                            </form> --}}
-                        </td>
-                    </tr>
                 @endforeach
-
-
-
 
                 <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">Regresar</a>
 
