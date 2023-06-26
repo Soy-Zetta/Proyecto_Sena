@@ -48,6 +48,9 @@ Route::get('/buscador_proveedores', [BuscadorController::class,'searchproveedor'
 Route::get('/buscador_clientes', [BuscadorController::class,'searchclientes'])->name('buscador.searchclientes');
 
 
+//ruta crud cilentes home
+Route::resource('/clientes', ClienteController::class)->names('clientes'); 
+
 
 
 
