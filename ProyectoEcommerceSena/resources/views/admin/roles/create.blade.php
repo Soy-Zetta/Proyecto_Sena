@@ -8,6 +8,8 @@
 
 @section('content')
 
+
+<a href="{{ route('admin.roles.index') }}" class="btn btn-warning">Regresar</a>
     <main>
 
         <div class="container py-4">
@@ -54,9 +56,11 @@
 
                 @endforeach
 
-                <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">Regresar</a>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
+                
+
+                
 
 
 

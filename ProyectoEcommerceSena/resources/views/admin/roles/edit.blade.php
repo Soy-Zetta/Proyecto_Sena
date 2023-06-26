@@ -13,11 +13,10 @@
             {{ session('info') }}
         </div>
     @endif
-
+    <a href="{{ route('admin.roles.index') }}" class="btn btn-warning">Regresar</a>
     <main>
         <div class="container py-4">
             <h2>Editar Roles</h2>
-
 
             <form action="{{ route('admin.roles.update', ['role' => $role->id]) }}" method="POST">
                 @method("PUT")
@@ -46,8 +45,6 @@
                         </label>
                     </div>
                 @endforeach
-
-                <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">Regresar</a>
 
                 <button type="submit" class="btn btn-primary">Actualizar Rol</button>
 
