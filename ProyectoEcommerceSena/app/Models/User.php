@@ -26,6 +26,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'apellido',
+        'tipo_documento',
+        'num_documento',
+        'lugar_nacimiento',
+        'fecha_nacimiento',
+        'telefono',
+        'ciudad_residencia',
+        'direccion',
     ];
 
     /**
@@ -65,5 +73,3 @@ class User extends Authenticatable
         return 'profile/username';
     }
 }
-
-

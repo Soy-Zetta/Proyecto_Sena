@@ -49,6 +49,14 @@
                 </div>
 
                 <div class="mb-3 row">
+                    <label for="rol" class="col-sm-2 col-form-label">Rol</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="rol" id="rol"
+                        value="{{ old('rol') }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
                     <label for="tipo_documento" class="col-sm-2 col-form-label">Tipo de Documento de Identificación</label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="tipo_documento" id="tipo_documento"
