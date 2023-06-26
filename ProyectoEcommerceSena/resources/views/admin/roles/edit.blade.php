@@ -14,7 +14,7 @@
             <h2>Editar Roles</h2>
 
 
-            <form action="{{ route('admin.roles.update', ['role' => $roles->id]) }}" method="POST">
+            <form action="{{ route('admin.roles.update', ['role' => $role->id]) }}" method="POST">
                 @method("PUT")
 
                 @csrf
