@@ -19,7 +19,7 @@ class cliente extends Model
     ];
 
     protected $table = 'clientes';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'numero_documento';
     public $timestamps = true;
 
     public function productos()

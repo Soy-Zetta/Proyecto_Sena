@@ -30,7 +30,7 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $validarDatos = $request->validate([
-            'numero_documento_cliente' => 'required',
+            'cliente_numero_documento' => 'required',
             'producto_id' => 'required',
             'fecha' => 'required',
             'cantidad' => 'required',
@@ -65,7 +65,7 @@ class PedidoController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'numero_documento_cliente' => 'required',
+            'cliente_numero_documento' => 'required',
             'producto_id' => 'required',
             'fecha' => 'required',
             'cantidad' => 'required|integer',

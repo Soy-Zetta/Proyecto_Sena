@@ -347,7 +347,7 @@ return [
         [
             'text' => 'Pedidos',
             'icon' => 'fas fa-luggage-cart',
-            'url'  => '#',
+            'url'  => 'pedidos.index',
         ],
 
         [
