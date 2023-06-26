@@ -347,13 +347,13 @@ return [
         [
             'text' => 'Pedidos',
             'icon' => 'fas fa-luggage-cart',
-            'url'  => '#',
+            'route'  => 'pedidos.index',
         ],
 
         [
             'text' => 'Productos',
             'icon' => 'fas fa-tools',
-            'route'  => 'products.index'
+            'route'  => 'products.index',
         ],
         [
             'text' => 'proveedores',

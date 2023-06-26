@@ -42,8 +42,12 @@
                     <input type="text" class="form-control" name="Correo" id="Correo"
                     value="{{ $proveedor->correo}}" required>
                   </div>
+
+                 
             
                   <div>
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a>
+
                       <button type="submit" class="btn btn-dark">Guardar</button>
               </div>
                 

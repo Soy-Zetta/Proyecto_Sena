@@ -62,17 +62,6 @@ Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 
 
-// Auth::routes();
-
-// Route::get('/home', function() {
-//     return view('admin.users.index');
-// })->name('home')->middleware('auth');
-
-// Route::resource('admin', UserController::class);
-
-//rutas
-
-
 
 
 

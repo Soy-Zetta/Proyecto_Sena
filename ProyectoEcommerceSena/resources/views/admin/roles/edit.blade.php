@@ -8,11 +8,13 @@
 
 @section('content')
 
-    @if (session('info'))
-        <div class='alert alert-success'>
-            {{ session('info') }}
-        </div>
-    @endif
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
     <a href="{{ route('admin.roles.index') }}" class="btn btn-warning">Regresar</a>
     <main>
         <div class="container py-4">

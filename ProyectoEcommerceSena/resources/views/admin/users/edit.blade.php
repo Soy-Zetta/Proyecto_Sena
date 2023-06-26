@@ -8,9 +8,15 @@
 @stop
 
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
 
-    
+<a href="{{ route('admin.users.index') }}" class="btn btn-warning">Regresar</a>
+
     <main>
         <div class="container py-4">
             <h2>Editar Usuario</h2>
@@ -37,13 +43,16 @@
                 </div>
 
                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Rol</label>
+                    <label for="rol" class="col-sm-2 col-form-label">Rol</label>
                     <div class="col-sm-5">
-                        @foreach ($usuario->roles as $role)
-                            <input type="text" value="{{ $role->name }}" class="form-control">
-                        @endforeach
+                        <select class="form-control" name="rol" id="rol" required>
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
+
                 
                 <div class="mb-3 row">
                     <label for="tipo_documento" class="col-sm-2 col-form-label">Tipo de Documento de Identificación</label>
@@ -115,8 +124,6 @@
                             value="{{ $usuario->password }}" required>
                     </div>
                 </div>
-
-                <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
 

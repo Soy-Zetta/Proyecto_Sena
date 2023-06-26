@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_nuemro_docuemto');
+            $table->unsignedBigInteger('cliente_numero_documento');
             $table->unsignedBigInteger('producto_id');
             $table->date('fecha');
             $table->integer('cantidad');

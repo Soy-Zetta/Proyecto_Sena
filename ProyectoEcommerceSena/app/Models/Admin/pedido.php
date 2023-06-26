@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +9,7 @@ class pedido extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'numero_documento_cliente',
+        'cliente_numero_documento',
         'producto_id',
         'fecha',
         'cantidad',
@@ -21,7 +21,7 @@ class pedido extends Model
 
     public function cliente()
     {
-        return $this->belongsTo(cliente::class,'numero_documento_cliente','numero_documento');
+        return $this->belongsTo(cliente::class,'cliente_numero_documento');
     }
     
     public function producto()

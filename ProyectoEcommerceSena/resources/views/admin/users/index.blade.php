@@ -8,7 +8,11 @@
 
 @section('content')
 
-
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <a href="{{ route('admin.users.create') }}" class="btn btn-success">Crear Usuario</a>
     <br><br>
