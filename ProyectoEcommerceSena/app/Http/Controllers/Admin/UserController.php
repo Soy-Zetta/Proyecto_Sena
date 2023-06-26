@@ -17,7 +17,7 @@ class UserController extends Controller
         // Con paginación
         $usuarios = User::paginate(10);
         $roles = Role::all();
-        return view('admin.users.index', compact('usuarios'));
+        return view('admin.users.index', compact('usuarios', 'roles'));
     }
 
     /**
