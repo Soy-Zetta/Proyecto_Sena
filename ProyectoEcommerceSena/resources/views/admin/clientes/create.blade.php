@@ -13,7 +13,7 @@
     @include('header')
     <br><br>
     <div class="main">
-        <form class="form" action="{{ route('register') }}" method="POST">
+        <form class="form" action="{{ route('clientes.store') }}" method="POST">
             <div class="main__container-title">
                 <h1 class="container-title__h1">Registrate xD</h1>
             </div>
@@ -21,7 +21,7 @@
             <div class="form__containerInputBnt">
                 <div class="container-input">
                     <label for="name">Nombre:</label>
-                    <input id="name" class="form__input" placeholder="Ingrese su nombre" type="text" name="name" required>
+                    <input id="name" class="form__input" placeholder="Ingrese su nombre" type="text" name="nombre" required>
                 </div>
 
                 <div class="container-input">

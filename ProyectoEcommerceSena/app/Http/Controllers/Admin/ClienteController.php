@@ -24,8 +24,9 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        $clientes =cliente::all();
-        return view('admin.clientes.create',compact('clientes'));
+        //$clientes =cliente::all();
+       // compact('clientes')
+        return view('admin.clientes.create',);
     }
 
     /**
@@ -33,6 +34,8 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+
+        dd($request);
          //Valida los datos del formulario
          $validarDatos = $request->validate([
             'nombre' => 'required',
