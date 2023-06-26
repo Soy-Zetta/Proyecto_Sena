@@ -8,26 +8,17 @@
 
 @section('content')
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <a href="{{ route('admin.users.index') }}" class="btn btn-warning">Regresar</a>
+
     <main>
 
         <div class="container py-4">
-
-            <h2>Registrar</h2>
-
-
-
-            {{-- para generar un error de validacion --}}
-
-            {{-- @if ($errors->any())
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach   
-                    </ul>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif --}}
 
             <form action="{{ route('admin.users.store') }}" method="POST">
 
@@ -36,7 +27,8 @@
                 <div class="mb-3 row">
                     <label for="name" class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" required>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}"
+                            required>
                     </div>
                 </div>
 
@@ -51,10 +43,14 @@
                 <div class="mb-3 row">
                     <label for="rol" class="col-sm-2 col-form-label">Rol</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="rol" id="rol"
-                        value="{{ old('rol') }}" required>
+                        <select class="form-control" name="rol" id="rol" required>
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
+
 
                 <div class="mb-3 row">
                     <label for="tipo_documento" class="col-sm-2 col-form-label">Tipo de Documento de Identificación</label>
@@ -127,7 +123,7 @@
                     </div>
                 </div>
 
-                <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a>
+
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
 

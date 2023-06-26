@@ -9,11 +9,11 @@
 @section('content')
 
 
-    @if (session('info'))
-        <div class='alert alert-success'>
-            {{ session('info') }}
-        </div>
-    @endif
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
     <a href="{{ route('admin.roles.create') }}" class="btn btn-success">Crear Rol</a>
     <br><br>
