@@ -73,7 +73,7 @@
 
             <div class="container-input">
                 <label for="password">Contraseña:</label>
-                <input id="password" class="form__input" placeholder="Ingrese su contraseña" type="password" name="password" required>
+                <input id="password" class="form__input" placeholder="Ingrese su contraseña" type="password" name="contrasena" required>
             </div>
 
         </div>
