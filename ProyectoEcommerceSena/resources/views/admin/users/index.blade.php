@@ -8,7 +8,11 @@
 
 @section('content')
 
-
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <a href="{{ route('admin.users.create') }}" class="btn btn-success">Crear Usuario</a>
     <br><br>
@@ -38,7 +42,7 @@
                         <th>ROL</th>
                         <th>NUMERO DOCUMENTO</th>
                         <th>E-MAIL</th>
-                        
+
                     </thead>
                     <tbody>
                         @foreach ($usuarios as $usuario)
@@ -46,14 +50,23 @@
                                 <td>{{ $usuario->id }}</td>
                                 <td>{{ $usuario->name }}</td>
                                 <td>{{ $usuario->apellido }}</td>
-                                <td>{{ $usuario->rol }}</td>
+                                <td>
+                                    @if ($usuario->roles->isNotEmpty())
+                                        @foreach ($usuario->roles as $rol)
+                                            {{ $rol->name }}
+                                        @endforeach
+                                    @else
+                                        Sin Rol
+                                    @endif
+                                </td>
                                 <td>{{ $usuario->num_documento }}</td>
                                 <td>{{ $usuario->email }}</td>
-                                <td><a href="{{ route('admin.users.edit', $usuario->id) }}"class="btn btn-primary">editar</a>
+                                <td>
+                                    <a href="{{ route('admin.users.edit', $usuario->id) }}"
+                                        class="btn btn-primary">editar</a>
                                 </td>
                                 <td>
                                     <form action="{{ route('admin.users.destroy', $usuario->id) }}" method="POST">
-
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-danger">eliminar</button>

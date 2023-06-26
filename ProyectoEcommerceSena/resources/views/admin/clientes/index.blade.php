@@ -1,4 +1,24 @@
-@extends('adminlte::page')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
 
@@ -64,4 +84,4 @@
 
 @section('css')
    
-@stop
+@stop --}}

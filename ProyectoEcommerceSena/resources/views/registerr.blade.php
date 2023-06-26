@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 <body>
     @include('header')
     <div class="main">
-        <form class="form">
+        <form class="form" action="{{route()}}">
             <div class="main__container-title">
                 <h1 class="container-title__h1">Registrate xD</h1>
             </div>
@@ -62,4 +62,4 @@
         </form>
     </div>
 </body>
-</html>
+</html> --}}
