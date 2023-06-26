@@ -44,15 +44,6 @@
                     <input id="num_documento" class="form__input" placeholder="Ingrese su número de documento" type="text" name="num_documento" required>
                 </div>
 
-                <div class="container-input">
-                    <label for="lugar_nacimiento">Lugar de Nacimiento:</label>
-                    <input id="lugar_nacimiento" class="form__input" placeholder="Ingrese su lugar de nacimiento" type="text" name="lugar_nacimiento" required>
-                </div>
-
-                <div class="container-input">
-                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-                    <input id="fecha_nacimiento" class="form__input" type="date" name="fecha_nacimiento" required>
-                </div>
 
                 <div class="container-input">
                     <label for="telefono">Teléfono/Celular:</label>
