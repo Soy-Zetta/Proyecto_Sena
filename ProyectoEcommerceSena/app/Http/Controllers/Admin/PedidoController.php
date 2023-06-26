@@ -1,9 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\pedido;
+use App\Http\Controllers\Controller;
+use App\Models\Admin\cliente;
+use App\Models\Admin\pedido;
+use App\Models\Admin\producto;
 use Illuminate\Http\Request;
+
+
+
 
 class PedidoController extends Controller
 {
@@ -12,8 +18,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = pedido::all();
-        return view('pedidos.index',compact('pedidos'));
+        $pedidos = Pedido::with('producto','cliente')->get();
+        return view('admin.pedidos.index', compact('pedidos'));
     }
 
     /**
@@ -21,48 +27,16 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        return view('pedidos.create');
+        $productos = producto::all();
+        $clientes = cliente::all();
+
+        return view('admin.pedidos.create',compact('productos','clientes'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validarDatos = $request->validate([
-            'cliente_numero_documento' => 'required',
-            'producto_id' => 'required',
-            'fecha' => 'required',
-            'cantidad' => 'required',
-            'precio' => 'required',
-            
-            
-        ]);
-        //Crear nuevo pedido
-        pedido::create($request->all());
-
-        //redireccionar a la pagina de index o a otra pagina relevante 
-        return redirect()->route('pedidos.index')->with('success', 'Pedido creado exitosamente');
-        
-    }
-
-
-    public function show(string $id)
-    {
-        $pedido = pedido::find0rfail($id);
-        return view('pedidos.show',compact('pedido'));
-    }
-
-
-    public function edit(string $id)
-    {
-        $pedido = pedido::find0rfail($id);
-        //logica para cargar datos necesarios en la vista de edicion
-        return view('pedidos.edit',compact('pedido'));
-    }
-
-  
-    public function update(Request $request, string $id)
     {
         $request->validate([
             'cliente_numero_documento' => 'required',
@@ -72,23 +46,57 @@ class PedidoController extends Controller
             'precio' => 'required|numeric',
         ]);
 
-        // Actualizar pedido existente
+        Pedido::create($request->all());
+        
+
+        return redirect()->route('admin.pedidos.index')->with('success', 'Pedido creado exitosamente');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($id)
+    {
+        $pedido = Pedido::findOrFail($id);
+        return view('admin.pedidos.show', compact('pedido'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
+    {
+        $pedido = Pedido::findOrFail($id);
+        return view('admin.pedidos.edit', compact('pedido'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'cliente_numero_documento' => 'required',
+            'producto_id' => 'required',
+            'fecha' => 'required',
+            'cantidad' => 'required|integer',
+            'precio' => 'required|numeric',
+        ]);
+
         $pedido = Pedido::findOrFail($id);
         $pedido->update($request->all());
 
-        // Redireccionar a la página de detalles del pedido o a otra página relevante
-        return redirect()->route('pedidos.update', $pedido->id)->with('success', 'Pedido actualizado exitosamente');
+        return redirect()->route('admin.pedidos.index')->with('success', 'Pedido actualizado exitosamente');
     }
 
-
-    public function destroy(string $id)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id)
     {
-        //buscar y eliminar pedido
-        $pedido = pedido::findOrFail($id);
+        $pedido = Pedido::findOrFail($id);
         $pedido->delete();
 
-        //redireccionar a la pagina de index o a otra pagina relevante 
-
-        return redirect()->route('pedidos.index')->with('succes','pedido eliminado exitosamente');
+        return redirect()->route('admin.pedidos.index')->with('success', 'Pedido eliminado exitosamente');
     }
 }

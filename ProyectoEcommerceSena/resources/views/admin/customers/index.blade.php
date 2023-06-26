@@ -29,7 +29,7 @@
     <table class="table table-striped table-dark mt-5">
         <thead>
             <tr>
-                <th>id</th>
+                <th>C.C</th>
                 <th>nombre</th>
                 <th>Correo</th>
              
