@@ -70,6 +70,6 @@ class User extends Authenticatable
     // Metodo de edicion del perfil del usuario
     public function adminlte_profile_url()
     {
-        return 'profile/username';
+        return 'admin/users';
     }
 }
