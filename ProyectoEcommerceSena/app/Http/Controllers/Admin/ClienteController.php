@@ -15,17 +15,18 @@ class ClienteController extends Controller
     {
          //Con Paginación
          $clientes = cliente::paginate(10);
-      //   return view('admin.customers.index',compact('clientes'));
+        return view('admin.clientes.index',compact('clientes'));
 
-      return 'aqui se visualiza a los clientes';
+      //eturn 'aqui se visualiza a los clientes';
     }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $clientes =cliente::all();
-        return view('admin.clientes.create',compact('clientes'));
+        //$clientes =cliente::all();
+       // compact('clientes')
+        return view('admin.clientes.create',);
     }
 
     /**
@@ -33,17 +34,25 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+
+       //dd($request);
          //Valida los datos del formulario
          $validarDatos = $request->validate([
             'nombre' => 'required',
-            'email' => 'required',
-            'contraseña' => 'required',
+            'apellido'=>'required',
+            'tipo_documento' => 'required',
+            'num_documento' => 'required',
             'telefono' => 'required',
-            'tipop_documento' => 'required',
-            'numero_documento' => 'required',
+            'ciudad_residencia'=>'required',
+            'direccion'=>'required',
+            'email' => 'required',
+            'contrasena' => 'required',
+            
+            
+           
             
         ]);
-      //  dd($validarDatos);
+      // dd($validarDatos);
        
         
         // Muestra los datos validados
@@ -54,18 +63,20 @@ class ClienteController extends Controller
         // Crea un nuevo objeto Producto con los datos validados
         $cliente = new cliente();
         $cliente->nombre = $validarDatos['nombre'];
+        $cliente->apellido = $validarDatos['apellido'];
+        $cliente->tipo_documento = $validarDatos['tipo_documento'];
+        $cliente->numero_documento = $validarDatos['num_documento'];
+        $cliente-> telefono= $validarDatos['telefono'];
+        $cliente->ciudad_residencia = $validarDatos['ciudad_residencia'];
+        $cliente->direccion = $validarDatos['direccion'];
         $cliente->email = $validarDatos['email'];
-        $cliente->contraseña = $validarDatos['contraseña'];
-        $cliente->telefono = $validarDatos['telefono'];
-        $cliente->tipo_documento = $validarDatos['ttipo_documento'];
-        $cliente->numero_documento = $validarDatos['numero_documento'];
-    
+        $cliente->contrasena = $validarDatos['contrasena'];
         // Guarda el objeto Producto en la base de datos
         $cliente->save();
     
         
         // Redirige a la vista de detalles del producto o a donde desees
-       return redirect()->route('customers.index');
+       return redirect()->route('clientes.index');
     }
 
     /**
@@ -104,7 +115,7 @@ class ClienteController extends Controller
         $cliente->nombre = $validarDatos['nombre'];
         $cliente->email = $validarDatos['email'];
         $cliente->contraseña = $validarDatos['contraseña'];
-        $cliente->telefono = $validarDatos['telefono'];
+        $cliente->telefono = $validarDatos['telefono '];
         $cliente->tipo_documento = $validarDatos['ttipo_documento'];
         $cliente->numero_documento = $validarDatos['numero_documento'];
         $cliente->update();
