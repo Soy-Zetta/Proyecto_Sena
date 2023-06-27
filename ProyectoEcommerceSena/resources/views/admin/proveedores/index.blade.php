@@ -30,9 +30,10 @@
     <table class="table table-striped table-dark mt-5">
         <thead>
             <tr>
-                <th>id</th>
+                <th>Correo</th>
                 <th>nombre</th>
                 <th>Tipo Documento</th>
+                <th>Numero de Documento</th>
              
                 
             </tr>
@@ -41,9 +42,10 @@
             @foreach ($proveedores as $proveedor)
                 <tr>
                     
-                    <td>{{$proveedor->id}}</td>
+                    <td>{{$proveedor->correo}}</td>
                     <td>{{$proveedor->nombre}}</td>
                     <td>{{$proveedor->tipo_documento}}</td>
+                    <td>{{$proveedor->numero_documento}}</td>
                     <td><a href="{{route('proveedores.edit',$proveedor->id)}}"class="btn btn-primary" >editar</a></td>
                     <td>
                         <form action="{{route('proveedores.destroy',$proveedor->id)}}" method="POST">
