@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\producto;
 use Illuminate\Http\Request;
-use App\Models\Product;
+
 use config\app\php;
 
 
@@ -12,9 +13,9 @@ class CartController extends Controller
 {
     public function shop()
     {
-        $products = Product::all();
-        //dd($products);
-        return view('frontend.shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products' => $products]);
+        $productos = producto::all();
+        //dd($producto);
+        return view('frontend.shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['productos' => $productos]);
     }
 
     public function cart()

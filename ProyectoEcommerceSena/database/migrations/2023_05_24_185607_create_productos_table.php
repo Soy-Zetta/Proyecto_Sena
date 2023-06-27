@@ -22,9 +22,9 @@ return new class extends Migration
             $table->integer('existencias');
             $table->string('imagen');
             $table->boolean('disponible')->default(true);
-            $table->timestamps();
             $table->integer('categorias_id')->index('fk_productos_categorias_idx')->onDelete('cascada');
             $table->integer('proveedores_id')->index('fk_productos_proveedores1_idx');
+            $table->timestamps();
         });
     }
 
