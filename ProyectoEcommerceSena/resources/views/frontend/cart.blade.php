@@ -60,15 +60,16 @@
                                {{-- <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }} --}}
                              </p>
                         </div>
+
                         <div class="col-lg-4">
                             <div class="row">
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
                                     <div class="form-group row">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
-                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
-                                               id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
+                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity >1 ? 1: 'no hay existencias' }}"
+                                               id="quantity"  name="quantity" style="width: 70px; margin-right: 10px;">
+                                        <button class="btn btn-secondary btn-sm" style="margin-right: 20px;"><i class="fa fa-edit"></i></button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">
@@ -79,6 +80,7 @@
                             </div>
                         </div>
                     </div>
+
                     <hr>
                 @endforeach
                 @if(count($cartCollection)>0)
