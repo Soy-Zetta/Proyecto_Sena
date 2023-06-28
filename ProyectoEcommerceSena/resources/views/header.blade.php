@@ -47,7 +47,7 @@
                     </ul>
 
                 </li>
-                <li class="nav__li nav__li3"><a href="./sobre-nosotros">Sobre Nosotros</a></li>
+                <li class="nav__li nav__li3"><a href="./nosotros">Sobre Nosotros</a></li>
                 <li class="nav__li nav__li4"><a href="./shop">Tienda </a><i class="fas fa-angle-down fa-angle-down4"></i>
 
                     <ul class="nav__li-act__ul nav__li-act__ul4">
