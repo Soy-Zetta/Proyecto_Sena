@@ -15,22 +15,20 @@ class CategoriesSeeder extends Seeder
     {
         
         categoria::create([
-            'name' => 'Alfonso Gaviria',
-            'email' => 'zetta@gmail.com',
-            'password' => bcrypt('12345678')
+            'nombre' => 'monitores',
+            'descripcion' => 'zetta@gmail.com'
         ]);
 
         categoria::create([
-            'name' => 'Stiven Rengifo',
-            'email' => 'stiven@gmail.com',
-            'password' => bcrypt('12345678')
+            'nombre' => 'mouse',
+            'descripcion' => 'stiven@gmail.com'
         ]);
 
         categoria::create([
-            'name' => 'Victo Hugo',
-            'email' => 'victor@gmail.com',
-            'password' => bcrypt('12345678')
-            
+            'nombre' => 'portatil',
+            'descripcion' => 'victor@gmail.com'
         ]);
+
+
     }
 }
