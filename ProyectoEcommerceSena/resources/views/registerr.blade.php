@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,16 @@
 <body>
     @include('header')
     <div class="main">
-        <form class="form" action="{{route()}}">
+        <form class="form">
             <div class="main__container-title">
                 <h1 class="container-title__h1">Registrate xD</h1>
             </div>
             <div class="form__containerInputBnt">
+                <div class="container-input">
+                    <label for="passLog">Nombre: </label>
+                    <input id="passLog" class="form__input" placeholder="Ingrese Su Contraseña" type="password">
+                </div>
+
                 <div class="container-input">
                     <label for="userLog">Correo: </label>
                     <input id="userLog" class="form__input" placeholder="Ingrese Su Correo" type="text">
@@ -23,11 +28,6 @@
 
                 <div class="container-input">
                     <label for="passLog">Contraseña: </label>
-                    <input id="passLog" class="form__input" placeholder="Ingrese Su Contraseña" type="password">
-                </div>
-
-                <div class="container-input">
-                    <label for="passLog">Pais: </label>
                     <input id="passLog" class="form__input" placeholder="Ingrese Su Contraseña" type="password">
                 </div>
 
@@ -62,4 +62,4 @@
         </form>
     </div>
 </body>
-</html> --}}
+</html>
