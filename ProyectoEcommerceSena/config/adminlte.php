@@ -378,7 +378,7 @@ return [
         ],
         [
             'text' => 'Reportes',
-            'icon' => 'fas fa-tachometer-alt fa-fw',
+            'icon' => 'fas fa-file-invoice',
             'url'  => 'admin/blog',
         ],
 

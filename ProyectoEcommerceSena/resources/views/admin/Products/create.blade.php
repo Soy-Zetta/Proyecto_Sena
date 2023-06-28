@@ -61,7 +61,7 @@
             <option value="1" >Disponible</option>
             <option value="0" >No disponible</option>
         </select>
-    </div>
+      </div>
 
       <div class="form-group">
         <label for="categoria">Categoría</label>

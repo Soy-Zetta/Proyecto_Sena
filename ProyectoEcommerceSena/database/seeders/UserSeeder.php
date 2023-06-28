@@ -11,6 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 
 
+
 class UserSeeder extends Seeder
 {
     /**
@@ -49,7 +50,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Victor Hugo',
-            'apellido' => 'Pacheco',
+            'apellido' => 'Pacheco ',
             'tipo_documento' => 'Tajeta de identidad',
             'num_documento' => '1.144.512.547',
             'lugar_nacimiento' => 'Cali',

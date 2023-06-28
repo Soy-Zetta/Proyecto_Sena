@@ -18,7 +18,7 @@ class ProveedoresTableSeeder extends Seeder
         $proveedores = [
             [
                 'nombre' => 'Master',
-                'tipo_documento' => 'nit',
+                'tipo_documento' => 'NIT',
                 'numero_documento' => 11234566,
                 'direccion' => 'calle 4 norte',
                 'telefono' => '3164567898',
@@ -26,7 +26,7 @@ class ProveedoresTableSeeder extends Seeder
             ],
             [
                 'nombre' => 'alfonso',
-                'tipo_documento' => 'cc',
+                'tipo_documento' => 'C.C',
                 'numero_documento' => 1145998377,
                 'direccion' => 'calle 36 b23',
                 'telefono' => '3157689087',
@@ -34,7 +34,7 @@ class ProveedoresTableSeeder extends Seeder
             ],
             [
                 'nombre' => 'manuel',
-                'tipo_documento' => 'rut',
+                'tipo_documento' => 'RUT',
                 'numero_documento' => 765548377,
                 'direccion' => 'calle 5 b23',
                 'telefono' => '3167889087',

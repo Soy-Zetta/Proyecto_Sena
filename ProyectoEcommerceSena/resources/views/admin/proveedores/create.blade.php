@@ -16,11 +16,16 @@
         <input type="text" class="form-control" name="nombre" id="nombre"
         value="{{ old('nombre') }}" required>
       </div>
+      
       <div class="mb-3">
         <label for="tipo_documento" class="form-label">Tipo Documento</label>
-        <input type="text" class="form-control" name="tipo_documento" id="tipo_documento"
-        value="{{ old('tipo_documento') }}" required>
+        <select class="form-control" name="tipo_documento" id="tipo_documento" required>
+          <option value="NIT" {{ old('tipo_documento') === 'nit' ? 'selected' : '' }}>NIT</option>
+          <option value="RUT" {{ old('tipo_documento') === 'rut' ? 'selected' : '' }}>RUT</option>
+          <option value="C.C" {{ old('tipo_documento') === 'cc' ? 'selected' : '' }}>Cédula de Ciudadanía</option>
+        </select>
       </div>
+
       <div class="mb-3">
         <label for="numero_documento" class="form-label"> numero de documento</label>
         <input type="number" class="form-control" name="numero_documento" id="numero_documento"
