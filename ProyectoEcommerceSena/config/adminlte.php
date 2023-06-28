@@ -323,6 +323,7 @@ return [
             'text' => 'Usuarios',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-users',
+            'can' => 'admin.users.index',
   
         ],
 
@@ -330,6 +331,7 @@ return [
             'text' => 'Roles',
             'route'  => 'admin.roles.index',
             'icon' => 'fas fa-users-cog fa-fw',
+            'can' => 'admin.roles.index',
   
         ],
 
@@ -359,6 +361,7 @@ return [
             'text' => 'proveedores',
             'icon' => 'fas fa-user-friends',
             'route'  => 'proveedores.index',
+            'can' => 'admin.proveedores.index',
             
          
 
@@ -513,7 +516,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
