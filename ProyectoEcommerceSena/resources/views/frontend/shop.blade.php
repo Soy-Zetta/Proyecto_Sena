@@ -46,7 +46,7 @@
                                      alt="{{ $pro->nombre }}">
                                 
                                 <div class="card-body">
-                                    <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
+                                    <a href=""><h6 class="card-title">{{ $pro->nombre }}</h6></a>
                                     <p>${{ $pro->precio }}</p>
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
