@@ -16,17 +16,17 @@ class CategoriesSeeder extends Seeder
         
         categoria::create([
             'nombre' => 'monitores',
-            'descripcion' => 'zetta@gmail.com'
+            'descripcion' => 'monitores samsung'
         ]);
 
         categoria::create([
             'nombre' => 'mouse',
-            'descripcion' => 'stiven@gmail.com'
+            'descripcion' => 'mouse gamer'
         ]);
 
         categoria::create([
             'nombre' => 'portatil',
-            'descripcion' => 'victor@gmail.com'
+            'descripcion' => 'portatil acer'
         ]);
 
 
