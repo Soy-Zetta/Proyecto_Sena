@@ -33,7 +33,7 @@ class ProductosTableSeeder extends Seeder
                 'descripcion' => 'monitor Color Negro pantalla led',
                 'precio' => 900000,
                 'existencias' => 15,
-                'imagen' => '64963b521b209.jpg',
+                'imagen' => 'monitor.jpg',
                 'disponible' => 1,
                 'categorias_id' => 2,
                 'proveedores_id' => 2
@@ -45,7 +45,7 @@ class ProductosTableSeeder extends Seeder
                 'descripcion' => 'portatil Color Negro 16gb Cmsx16gx5m1a4800c40',
                 'precio' => 800000,
                 'existencias' => 15,
-                'imagen' => '64962ebe73b87.webp',
+                'imagen' => 'portatil.webp',
                 'disponible' => 1,
                 'categorias_id' => 3,
                 'proveedores_id' => 3

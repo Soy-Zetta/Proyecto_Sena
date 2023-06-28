@@ -67,7 +67,7 @@
                                     {{ csrf_field() }}
                                     <div class="form-group row">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
-                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity >1 ? 1: 'no hay existencias' }}"
+                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity"  name="quantity" style="width: 70px; margin-right: 10px;">
                                         <button class="btn btn-secondary btn-sm" style="margin-right: 20px;"><i class="fa fa-edit"></i></button>
                                     </div>
