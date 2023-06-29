@@ -61,7 +61,9 @@
                              </p>
                         </div>
 
-                        <div class="col-lg-4">
+                        
+
+                         <div class="col-lg-4">
                             <div class="row">
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
@@ -69,7 +71,7 @@
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
                                         <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity"  name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 20px;"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-secondary btn-sm" style="margin-right: 5px;"><i class="fa fa-edit"></i></button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">
@@ -79,7 +81,9 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> 
+
+
 
                     <hr>
                 @endforeach

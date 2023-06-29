@@ -54,6 +54,8 @@ Route::get('/buscador_proveedores', [BuscadorController::class,'searchproveedor'
 //buscador de productos panel de Clientes
 Route::get('/buscador_clientes', [BuscadorController::class,'searchclientes'])->name('buscador.searchclientes');
 
+//clientes crud
+Route::resource('/clientes', ClienteController::class)->names('clientes');
 
 
 
