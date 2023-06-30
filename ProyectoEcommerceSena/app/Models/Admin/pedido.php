@@ -14,6 +14,7 @@ class pedido extends Model
         'fecha',
         'cantidad',
         'precio',
+        'total',
     ];
     protected $table = 'pedidos';
     protected $primaryKey = 'id';

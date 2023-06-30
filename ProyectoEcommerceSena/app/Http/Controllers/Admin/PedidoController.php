@@ -44,9 +44,19 @@ class PedidoController extends Controller
             'fecha' => 'required',
             'cantidad' => 'required|integer',
             'precio' => 'required|numeric',
+            
         ]);
 
-        Pedido::create($request->all());
+        $total = $request->cantidad * $request->precio;
+
+        Pedido::create([
+            'cliente_numero_documento' => $request->cliente_numero_documento,
+            'producto_id' => $request->producto_id,
+            'fecha' => $request->fecha,
+            'cantidad' => $request->cantidad,
+            'precio' => $request->precio,
+            'total' => $total,
+        ]);
         
 
         return redirect()->route('admin.pedidos.index')->with('success', 'Pedido creado exitosamente');
@@ -58,7 +68,9 @@ class PedidoController extends Controller
     public function show($id)
     {
         $pedido = Pedido::findOrFail($id);
-        return view('admin.pedidos.show', compact('pedido'));
+        $total = $pedido->getTotal();
+        
+        return view('admin.pedidos.show', compact('pedido','total'));
     }
 
     /**
@@ -81,10 +93,19 @@ class PedidoController extends Controller
             'fecha' => 'required',
             'cantidad' => 'required|integer',
             'precio' => 'required|numeric',
+            
+
         ]);
 
         $pedido = Pedido::findOrFail($id);
-        $pedido->update($request->all());
+        $pedido->update([
+            'cliente_numero_documento' => $request->cliente_numero_documento,
+            'producto_id' => $request->producto_id,
+            'fecha' => $request->fecha,
+            'cantidad' => $request->cantidad,
+            'precio' => $request->precio,
+            'total' => $request->cantidad * $request->precio,
+        ]);
 
         return redirect()->route('admin.pedidos.index')->with('success', 'Pedido actualizado exitosamente');
     }

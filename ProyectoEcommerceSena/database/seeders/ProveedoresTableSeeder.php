@@ -22,7 +22,7 @@ class ProveedoresTableSeeder extends Seeder
                 'numero_documento' => 11234566,
                 'direccion' => 'calle 4 norte',
                 'telefono' => '3164567898',
-                'correo' => 'masterpf@gmail.com'
+                'correo' => 'master@gmail.com'
             ],
             [
                 'nombre' => 'alfonso',
@@ -33,7 +33,7 @@ class ProveedoresTableSeeder extends Seeder
                 'correo' => 'alfonsopumarejo@gmail.com'
             ],
             [
-                'nombre' => 'manuel',
+                'nombre' => 'manuela',
                 'tipo_documento' => 'RUT',
                 'numero_documento' => 765548377,
                 'direccion' => 'calle 5 b23',
