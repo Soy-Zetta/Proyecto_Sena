@@ -110,7 +110,7 @@
     </div>
 @endsection
 
-<p>victor sopla pollas, infla los condones</p>
+
 
 
 
