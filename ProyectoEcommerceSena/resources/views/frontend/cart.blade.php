@@ -108,7 +108,9 @@
         </div>
         <br><br>
     </div>
-@endsection 
+@endsection
+
+{{-- aqui estuvo la perra flaca de master --}}
 
 
 
