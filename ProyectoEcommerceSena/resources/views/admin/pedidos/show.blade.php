@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('adminlte::page')
 @section('title','Detalle del Pedido')
 
@@ -22,10 +21,6 @@
             <!-- Agrega aquí más detalles del pedido    si los deseas -->
         </div>
     </div>
-
-    
 @endsection
-=======
 
->>>>>>> 14bbb96d0ae43547383613e306c7a2f5af38edee
 
