@@ -13,8 +13,9 @@
             {{ session('success') }}
         </div>
     @endif
-
-    <a href="{{ route('admin.users.create') }}" class="btn btn-success">Crear Usuario</a>
+        @can('admin.users.create')
+        <a href="{{ route('admin.users.create') }}" class="btn btn-success">Crear Usuario</a>
+        @endcan
     <br><br>
 
     <form action="{{ route('buscador.search') }}" method="GET">
@@ -62,15 +63,20 @@
                                 <td>{{ $usuario->num_documento }}</td>
                                 <td>{{ $usuario->email }}</td>
                                 <td>
+                                    @can('admin.users.edit')
                                     <a href="{{ route('admin.users.edit', $usuario->id) }}"
                                         class="btn btn-primary">editar</a>
+                                    @endcan
                                 </td>
                                 <td>
+                                    @can('admin.users.destroy')
                                     <form action="{{ route('admin.users.destroy', $usuario->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-danger">eliminar</button>
                                     </form>
+                                    @endcan
+
                                 </td>
                             </tr>
                         @endforeach

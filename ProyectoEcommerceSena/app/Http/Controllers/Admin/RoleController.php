@@ -13,12 +13,12 @@ class RoleController extends Controller
      * Display a listing of the resource.
      */
 
-     public function __construct()
-     {
-        $this->middleware('can:admin.roles.index')->only('index');
-        $this->middleware('can:admin.roles.edit')->only('edit', 'update');
+    //  public function __construct()
+    //  {
+    //     $this->middleware('can:admin.roles.index')->only('index');
+    //     $this->middleware('can:admin.roles.edit')->only('edit', 'update');
         
-     }
+    //  }
  
 
     public function index()
