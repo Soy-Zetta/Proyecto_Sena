@@ -15,7 +15,6 @@ use Spatie\Permission\Middlewares\RoleMiddleware;
 use Illuminate\Support\Facades\Auth;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
 // Rutas protegidas para el rol 'Admin' y solo serán accesibles por usuarios con el rol 'Admin' debido al middleware RoleMiddleware.
 // Aquí agregas todas las rutas que solo serán accesibles por los administradores.
