@@ -38,7 +38,7 @@ class ProveedoresTableSeeder extends Seeder
                 'numero_documento' => 765548377,
                 'direccion' => 'calle 5 b23',
                 'telefono' => '3167889087',
-                'correo' => 'manuel@gmail.com'
+                'correo' => 'manuela@gmail.com'
             ],
             // Agrega más productos aquí si es necesario
         ];

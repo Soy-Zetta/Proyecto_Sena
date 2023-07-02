@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProveedorController;
 use App\Http\Controllers\Admin\BuscadorController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ClienteController;
+use App\Http\Controllers\Admin\CompraController;
 use App\Http\Controllers\Admin\PedidoController;
 use Spatie\Permission\Middlewares\RoleMiddleware;
 use Illuminate\Support\Facades\Auth;
@@ -42,9 +43,15 @@ Route::middleware([RoleMiddleware::class.':Admin'])->group(function () {
     Route::get('/buscador_proveedores', [BuscadorController::class, 'searchproveedor'])->name('buscador.searchproveedor');
     //Buscador de productos panel de Clientes
     Route::get('/buscador_clientes', [BuscadorController::class, 'searchclientes'])->name('buscador.searchclientes');
-    //clientes crud
+    //Panel de administración, Ruta CRUD de Clientes
     Route::resource('/clientes', ClienteController::class)->names('clientes');
+    //Panel de administración, Ruta CRUD Compras
+    Route::resource('fronted/compras',CompraController::class)->names('frontend/compras');
 });
+
+
+
+
 
 
 

@@ -7,6 +7,13 @@
 @stop
 
 @section('content')
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
    <form action="{{route('proveedores.update',$proveedor->id)}}" method="POST">
       @csrf
       @method('PUT')
@@ -26,6 +33,13 @@
                   </div>
 
                   <div class="mb-3">
+                    <label for="numero_documento" class="form-label">Numero Documento</label>
+                    <input type="text" class="form-control" name="numero_documento" id="numero_documento"
+                    value="{{ $proveedor->numero_documento}}" required>
+                  </div>
+
+
+                  <div class="mb-3">
                     <label for="direccion" class="form-label">Direccion</label>
                     <input type="text" class="form-control" name="direccion" id="direccion"
                     value="{{ $proveedor->direccion}}"required>
@@ -39,14 +53,14 @@
 
                   <div class="mb-3">
                     <label for="correo" class="form-label">Correo</label>
-                    <input type="text" class="form-control" name="Correo" id="Correo"
+                    <input type="text" class="form-control" name="correo" id="correo"
                     value="{{ $proveedor->correo}}" required>
                   </div>
 
                  
             
                   <div>
-                    <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a>
+                    {{-- <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a> --}}
 
                       <button type="submit" class="btn btn-dark">Guardar</button>
               </div>

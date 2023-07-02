@@ -403,6 +403,26 @@ return [
             'route'  => 'pedidos.index',
         ],
 
+        [
+            'text' => 'Productos',
+            'icon' => 'fas fa-tools',
+            'route'  => 'products.index',
+             'can' => 'admin.products.index',
+        ],
+        [
+            'text' => 'proveedores',
+            'icon' => 'fas fa-user-friends',
+            'route'  => 'proveedores.index',
+             'can' => 'admin.proveedores.index',
+            
+         
+
+        ],
+        [
+            'text' => 'categorias',
+            'icon' => 'fas fa-procedures',
+            'route'  => 'categories.index',
+        ],
         // [
         //     'text' => 'Productos',
         //     'icon' => 'fas fa-tools',
@@ -429,6 +449,13 @@ return [
             'icon' => 'fas fa-file-invoice',
             'url'  => 'admin/blog',
         ],
+
+        [
+            'text' => 'Compras',
+            'icon' => 'fas fa-shopping-basket',
+            'url'  => 'admin/blog',
+        ],
+
 
         // [
         //     'text'    => 'multilevel',

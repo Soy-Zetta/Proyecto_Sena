@@ -21,6 +21,7 @@
             <!-- Agrega aquí más detalles del pedido    si los deseas -->
         </div>
     </div>
-@endsection
 
+    
+@endsection
 

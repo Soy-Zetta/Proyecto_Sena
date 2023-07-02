@@ -8,8 +8,16 @@
 
 @section('content')
 
-    <a href="{{ route('proveedores.create') }}" class="btn btn-primary">CREAR PROVEEDORES</a>
-    <br><br>
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+ 
+<a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
+<br><br>
+
+    
 
     <form action="{{ route('buscador.searchproveedor') }}" method="GET">
         <fieldset enable>
