@@ -291,6 +291,8 @@ return [
 
     'menu' => [
         // Navbar items:
+
+
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
@@ -304,7 +306,7 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Buscador',
         ],
         [
             'text' => 'blog',
@@ -312,28 +314,77 @@ return [
             'can'  => 'manage-blog',
         ],
 
-        // ['header' => 'PANEL DE CONTROL'],
+        ['header' => 'PANEL DE CONTROL'],
         [
             'text' => 'Dashboard',
             'icon' => 'fas fa-tachometer-alt fa-fw',
-            'url'  => 'admin/blog',
+            'url'  => '#',
+
         ],
         // ['header' => 'CONFIGURACIÓN DE CUENTA'],
+
         [
-            'text' => 'Usuarios',
-            'route'  => 'admin.users.index',
-            'icon' => 'fas fa-fw fa-users',
-            'can' => 'admin.users.index',
-  
+            'text'    => 'Gestion de Usuarios',
+            'icon'    => 'fas fa-fw fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Usuarios',
+                    'route'  => 'admin.users.index',
+                    'icon' => 'fas fa-fw fa-users',
+                    'can' => 'admin.users.index',
+                ],
+    
+                [
+                    'text' => 'Roles',
+                    'route'  => 'admin.roles.index',
+                    'icon' => 'fas fa-users-cog fa-fw',
+                    'can' => 'admin.roles.index',
+                ],
+            ],
         ],
 
         [
-            'text' => 'Roles',
-            'route'  => 'admin.roles.index',
-            'icon' => 'fas fa-users-cog fa-fw',
-            'can' => 'admin.roles.index',
-  
+            'text'    => 'Gestion de Productos',
+            'icon'    => 'fas fa-fw fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Productos',
+                    'route'  => 'admin.users.index',
+                    'icon' => 'fas fa-tools',
+                    'route'  => 'products.index',
+                ],
+    
+                [
+                    'text' => 'Proveedores',
+                    'route'  => 'proveedores.index',
+                    'icon' => 'fas fa-user-friends',
+                    'can' => 'proveedores.index',
+                ],
+
+                [
+                    'text' => 'Categorias',
+                    'route'  => 'admin.roles.index',
+                    'icon' => 'fas fa-procedures',
+                    'route'  => 'categories.index',
+                ],
+            ],
         ],
+
+        // [
+        //     'text' => 'Usuarios',
+        //     'route'  => 'admin.users.index',
+        //     'icon' => 'fas fa-fw fa-users',
+        //     'can' => 'admin.users.index',
+  
+        // ],
+
+        // [
+        //     'text' => 'Roles',
+        //     'route'  => 'admin.roles.index',
+        //     'icon' => 'fas fa-users-cog fa-fw',
+        //     'can' => 'admin.roles.index',
+  
+        // ],
 
         [
             'text' => 'Cambiar Contraseña',
@@ -372,6 +423,22 @@ return [
             'icon' => 'fas fa-procedures',
             'route'  => 'categories.index',
         ],
+        // [
+        //     'text' => 'Productos',
+        //     'icon' => 'fas fa-tools',
+        //     'route'  => 'products.index',
+        // ],
+        // [
+        //     'text' => 'proveedores',
+        //     'icon' => 'fas fa-user-friends',
+        //     'route'  => 'proveedores.index',
+        //     'can' => 'proveedores.index',
+        // ],
+        // [
+        //     'text' => 'categorias',
+        //     'icon' => 'fas fa-procedures',
+        //     'route'  => 'categories.index',
+        // ],
         [
             'text' => 'Empleados',
             'icon' => 'fas fa-tachometer-alt',

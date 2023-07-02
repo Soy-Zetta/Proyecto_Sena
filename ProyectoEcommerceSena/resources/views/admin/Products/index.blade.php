@@ -1,6 +1,3 @@
-
-
-
 @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
@@ -11,19 +8,28 @@
 
 @section('content')
 
-<a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
-<br><br>
+    @if (session('delete'))
+        <div class="alert alert-success">
+            {{ session('delete') }}
+        </div>
+    @endif
 
-<form action="{{ route('buscador.search') }}" method="GET" class="mb-3">
-    @csrf
-    <div class="input-group">
-        <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
-        <button type="submit" class="btn btn-primary">Buscar</button>
-    </div>
-</form>
+    @can('products.create')
+        <a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
+    @endcan
 
-<br><br>
-<div class="container">
+    <br><br>
+
+    <form action="{{ route('buscador.search') }}" method="GET" class="mb-3">
+        @csrf
+        <div class="input-group">
+            <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
+
+    <br><br>
+
     <table class="table">
         <thead>
             <tr>
@@ -53,95 +59,58 @@
                         @endif
                     </td>
                     <td>
-                        <img src="{{ asset('images/' . $producto->imagen) }}" alt="{{ $producto->nombre }}" width="100" height="100">
+                        <img src="{{ asset('images/' . $producto->imagen) }}" alt="{{ $producto->nombre }}" width="100"
+                            height="100">
                     </td>
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-primary btn-sm mr-2">Editar</a>
+                            @can('products.edit')
+                                <a href="{{ route('products.edit', $producto->id) }}"
+                                    class="btn btn-primary btn-sm mr-2">Editar</a>
+                            @endcan
 
-                            <form action="{{ route('products.destroy', $producto->id) }}" method="POST" id="deleteForm">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                            </form>
+                            @can('products.delete')
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                    data-target="#confirmDeleteModal{{ $producto->id }}">Eliminar</button>
+                            @endcan
                         </div>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-</div>
 
+    <!-- Modal de confirmación de eliminación -->
+    @foreach ($productos as $producto)
+        @can('products.delete')
+            <div class="modal fade" id="confirmDeleteModal{{ $producto->id }}" tabindex="-1" role="dialog"
+                aria-labelledby="confirmDeleteModalLabel{{ $producto->id }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmDeleteModalLabel{{ $producto->id }}">Confirmar eliminación</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            ¿Estás seguro de que deseas eliminar este producto?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <form action="{{ route('products.destroy', $producto->id) }}" method="POST"
+                                id="deleteForm{{ $producto->id }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endcan
+    @endforeach
 @stop
-
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/products.css') }}">
 @stop
-
-
-
-
-
-
-
-
-
-
-{{-- @extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
-    <h1 class="m-0 text-dark">Productos</h1>
-@stop
-
-@section('content')
-
-<a href="{{route('products.create')}}" class="btn btn-primary">Crear producto</a>
-<br><br>
-
-<form action="{{ route('buscador.search') }}" method="GET">
-    <fieldset enable>
-        @csrf
-        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por Codigo de producto">
-      </div>
-      <div class="mb-3">
-      </div>
-      <button type="submit" class="btn btn-primary">Buscar</button>
-    </fieldset>
-  </form>
-
-<br><br>
-<div class="container">
-    <div class="row">   
-        @foreach ($productos as $producto)
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem">
-                    <img src="{{asset('images/'.$producto->imagen)}}" alt="{{$producto->nombre}}">     
-                    <div class="card-body">
-                        <p class="card-text">{{$producto->nombre}}</p>
-                        <p class="card-text">{{$producto->precio}}</p>
-                        <p class="card-text">Existencias: {{$producto->existencias}}</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="{{route('products.edit',$producto->id)}}" class="btn btn-primary btn-sm">Editar</a>
-
-                        <form action="{{route('products.destroy',$producto->id)}}" method="POST" id="deleteForm">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</div>
-
-@stop
-
-
-@section('css')
-    <link rel="stylesheet" href={{ asset('css/products.css') }}>
-@stop --}}

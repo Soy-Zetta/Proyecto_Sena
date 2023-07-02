@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Traits\HasRoles;
 
 
 
@@ -46,7 +45,7 @@ class UserSeeder extends Seeder
             'direccion' => 'Calle Perdida 2',
             'email' => 'stiven@gmail.com',
             'password' => bcrypt('12345678')
-        ])->assignRole('Empleado');
+        ])->assignRole('Admin');
 
         User::create([
             'name' => 'Victor Hugo',
@@ -61,9 +60,22 @@ class UserSeeder extends Seeder
             'email' => 'victor@gmail.com',
             'password' => bcrypt('12345678')
 
-        ])->assignRole('Cliente');
+        ])->assignRole('Admin');
 
+        User::create([
+            'name' => 'Camilo',
+            'apellido' => 'idrobo',
+            'tipo_documento' => 'Tajeta de identidad',
+            'num_documento' => '1.144.512.560',
+            'lugar_nacimiento' => 'Cali',
+            'fecha_nacimiento' => '2000-05-15',
+            'telefono' => '3022356955',
+            'ciudad_residencia' => 'Cali',
+            'direccion' => 'Calle Perdida 4',
+            'email' => 'camilo@gmail.com',
+            'password' => bcrypt('12345678')
 
+        ])->assignRole('Empleado');
 
 
         User::factory(50)->create([

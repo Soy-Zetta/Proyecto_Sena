@@ -199,7 +199,7 @@ class ProductoController extends Controller
         if ($nombreImagen && file_exists(public_path('images/' . $nombreImagen))) {
             unlink(public_path('images/' . $nombreImagen));
         }
-            return redirect()->route('products.index');
+            return redirect()->route('products.index')->with('delete','datos eliminados');
         }
 }
 

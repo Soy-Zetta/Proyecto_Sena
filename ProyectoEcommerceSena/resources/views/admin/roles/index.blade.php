@@ -8,14 +8,15 @@
 
 @section('content')
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @can('admin.roles.create')
+        <a href="{{ route('admin.roles.create') }}" class="btn btn-success">Crear Rol</a>
+    @endcan
 
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-    <a href="{{ route('admin.roles.create') }}" class="btn btn-success">Crear Rol</a>
     <br><br>
 
     <div class="container">
@@ -36,15 +37,20 @@
                                 <td>{{ $role->id }}</td>
                                 <td>{{ $role->name }}</td>
                                 <td width="10px">
-                                    <a href="{{ route('admin.roles.edit', $role->id) }}"class="btn btn-primary">editar</a>
+                                    @can('admin.roles.edit')
+                                        <a href="{{ route('admin.roles.edit', $role->id) }}"class="btn btn-primary">editar</a>
+                                    @endcan
                                 </td>
 
                                 <td width="10px">
-                                    <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">eliminar</button>
-                                    </form>
+                                    @can('admin.roles.destroy')
+                                        <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">eliminar</button>
+                                        </form>
+                                    @endcan
+
                                 </td>
                             </tr>
                         @endforeach
