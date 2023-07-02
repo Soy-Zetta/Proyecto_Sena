@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,12 @@
 
 
 <div class="container">
-        <nav aria-label="breadcrumb">
+        {{-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="./">Inicio</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tienda</li>
             </ol>
-        </nav>
+        </nav> --}}
         <div class="">
             <div class="">
                 <div class="">
@@ -32,14 +32,7 @@
                 <div class="row">
                     @foreach($productos as $pro)
                         <div class="col-lg-3">
-
-                            {{-- problema de imagen--}}
-                            {{--<div class="card" style="margin-bottom: 20px; height: auto;"> 
-                                 <img src="{{asset('./images/$pro->image_path;')}}" class="card-img-top mx-auto"
-                                     style="height: 150px; width: 150px;display: block;"
-                                     alt="{{ $pro->image_path }}"> --}}
-
-                            {{-- problema de imagen solucionado --}}        
+     
                                      <div class="card" style="margin-bottom: 20px; height: 95%;">
                                      <img src="{{ asset('images/' . $pro->imagen) }}" class="card-img-top mx-auto"
                                      style="height: 150px; width: 150px; display: block;"
