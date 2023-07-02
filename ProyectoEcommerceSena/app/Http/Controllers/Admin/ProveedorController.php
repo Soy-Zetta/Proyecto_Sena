@@ -58,14 +58,14 @@ class ProveedorController extends Controller
         
             
             // Redirige a la vista de detalles del producto o a donde desees
-           return redirect()->route('proveedores.index');
+           return redirect()->route('admin.proveedores.index');
     }
 
    
     public function show(string $id)
     {
         $proveedor = proveedore::findOrFail($id);
-        return view('proveedores.show',compact('proveedor'));
+        return view('admin.proveedores.show',compact('proveedor'));
     }
 
     

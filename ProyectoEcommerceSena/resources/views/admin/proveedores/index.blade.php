@@ -17,8 +17,7 @@
 <a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
 <br><br>
 
-    <a href="{{ route('proveedores.create') }}" class="btn btn-primary">CREAR PROVEEDORES</a>
-    <br><br>
+    
 
     <form action="{{ route('buscador.searchproveedor') }}" method="GET">
         <fieldset enable>
