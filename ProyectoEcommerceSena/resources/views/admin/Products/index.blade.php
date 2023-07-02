@@ -82,7 +82,7 @@
 
     <!-- Modal de confirmación de eliminación -->
     @foreach ($productos as $producto)
-        @can('products.delete')
+        
             <div class="modal fade" id="confirmDeleteModal{{ $producto->id }}" tabindex="-1" role="dialog"
                 aria-labelledby="confirmDeleteModalLabel{{ $producto->id }}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -97,17 +97,20 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            
                             <form action="{{ route('products.destroy', $producto->id) }}" method="POST"
                                 id="deleteForm{{ $producto->id }}">
+                                
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        @endcan
+        
     @endforeach
 @stop
 
