@@ -26,7 +26,7 @@
                         <button class="header__section1__btn1"><i class="fas fa-shopping-cart"></i><a href="./cart"> Carrito</a></button>
                     </div>
                     <div>
-                        <button id="btn-log" class="header__section1__btn2"><i class="fas fa-user"></i><a href="./loginn"> Ingresar</a></button>
+                        <button id="btn-log" class="header__section1__btn2"><i class="fas fa-user"></i><a href="./login"> Ingresar</a></button>
                     </div>
                 </div>
             </div>
