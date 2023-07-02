@@ -7,6 +7,16 @@
 @stop
 
 @section('content')
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
+
+
 <form action="{{route('proveedores.store')}}" method="POST" class="card">
   @csrf
   <div class="row">

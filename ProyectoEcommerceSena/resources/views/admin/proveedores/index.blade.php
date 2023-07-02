@@ -12,7 +12,21 @@
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-@endif
+    @endif
+
+    @push('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('#success-alert').fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            }, 2000);
+        });
+    </script>
+@endpush
+
  
 <a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
 <br><br>
