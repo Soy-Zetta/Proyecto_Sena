@@ -30,6 +30,8 @@
                                 Carrito</a></button>
                     </div>
                     <div>
+
+                    {{-- Boton de Login Y Logout, Darle estilo --}}
                         @if (Auth::check())
                             <!-- Botón de cierre de sesión -->
                             <form action="{{ route('logout') }}" method="POST">
