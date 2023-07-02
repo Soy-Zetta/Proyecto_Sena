@@ -17,12 +17,34 @@ class ProductosTableSeeder extends Seeder
         								
         $productos = [
             [
-                'nombre' => 'rampg12x',
+                'nombre' => 'Mouse',
                 'codigo' => 1234,
-                'descripcion' => 'ram Color Negro 16gb Cmsx16gx5m1a4800c40',
+                'descripcion' => 'Mouse Color Negro Cmsx16gx5m1a4800c40',
                 'precio' => 300000,
-                'existencias' => 15,
-                'imagen' => 'ram.png',
+                'existencias' => 5,
+                'imagen' => 'mou.png',
+                'disponible' => 1,
+                'categorias_id' => 1,
+                'proveedores_id' => 1
+            ],
+            [
+                'nombre' => 'Mouse',
+                'codigo' => 1234,
+                'descripcion' => 'Mouse Color Negro Cmsx16gx5m1a4800c40',
+                'precio' => 300000,
+                'existencias' => 5,
+                'imagen' => 'mou.png',
+                'disponible' => 1,
+                'categorias_id' => 1,
+                'proveedores_id' => 1
+            ],
+            [
+                'nombre' => 'Mouse',
+                'codigo' => 1234,
+                'descripcion' => 'Mouse Color Negro Cmsx16gx5m1a4800c40',
+                'precio' => 300000,
+                'existencias' => 5,
+                'imagen' => 'mou.png',
                 'disponible' => 1,
                 'categorias_id' => 1,
                 'proveedores_id' => 1
