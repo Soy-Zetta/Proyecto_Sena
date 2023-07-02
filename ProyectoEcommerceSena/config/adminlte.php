@@ -356,12 +356,13 @@ return [
             'text' => 'Productos',
             'icon' => 'fas fa-tools',
             'route'  => 'products.index',
+            // 'can' => 'admin.products.index',
         ],
         [
             'text' => 'proveedores',
             'icon' => 'fas fa-user-friends',
             'route'  => 'proveedores.index',
-            'can' => 'admin.proveedores.index',
+            // 'can' => 'admin.proveedores.index',
             
          
 
@@ -381,6 +382,13 @@ return [
             'icon' => 'fas fa-file-invoice',
             'url'  => 'admin/blog',
         ],
+
+        [
+            'text' => 'Compras',
+            'icon' => 'fas fa-shopping-basket',
+            'url'  => 'admin/blog',
+        ],
+
 
         // [
         //     'text'    => 'multilevel',

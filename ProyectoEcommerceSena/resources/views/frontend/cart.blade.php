@@ -70,8 +70,9 @@
                                     <div class="form-group row">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
                                         <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
-                                               id="quantity"  name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 5px;"><i class="fa fa-edit"></i></button>
+                                               id="quantity"  name="quantity" style="width: 100px; margin-right: 10px;">
+                                               
+                                        <button class="btn btn-secondary btn-sm" style="margin-right:10px;"><i class="fa fa-edit"></i></button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">
@@ -102,7 +103,7 @@
                         </ul>
                     </div>
                     <br><a href="./shop" class="btn btn-primary">Sigue comprando</a>
-                    <a href="/checkout" class="btn btn-success">Ir al pago</a>
+                    <a href="{{ route('frontend/compras.index') }}" class="btn btn-success">Ir al pago</a>
                 </div>
             @endif
         </div>

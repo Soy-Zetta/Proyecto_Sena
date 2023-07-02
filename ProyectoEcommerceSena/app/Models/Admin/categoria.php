@@ -17,7 +17,7 @@ class categoria extends Model
     public $timestamps = false;
 
    
-    public function productos()
+    public function producto()
     {
         return $this->hasMany(Producto::class, 'categorias_id');
     }

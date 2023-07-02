@@ -23,12 +23,15 @@
                     @foreach($compras as $compra)
                     <tr>
                     
-                        <td>{{$categoria->id}}</td>
-                        <td>{{$categoria->nombre}}</td>
-                        <td>{{$categoria->descripcion}}</td>
-                        <td><a href="{{route('shoppings.edit',$categoria->id)}}"class="btn btn-primary" >editar</a></td>
+                        <td>{{$compra->id}}</td>
+                        <td>{{$producto->Producto}}</td>
+                        <td>{{$cliente->Cliente}}</td>
+                        <td>{{$compra->Fecha}}</td>
+                        <td>{{$producto->Cantidad}}</td>
+                        <td>{{$compra->Precio}}</td>
+                        <td><a href="{{route('shoppings.edit',$compra->id)}}"class="btn btn-primary" >editar</a></td>
                         <td>
-                            <form action="{{route('shoppings.destroy',$categoria->id)}}" method="POST">
+                            <form action="{{route('shoppings.destroy',$compra->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                     <button type="submit" class="btn btn-danger">eliminar</button>
@@ -38,9 +41,9 @@
                 @endforeach
             </tbody>
         </table>
-        <div class = "d-flex justify-content-end">
+        {{-- <div class = "d-flex justify-content-end">
             {!! $categorias->links() !!}
-        </div>
+        </div> --}}
     </div>
       
     

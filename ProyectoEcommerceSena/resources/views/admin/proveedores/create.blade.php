@@ -47,7 +47,7 @@
         value="{{ old('correo') }}" required>
       </div>
        
-      <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a>
+      {{-- <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a> --}}
    
       <button type="submit" class="btn btn-info">Guardar</button>
     </div>

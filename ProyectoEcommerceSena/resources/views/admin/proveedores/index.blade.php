@@ -7,6 +7,12 @@
 @stop
 
 @section('content')
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
  
 <a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
 <br><br>

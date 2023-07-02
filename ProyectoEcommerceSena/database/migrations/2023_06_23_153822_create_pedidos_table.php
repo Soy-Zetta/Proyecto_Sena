@@ -13,15 +13,12 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_numero_documento');
-            $table->unsignedBigInteger('producto_id');
             $table->date('fecha');
             $table->integer('cantidad');
             $table->decimal('precio', 8, 2);
             $table->decimal('total', 8, 2)->nullable();
             $table->timestamps();
-        
-            $table->integer('clientes_numero_documento')->index('fk_pedidos_clientes_numero_documentox')->onDelete('cascada');
+             $table->integer('clientes_numero_documento')->index('fk_pedidos_clientes_numero_documentox')->onDelete('cascada');
             $table->integer('productos_id')->index('fk_pedidos_productos_idx');
         });
     }

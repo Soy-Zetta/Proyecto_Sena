@@ -71,7 +71,7 @@ class ProveedorController extends Controller
     
     public function edit(string $id)
     {
-        $proveedor = proveedore::findOrFail($id);
+        $proveedor= proveedore::findOrFail($id);
         // dd($cegoriasat  );
         return view('admin.proveedores.edit',compact('proveedor'));
     }
@@ -99,7 +99,7 @@ class ProveedorController extends Controller
         $proveedor->correo = $validarDatos['correo'];
         $proveedor->update();
         
-        return redirect()->route('proveedores.index');
+        return redirect()->route('proveedores.index')->with('success', 'El rol se ha actualizado correctamente.');
     }
 
     /**
@@ -110,6 +110,6 @@ class ProveedorController extends Controller
         $proveedor = proveedore::findOrFail($id);
         $proveedor->delete();
 
-        return redirect()->route('proveedores.index');
+        return redirect()->route('admin.proveedores.index')->with('success', 'El rol se eliminó correctamente.');
     }
 }

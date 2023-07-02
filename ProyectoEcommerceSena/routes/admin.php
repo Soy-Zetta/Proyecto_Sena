@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProveedorController;
 use App\Http\Controllers\Admin\BuscadorController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ClienteController;
+use App\Http\Controllers\Admin\CompraController;
 use App\Http\Controllers\Admin\PedidoController;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,12 +18,15 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
-//rutas crud proveedores panel de administracion
+//rutas crud clientes panel de administracion
 Route::resource('/customers',ClienteController::class)->names('customers');
 
-//rutas crud proveedores panel de administracion
+//rutas crud pedidos panel de administracion
 Route::resource('pedidos',PedidoController::class)->names('pedidos');
 
+
+//rutas crud proveedores panel de administracion
+Route::resource('fronted/compras',CompraController::class)->names('frontend/compras');
 
 //rutas crud proveedores panel de administracion
 Route::resource('/proveedores',ProveedorController::class)->names('proveedores');
