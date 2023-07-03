@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->decimal('precio');
             $table->integer('cantidad');
-            $table->integer('total');
-            $table->integer('compras_id')->index('fk_detallecompras_compras_id')->onDelete('cascada');
-            $table->integer('productos_id')->index('fk_detallecompras_productos_id');
+            $table->string('descrpcion');
+            $table->integer('compras_id')->index('fk_detallecompras_compras_idx')->onDelete('cascada');
+            $table->integer('productos_id')->index('fk_detallecompras_productos_idx');
             $table->timestamps('');
         });
     }

@@ -12,8 +12,8 @@ class detallecompra extends Model
         'compras_id',
         'productos_id',
         'precio',
-         'cantidad',
-          'total', 
+        'cantidad',
+        'descripcion', 
          
         ];
     protected $table = 'detallecompras';

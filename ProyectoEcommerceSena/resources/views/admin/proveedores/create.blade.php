@@ -14,6 +14,18 @@
     </div>
 @endif
 
+@push('scripts')
+<script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('#success-alert').fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            }, 5000);
+        });
+    </script>
+@endpush
 
 
 

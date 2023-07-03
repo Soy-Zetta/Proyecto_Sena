@@ -18,7 +18,7 @@ class ProveedorController extends Controller
     public function create()
     {
         $proveedores =proveedore::all();
-        return view('admin.proveedores.create',compact('proveedores'))->with('success', '¡El proveedor se creó satisfactoriamente!');
+        return view('admin.proveedores.create',compact('proveedores'))->with('success', 'El rproveedor se eliminó correctamente.');
     }
 
     
