@@ -1,4 +1,4 @@
- @include('header') 
+  @include('header') 
 
 
 @extends('layouts.app')
@@ -57,7 +57,7 @@
                                 <b><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
                                 <b>Price: </b>${{ $item->price }}<br>
                                 <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
-                               {{-- <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }} --}}
+                               {{-- <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions()  --}}
                              </p>
                         </div>
 
@@ -110,9 +110,7 @@
         <br><br>
     </div>
 @endsection
-
-
-
+ 
 
 
 
