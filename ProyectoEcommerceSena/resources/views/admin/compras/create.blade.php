@@ -103,7 +103,7 @@
 
                 <div class="form-group">
                     <label for="productos_id">Producto</label>
-                    <select name="productos_id[]" id="productos_id" class="form-control" multiple required>
+                    <select name="productos_id" id="productos_id" class="form-control"  required>
                         @foreach($productos as $producto)
                             <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
                         @endforeach
