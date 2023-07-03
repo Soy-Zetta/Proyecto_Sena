@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Rutas protegidas para el rol 'Admin' y solo serán accesibles por usuarios con el rol 'Admin' debido al middleware RoleMiddleware.
 // Aquí agregas todas las rutas que solo serán accesibles por los administradores.
-Route::middleware([RoleMiddleware::class.':Admin'])->group(function () {
+Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('admin.home');
     //Panel de administración, Ruta CRUD de Usuarios 
     Route::resource('users', UserController::class)->names('admin.users');
@@ -48,7 +48,6 @@ Route::middleware([RoleMiddleware::class.':Admin'])->group(function () {
     Route::resource('fronted/compras',CompraController::class)->names('frontend/compras');
 });
 // POR AQUI ESTUVO ZETTA ORGANIZANDO LAS RUTAS :)
-
 
 
 
