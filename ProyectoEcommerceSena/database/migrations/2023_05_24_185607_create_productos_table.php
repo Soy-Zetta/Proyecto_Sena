@@ -16,13 +16,15 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->integer('id', true);
             $table->string('nombre', 45);
+            $table->integer('codigo');
             $table->string('descripcion', 100);
-            $table->decimal('precio');
+            $table->decimal('precio', 10,2);
             $table->integer('existencias');
             $table->string('imagen');
-            $table->timestamps();
+            $table->boolean('disponible')->default(true);
             $table->integer('categorias_id')->index('fk_productos_categorias_idx')->onDelete('cascada');
             $table->integer('proveedores_id')->index('fk_productos_proveedores1_idx');
+            $table->timestamps();
         });
     }
 

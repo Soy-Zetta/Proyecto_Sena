@@ -6,20 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
+
 class producto extends Model
 {
     use HasFactory;
     protected $fillable = [
         'nombre',
         'descripcion',
+        'codigo',
         'precio',
         'existencias',
+        'imagen',
+        'disponible',
         'categorias_id',
         'proveedor_id',
     ];
     protected $table = 'productos';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function categoria()
     {

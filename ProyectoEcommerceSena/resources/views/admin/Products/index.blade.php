@@ -1,3 +1,5 @@
+
+
 @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
@@ -8,50 +10,98 @@
 
 @section('content')
 
-<a href="{{route('products.create')}}" class="btn btn-primary">Crear producto</a>
+@if (session('delete'))
+    <div class="alert alert-success">
+        {{ session('delete') }}
+    </div>
+@endif
+
+<a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
 <br><br>
 
-<form action="{{ route('buscador.search') }}" method="GET">
-    <fieldset enable>
-        @csrf
-        <input name ="buscador" type="text" id="disabledTextInput" class="form-control" placeholder="Buscar por Codigo de producto">
-      </div>
-      <div class="mb-3">
-      </div>
-      <button type="submit" class="btn btn-primary">Buscar</button>
-    </fieldset>
-  </form>
+<form action="{{ route('buscador.search') }}" method="GET" class="mb-3">
+    @csrf
+    <div class="input-group">
+        <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
 
 <br><br>
 <div class="container">
-    <div class="row">   
-        @foreach ($productos as $producto)
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem">
-                    <img src="{{$producto->imagen}}" alt="Hyundai" class="card-img-top">
-                    <div class="card-body">
-                        <p class="card-text">{{$producto->nombre}}</p>
-                        <p class="card-text">{{$producto->precio}}</p>
-                        <p class="card-text">Existencias: {{$producto->existencias}}</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="{{route('products.edit',$producto->id)}}" class="btn btn-primary btn-sm">Editar</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Código</th>
+                <th>Precio</th>
+                <th>Existencias</th>
+                <th>Disponibilidad</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($productos as $producto)
+                <tr>
+                    <td>{{ $producto->nombre }}</td>
+                    <td>{{ $producto->descripcion }}</td>
+                    <td>{{ $producto->codigo }}</td>
+                    <td>{{ $producto->precio }}</td>
+                    <td>{{ $producto->existencias }}</td>
+                    <td>
+                        @if ($producto->disponible)
+                            Disponible
+                        @else
+                            No disponible
+                        @endif
+                    </td>
+                    <td>
+                        <img src="{{ asset('images/' . $producto->imagen) }}" alt="{{ $producto->nombre }}" width="100" height="100">
+                    </td>
+                    <td>
+                        <div class="d-flex">
+                            <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-primary btn-sm mr-2">Editar</a>
 
-                        <form action="{{route('products.destroy',$producto->id)}}" method="POST" id="deleteForm">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        @endforeach
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDeleteModal{{ $producto->id }}">Eliminar</button>
+
+                            <!-- Modal de confirmación de eliminación -->
+                            <div class="modal fade" id="confirmDeleteModal{{ $producto->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel{{ $producto->id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirmDeleteModalLabel{{ $producto->id }}">Confirmar eliminación</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ¿Estás seguro de que deseas eliminar este producto?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <form action="{{ route('products.destroy', $producto->id) }}" method="POST"
+                                                <form action="{{ route('products.destroy', $producto->id) }}" method="POST" id="deleteForm{{ $producto->id }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-</div>
-
-@stop
-
-
-@section('css')
-    <link rel="stylesheet" href={{ asset('css/products.css') }}>
-@stop
+    
+    @stop
+    
+    
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('css/products.css') }}">
+    @stop

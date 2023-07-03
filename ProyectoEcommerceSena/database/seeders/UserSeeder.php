@@ -8,6 +8,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
+
+
+
 class UserSeeder extends Seeder
 {
     /**
@@ -17,36 +20,71 @@ class UserSeeder extends Seeder
     {
 
         User::create([
-            'name' => 'Alfonso Gaviria',
-            'email' => 'zetta@gmail.com',
+            'name' => 'Alfonso',
+            'apellido' => 'Gaviria C',
             'tipo_documento' => 'Cedula',
             'num_documento' => '1.144.512.548',
+            'lugar_nacimiento' => 'Cali',
+            'fecha_nacimiento' => '1995-05-15',
+            'telefono' => '3022356955',
+            'ciudad_residencia' => 'Cali',
+            'direccion' => 'Calle Perdida 1',
+            'email' => 'zetta@gmail.com',
             'password' => bcrypt('12345678')
         ])->assignRole('Admin');
 
         User::create([
-            'name' => 'Stiven Rengifo',
-            'email' => 'stiven@gmail.com',
+            'name' => 'Stiven',
+            'apellido' => ' Rengifo Ortiz',
             'tipo_documento' => 'Cedula',
             'num_documento' => '1.144.512.549',
+            'lugar_nacimiento' => 'Cali',
+            'fecha_nacimiento' => '2002-05-24',
+            'telefono' => '3022356955',
+            'ciudad_residencia' => 'Cali',
+            'direccion' => 'Calle Perdida 2',
+            'email' => 'stiven@gmail.com',
             'password' => bcrypt('12345678')
         ])->assignRole('Admin');
 
         User::create([
-            'name' => 'Victo Hugo',
-            'email' => 'victor@gmail.com',
+            'name' => 'Victor Hugo',
+            'apellido' => 'Pacheco ',
             'tipo_documento' => 'Tajeta de identidad',
             'num_documento' => '1.144.512.547',
+            'lugar_nacimiento' => 'Cali',
+            'fecha_nacimiento' => '2000-05-15',
+            'telefono' => '3022356955',
+            'ciudad_residencia' => 'Cali',
+            'direccion' => 'Calle Perdida 3',
+            'email' => 'victor@gmail.com',
             'password' => bcrypt('12345678')
 
         ])->assignRole('Admin');
 
+        User::create([
+            'name' => 'Camilo',
+            'apellido' => 'idrobo',
+            'tipo_documento' => 'Tajeta de identidad',
+            'num_documento' => '1.144.512.560',
+            'lugar_nacimiento' => 'Cali',
+            'fecha_nacimiento' => '2000-05-15',
+            'telefono' => '3022356955',
+            'ciudad_residencia' => 'Cali',
+            'direccion' => 'Calle Perdida 4',
+            'email' => 'camilo@gmail.com',
+            'password' => bcrypt('12345678')
 
+        ])->assignRole('Empleado');
 
 
         User::factory(50)->create([
             'tipo_documento' => 'Cedula',
-        ]);
+        ])->each(function ($user) {
+            $user->assignRole('Cliente');
+        });
+
+        
 
         // $tipo_documento = ['Cedula','Tajeta identida','Cedula extranjeria'];
 
@@ -61,5 +99,6 @@ class UserSeeder extends Seeder
         //         'email' => 'zetta@gmail.com',
         //         'password' => bcrypt('12345678')
         //     ]);
+        
     }
 }

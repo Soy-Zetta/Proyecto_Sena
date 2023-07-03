@@ -1,3 +1,4 @@
+
 @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
@@ -7,6 +8,14 @@
 @stop
 
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
+<a href="{{ route('admin.users.index') }}" class="btn btn-warning">Regresar</a>
 
     <main>
         <div class="container py-4">
@@ -33,6 +42,18 @@
                     </div>
                 </div>
 
+                <div class="mb-3 row">
+                    <label for="rol" class="col-sm-2 col-form-label">Rol</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" name="rol" id="rol" required>
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                
                 <div class="mb-3 row">
                     <label for="tipo_documento" class="col-sm-2 col-form-label">Tipo de Documento de Identificación</label>
                     <div class="col-sm-5">
@@ -103,8 +124,6 @@
                             value="{{ $usuario->password }}" required>
                     </div>
                 </div>
-
-                <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
 

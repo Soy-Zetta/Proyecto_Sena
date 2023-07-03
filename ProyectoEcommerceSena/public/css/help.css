@@ -1,0 +1,90 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.container-title {
+    margin: 10px 0;
+}
+
+.container-title__h1 {
+    font-size: 1.5em;
+}
+
+.container-search {
+    margin: 10px 0;
+}
+
+.container-search__input {
+    background-color: #ddd;
+    width: 700px;
+    height: 50px;
+    padding: 10px;
+}
+
+.nav__ul-help {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav__li-help {
+    margin: 0 50px;
+    color: rgb(255, 128, 0);
+    list-style: none;
+}
+
+.nav__li__subnavbar-li {
+    display: flex;
+    align-items: center;
+    margin: 10px 20px;
+    color: var(--colorLetra);
+    list-style: none;
+    cursor: pointer;
+}
+
+.nav__li__subnavbar-li:hover {
+    text-decoration: underline;
+}
+
+.nav__li__subnavbar-li i {
+    padding: 10px;
+}
+
+.fa-plus {
+    transform: rotate(0);
+    transition: transform 1s;
+}
+
+.active {
+    transform: rotate(405deg);
+    transition: transform 1s;
+}
+
+.container-info {
+    background-color: #fffd;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 10000;
+    inset: 0;
+    padding: 50px;
+}
+
+
+.container-infoOn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeSubMenu {
+    background-color: #f00;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}

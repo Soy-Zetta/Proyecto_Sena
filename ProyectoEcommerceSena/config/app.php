@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+       
         /*
          * Application Service Providers...
          */
@@ -172,6 +172,9 @@ return [
         //Spatie
         Spatie\Permission\PermissionServiceProvider::class,
     ])->toArray(),
+
+        //Darryldecode\Cart
+        Darryldecode\Cart\CartServiceProvider::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -187,5 +190,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    // Darryldecode\Cart
+    'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 
 ];

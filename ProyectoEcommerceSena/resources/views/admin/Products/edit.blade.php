@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{ route('products.update',$producto->id) }}" method="POST" class="card">
+<form action="{{ route('products.update',$producto->id) }}" method="POST" class="card" enctype="multipart/form-data">
   @csrf
   @method('PUT')
   <div class="row">
@@ -28,15 +28,27 @@
          <label for="existencias" class="form-label">Existencias</label>
          <input type="text" class="form-control" name="existencias" id="existencias" value="{{ $producto->existencias }}">
       </div>
+      
       <div class="mb-3">
-         <label for="imagen" class="form-label">Imagen</label>
-         <input type="text" class="form-control" name="imagen" id="imagen" value="{{ $producto->imagen }}">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input type="file" class="form-control" name="imagen" id="imagen" 
+        >
       </div>
+
+    <div class="form-group">
+      <label for="disponible">Disponibilidad:</label>
+      <select name="disponible" id="disponible" class="form-control">
+          <option value="1" >Disponible</option>
+          <option value="0" >No disponible</option>
+      </select>
+  </div>
+
+
       <div class="form-group">
           <label for="categoria">Categoría</label>
           <select name="categoria" id="categoria" class="form-control">
               @foreach ($categorias as $categoria)
-                <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                <option value="{{ $categoria->id }}"required>{{ $categoria->nombre }}</option>
               @endforeach
           </select>
       
@@ -44,7 +56,7 @@
         <label for="proveedor">Proveedor</label>
         <select name="proveedor" id="proveedor" class="form-control">
             @foreach($proveedores as $proveedor)
-                <option value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
+                <option value="{{ $proveedor->id }}"required>{{ $proveedor->nombre }}</option>
             @endforeach
         </select>
     </div>

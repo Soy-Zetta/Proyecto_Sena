@@ -11,8 +11,18 @@ class proveedore extends Model
     protected $fillable = [
         'nombre',
         'Tipo_Documento',
+        'numero_documento',
         'Direccion',
         'telefono',
-        
+        'Correo',
     ];
+    protected $table = 'proveedores';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+
+    public function proveedor()
+    {
+        return $this->belongsTo(proveedore::class, 'proveedores_id');
+    }
+
 }
