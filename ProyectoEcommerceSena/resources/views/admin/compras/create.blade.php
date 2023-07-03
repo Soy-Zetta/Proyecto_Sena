@@ -93,7 +93,7 @@
 
                 <div class="form-group">
                     <label for="proveedor">Proveedor</label>
-                    <select name="proveedor[]" id="proveedor" class="form-control" required>
+                    <select name="proveedor" id="proveedor" class="form-control" required>
                         <option value="">Seleccione un proveedor</option>
                         @foreach($proveedores as $proveedor)
                             <option value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
@@ -103,7 +103,8 @@
 
                 <div class="form-group">
                     <label for="productos_id">Producto</label>
-                    <select name="productos_id" id="productos_id" class="form-control"  required>
+                    <select name="productos_id[]" id="productos_id" class="form-control" required>
+                        <option value="">Seleccione un producto</option>
                         @foreach($productos as $producto)
                             <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
                         @endforeach
