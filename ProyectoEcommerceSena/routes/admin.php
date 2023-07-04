@@ -12,7 +12,6 @@ use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\CompraController;
 use App\Http\Controllers\Admin\PedidoController;
 use Spatie\Permission\Middlewares\RoleMiddleware;
-use Illuminate\Support\Facades\Auth;
 
 
 

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'master mamon',
+    'title' => 'Ram Service',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -333,7 +333,6 @@ return [
                     'icon' => 'fas fa-fw fa-users',
                     'can' => 'admin.users.index',
                 ],
-    
                 [
                     'text' => 'Roles',
                     'route'  => 'admin.roles.index',
@@ -342,16 +341,15 @@ return [
                 ],
             ],
         ],
-
         [
             'text'    => 'Gestion de Productos',
             'icon'    => 'fas fa-fw fa-users',
             'submenu' => [
                 [
                     'text' => 'Productos',
-                    'route'  => 'admin.users.index',
-                    'icon' => 'fas fa-tools',
                     'route'  => 'products.index',
+                    'icon' => 'fas fa-tools',
+                    'can'  => 'products.index',
                 ],
     
                 [
@@ -360,89 +358,18 @@ return [
                     'icon' => 'fas fa-user-friends',
                     'can' => 'proveedores.index',
                 ],
-
                 [
                     'text' => 'Categorias',
-                    'route'  => 'admin.roles.index',
+                    'route' => 'admin.roles.index',
                     'icon' => 'fas fa-procedures',
-                    'route'  => 'categories.index',
+                    'can'  => 'categories.index',
                 ],
             ],
         ],
-
-        // [
-        //     'text' => 'Usuarios',
-        //     'route'  => 'admin.users.index',
-        //     'icon' => 'fas fa-fw fa-users',
-        //     'can' => 'admin.users.index',
-  
-        // ],
-
-        // [
-        //     'text' => 'Roles',
-        //     'route'  => 'admin.roles.index',
-        //     'icon' => 'fas fa-users-cog fa-fw',
-        //     'can' => 'admin.roles.index',
-  
-        // ],
-
-        [
-            'text' => 'Cambiar Contraseña',
-            'can'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'clientes',
-            'icon' => 'fas fa-user-tag',
-            'route'  => 'customers.index',
-        ],
-
         [
             'text' => 'Pedidos',
             'icon' => 'fas fa-luggage-cart',
             'route'  => 'pedidos.index',
-        ],
-
-        [
-            'text' => 'Productos',
-            'icon' => 'fas fa-tools',
-            'route'  => 'products.index',
-             'can' => 'admin.products.index',
-        ],
-        [
-            'text' => 'proveedores',
-            'icon' => 'fas fa-user-friends',
-            'route'  => 'proveedores.index',
-             'can' => 'admin.proveedores.index',
-            
-         
-
-        ],
-        [
-            'text' => 'categorias',
-            'icon' => 'fas fa-procedures',
-            'route'  => 'categories.index',
-        ],
-        // [
-        //     'text' => 'Productos',
-        //     'icon' => 'fas fa-tools',
-        //     'route'  => 'products.index',
-        // ],
-        // [
-        //     'text' => 'proveedores',
-        //     'icon' => 'fas fa-user-friends',
-        //     'route'  => 'proveedores.index',
-        //     'can' => 'proveedores.index',
-        // ],
-        // [
-        //     'text' => 'categorias',
-        //     'icon' => 'fas fa-procedures',
-        //     'route'  => 'categories.index',
-        // ],
-        [
-            'text' => 'Empleados',
-            'icon' => 'fas fa-tachometer-alt',
-            'url'  => 'admin/blog',
         ],
         [
             'text' => 'Reportes',
