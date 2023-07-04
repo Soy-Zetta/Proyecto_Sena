@@ -90,8 +90,9 @@ class categoriaController extends Controller
      */
     public function destroy(string $id)
     {
+        //dd('Inside destroy method');
         $categoria = Categoria::findOrFail($id);
-        $categoria->productos()->delete();
+        $categoria->producto()->delete();
         $categoria->delete();
 
         return redirect()->route('categories.index');

@@ -360,7 +360,7 @@ return [
                 ],
                 [
                     'text' => 'Categorias',
-                    'route' => 'admin.roles.index',
+                    'route' => 'categories.index',
                     'icon' => 'fas fa-procedures',
                     'can'  => 'categories.index',
                 ],
