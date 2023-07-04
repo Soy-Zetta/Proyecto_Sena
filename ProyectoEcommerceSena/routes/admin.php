@@ -33,7 +33,7 @@ Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () 
     //Panel de administración, Ruta CRUD de Clientes
     Route::resource('customers', ClienteController::class)->names('customers');
     //Panel de administración, Ruta CRUD de Pedidos realizados por los Clientes.
-    Route::resource('pedidos', PedidoController::class)->names('pedidos');
+    Route::resource('/pedidos', PedidoController::class)->names('pedidos');
     //Panel de administración, Ruta Buscador.
     Route::get('/buscador', [BuscadorController::class, 'search'])->name('buscador.search');
     //buscador de productos panel de Categorias
@@ -45,7 +45,7 @@ Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () 
     //Panel de administración, Ruta CRUD de Clientes
     Route::resource('/clientes', ClienteController::class)->names('clientes');
     //Panel de administración, Ruta CRUD Compras
-    Route::resource('fronted/compras',CompraController::class)->names('frontend/compras');
+    Route::resource('/compras',CompraController::class)->names('compras');
 });
 // POR AQUI ESTUVO ZETTA ORGANIZANDO LAS RUTAS :)
 

@@ -19,7 +19,7 @@ class producto extends Model
         'imagen',
         'disponible',
         'categorias_id',
-        'proveedor_id',
+        'proveedores_id',
     ];
     protected $table = 'productos';
     protected $primaryKey = 'id';

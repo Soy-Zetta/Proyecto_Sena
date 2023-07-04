@@ -453,7 +453,7 @@ return [
         [
             'text' => 'Compras',
             'icon' => 'fas fa-shopping-basket',
-            'url'  => 'admin/blog',
+            'route'  => 'compras.index',
         ],
 
 
