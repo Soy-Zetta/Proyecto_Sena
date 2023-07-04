@@ -31,13 +31,16 @@
                     </div>
                     <div>
 
-                    {{-- Boton de Login Y Logout, Darle estilo --}}
+                        {{-- Boton de Login Y Logout, Darle estilo --}}
+                        <!-- Botón de cierre de sesión -->
                         @if (Auth::check())
-                            <!-- Botón de cierre de sesión -->
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Cerrar sesión</button>
                             </form>
+
+                            <!-- Botón de cuenta del cliente -->
+                            <a href="{{ route('perfil.index') }}" class="btn btn-primary">Mi cuenta</a>
                         @else
                             <!-- Botón de inicio de sesión -->
                             <button id="btn-log" class="header__section1__btn2">
