@@ -43,7 +43,7 @@
                         <td>{{ $categoria->descripcion }}</td>
                         <td>
                             @can('categories.edit')
-                                <a href="{{ route('categories.edit', $categoria->id) }}" class="btn btn-primary">Editar</a>
+                                <a href="{{ route('categories.edit', $categoria->id) }}" class="btn btn-outline-primary">Editar</a>
                             @endcan
 
                             <!-- Modal de confirmación de eliminación -->
@@ -78,7 +78,7 @@
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                                             </form>
                                         </div>
                                     </div>
