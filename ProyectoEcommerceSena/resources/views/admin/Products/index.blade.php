@@ -81,7 +81,6 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                            <form action="{{ route('products.destroy', $producto->id) }}" method="POST"
                                                 <form action="{{ route('products.destroy', $producto->id) }}" method="POST" id="deleteForm{{ $producto->id }}">
                                                     @csrf
                                                     @method('DELETE')
