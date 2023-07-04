@@ -50,7 +50,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'categories.destroy', 'description' => 'Eliminar Categoria'])->syncRoles([$role1]);
 
 
-
+// Aqui estuvo zetta
 
     }
 }
