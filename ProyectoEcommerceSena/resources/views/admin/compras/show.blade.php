@@ -96,6 +96,7 @@
     </div>
 
     <div class="text-right">
-        <button class="btn btn-outline-primary" onclick="window.print()">Imprimir</button>
+        <a href="{{ route('compras.index') }}" class="btn btn-outline-secondary">Regresar</a>
+       <button class="btn btn-outline-primary" onclick="window.print()">Imprimir</button>
     </div>
 @endsection
