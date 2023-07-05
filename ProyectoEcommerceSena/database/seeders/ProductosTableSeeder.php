@@ -17,6 +17,7 @@ class ProductosTableSeeder extends Seeder
         								
         $productos = [
             [
+                 // productos camila 
                 'nombre' => 'Monitor HP 23,8',
                 'codigo' => 1234,
                 'descripcion' => 'monitor HP ultradelgado con pantalla de micro-bordes y resolución Full HD. ',
@@ -107,7 +108,6 @@ class ProductosTableSeeder extends Seeder
                 'categorias_id' => 1,
                 'proveedores_id' => 1
             ],
-            /////
             [
                 'nombre' => 'Monitor KALLEY',
                 'codigo' => 12345,
@@ -132,6 +132,33 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 3
                 
             ],
+             //productos stiven
+            [
+                'nombre' => 'Monitor KALLEY',
+                'codigo' => 12345,
+                'descripcion' => 'monitor Kalley de 24” M24FP color gris',
+                'precio' => 600000,
+                'existencias' => 15,
+                'imagen' => 'Monitor KALLEY 24 Pulgadas K-M24FP .png',
+                'disponible' => 1,
+                'categorias_id' => 1,
+                'proveedores_id' => 2
+               
+            ],
+            [
+                'nombre' => 'Monitor Gamer ACER',
+                'codigo' => 123456,
+                'descripcion' => 'portatil Color Negro 16gb Cmsx16gx5m1a4800c40',
+                'precio' => 800000,
+                'existencias' => 15,
+                'imagen' => 'Monitor Gamer ACER 23.8 Pulgadas QG241Y Pbmiipx .png',
+                'disponible' => 1,
+                'categorias_id' => 3,
+                'proveedores_id' => 3
+                
+            ],
+            // produ
+
             // Agrega más productos aquí si es necesario
         ];
     
