@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre', 45);
             $table->integer('codigo');
             $table->string('descripcion', 300);
-            $table->decimal('precio', 10,2);
+            $table->integer('precio');
             $table->integer('existencias');
             $table->string('imagen');
             $table->boolean('disponible')->default(true);
