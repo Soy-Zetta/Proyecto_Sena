@@ -17,7 +17,7 @@ class compra extends Model
         'total',
         'fecha', 
         'imagen', 
-        'estado'
+        'estado',
         ];
     protected $table = 'compras';
     protected $primaryKey = 'id';
