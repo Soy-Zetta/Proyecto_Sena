@@ -19,10 +19,10 @@
        <div>
             <h1 class="titulo">Sobre Nosotros</h1>
         </div>
-
+{{-- 
         <div class="whatsapp">
             <p class="tel">Contactanos 312-0000000 / 315-1111111.</p>
-        </div>
+        </div> --}}
 
         <div class="empresa">
             <div>

@@ -67,18 +67,17 @@
                             <div class="row">
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
                                         <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
                                                id="quantity"  name="quantity" style="width: 100px; margin-right: 10px;">
-                                               
-                                        <button class="btn btn-secondary btn-sm" style="margin-right:10px;"><i class="fa fa-edit"></i></button>
+                                        <button class="edit-cart-btn-input btn btn-secondary btn-sm">Confirmar cantidad</button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                    <button class="btn btn-danger btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                 </form>
                             </div>
                         </div>

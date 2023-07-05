@@ -1,10 +1,6 @@
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
-}
 
 body {
     background-color: #d5d5d5;
-    padding: 30px 20%;
 }
 
 .container-profile {
@@ -14,6 +10,7 @@ body {
     align-items: center;
     border-radius: 5px;
     padding: 20px;
+    margin: 30px 20%;
     text-decoration: none;
     color: #000;
     transition: border .5s;
@@ -37,7 +34,7 @@ body {
 .container-dates {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    margin: 50px 0;
+    margin: 30px 20%;
 }
 
 

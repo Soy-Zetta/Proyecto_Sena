@@ -23,3 +23,15 @@ body::before {
 h4 {
     color: #fff;
 }
+
+.edit-cart-btn-input {
+    margin: 5px 0;
+}
+
+p {
+    color: #ddd;
+}
+
+b {
+    color: #fff;
+}
