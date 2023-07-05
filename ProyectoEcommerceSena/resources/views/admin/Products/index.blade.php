@@ -16,14 +16,14 @@
     </div>
 @endif
 
-<a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
+<a href="{{ route('products.create') }}" class="btn btn-outline-primary">Crear producto</a>
 <br><br>
 
 <form action="{{ route('buscador.search') }}" method="GET" class="mb-3">
     @csrf
     <div class="input-group">
         <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
-        <button type="submit" class="btn btn-primary">Buscar</button>
+        <button type="submit" class="btn btn-outline-primary">Buscar</button>
     </div>
 </form>
 

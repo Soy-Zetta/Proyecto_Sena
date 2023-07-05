@@ -8,15 +8,15 @@
 
 @section('content')
     @can('categories.create')
-        <a href="{{ route('categories.create') }}" class="btn btn-primary">Crear categoría</a>
+        <a href="{{ route('categories.create') }}" class="btn btn-outline-primary">Crear categoría</a>
     @endcan
 
     <br><br>
     <form action="{{ route('buscador.searchCategories') }}" method="GET">
         @csrf
         <div class="input-group">
-            <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de categoria" required>
+            <button type="submit" class="btn btn-outline-primary">Buscar</button>
         </div>
     </form>
 

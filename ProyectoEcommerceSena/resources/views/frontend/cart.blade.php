@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                     <br><a href="./shop" class="btn btn-primary">Sigue comprando</a>
-                    <a href="{{ route('cart.index') }}" class="btn btn-success">Ir al pago</a>
+                    <a href="{{ route('cart.index') }}" class="btn btn-success">Ir al pago.</a>
                 </div>
             @endif
         </div>

@@ -29,4 +29,9 @@ class detallecompra extends Model
     {
         return $this->belongsTo(producto::class, 'productos_id');
     }
+
+    // public function getTotal()
+    // {
+    //     return $this->cantidad * $this->precio;
+    // }
 }
