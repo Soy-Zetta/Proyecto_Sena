@@ -509,14 +509,7 @@ class ProductosTableSeeder extends Seeder
                 'categorias_id' => 9,
                 'proveedores_id' => 3
                 
-            ],
-
-
-
-
-
-
-            
+            ],            
             [
                 'nombre' => 'AMD R7 370',
                 'codigo' => 123456,
@@ -541,6 +534,63 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 3
                 
             ],
+
+
+
+
+            
+
+            
+            [
+                'nombre' => 'RTX 3070 Ti',
+                'codigo' => 123456,
+                'descripcion' => ' tarjeta gráfica potente de Nvidia que ofrece un rendimiento mejorado en comparación con la RTX 3070 estándar, brindando imágenes fluidas y realistas en juegos y aplicaciones gráficas intensivas.',
+                'precio' => 800000,
+                'existencias' => 14,
+                'imagen' => '3070_ti-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'RTX 3070',
+                'codigo' => 123456,
+                'descripcion' => 'Tarjeta gráfica de gama media de Nvidia que proporciona un excelente rendimiento en juegos y aplicaciones multimedia, con soporte para trazado de rayos y altas tasas de cuadros para una jugabilidad suave.',
+                'precio' => 750000,
+                'existencias' => 15,
+                'imagen' => '3070-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 3
+                
+            ],            
+            [
+                'nombre' => 'RTX 4070',
+                'codigo' => 123456,
+                'descripcion' => ' tarjetas gráficas de Nvidia con avances en rendimiento, eficiencia energética y tecnologías de trazado de rayos para una experiencia visual de última generación.',
+                'precio' => 650000,
+                'existencias' => 14,
+                'imagen' => '4070-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 2
+                
+            ],
+            [
+                'nombre' => 'RTX 4070 Ti',
+                'codigo' => 123456,
+                'descripcion' => ' La tarjeta gráfica de alta gama de Nvidia con un rendimiento excepcional y capacidades de trazado de rayos mejoradas para una experiencia visual inmersiva en juegos y aplicaciones exigentes.',
+                'precio' => 550000,
+                'existencias' => 15,
+                'imagen' => '4070tii-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 3
+                
+            ],
+
+
 
 
 
