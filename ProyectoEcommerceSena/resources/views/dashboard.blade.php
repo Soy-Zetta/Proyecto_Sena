@@ -12,13 +12,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0">Este Contenido es publico</p>
-                    @role('Admin')
-                    <p class="mb-0">Este Contenido es solo Administrador</p>
-                    @endrole
-                    @role('Empleado')
-                    <p class="mb-0">Este Contenido es solo Empleado</p>
-                    @endrole
+                    <p class="mb-0">Añadir metricas!!!</p>
                 </div>
             </div>
         </div>

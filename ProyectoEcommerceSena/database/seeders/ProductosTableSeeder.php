@@ -39,9 +39,9 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 1
             ],
             [
-                'nombre' => 'Monitor SAMSUNG Gaming ',
+                'nombre' => 'Monitor SAMSUNG Gaming',
                 'codigo' => 1234,
-                'descripcion' => 'Monitor SAMSUNG Gaming de 27" pulgadas, con tasa de actualización de 165Hz, tiempo de respuesta de 1ms.',
+                'descripcion' => 'Monitor SAMSUNG Gaming de 27 pulgadas, con tasa de actualización de 165Hz, tiempo de respuesta de 1ms.',
                 'precio' => 1200000,
                 'existencias' => 5,
                 'imagen' => 'Monitor SAMSUNG Gamer 27 pulgadas G320NL .png',
@@ -64,7 +64,7 @@ class ProductosTableSeeder extends Seeder
             [
                 'nombre' => 'Monitor LG Gaming ',
                 'codigo' => 123456,
-                'descripcion' => 'Monitor LG Gaming de 24" pulgadas, tasa de refresco de 144Hz que permite a los jugadores ver rápidamente el próximo cuadro con imágenes más fluidas',
+                'descripcion' => 'Monitor LG Gaming de 24 pulgadas, tasa de refresco de 144Hz que permite a los jugadores ver rápidamente el próximo cuadro con imágenes más fluidas',
                 'precio' => 850000,
                 'existencias' => 15,
                 'imagen' => 'Monitor LG Gamer 24 Pulgadas 24GN65R .png',
