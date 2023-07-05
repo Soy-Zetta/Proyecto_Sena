@@ -64,7 +64,9 @@
                         <div class="d-flex">
                             <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-outline-primary btn-sm mr-2">Editar</a>
                             @can('products.destroy')
-                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteModal{{ $producto->id }}">Eliminar</button>
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteModal{{ $producto->id }}"title="Eliminar">
+                                <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                            </button>
                             @endcan
                             <!-- Modal de confirmación de eliminación -->
                             <div class="modal fade" id="confirmDeleteModal{{ $producto->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel{{ $producto->id }}" aria-hidden="true">

@@ -96,6 +96,6 @@
     </div>
 
     <div class="text-right">
-        <button class="btn btn-primary" onclick="window.print()">Imprimir</button>
+        <button class="btn btn-outline-primary" onclick="window.print()">Imprimir</button>
     </div>
 @endsection

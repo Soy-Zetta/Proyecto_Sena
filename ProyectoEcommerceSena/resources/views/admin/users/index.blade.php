@@ -73,7 +73,9 @@
                                     <form action="{{ route('admin.users.destroy', $usuario->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-outline-danger">eliminar</button>
+                                        <button type="summit" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar este usuario?')" title="Eliminar">
+                                            <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                                        </button>
                                     </form>
                                     @endcan
 

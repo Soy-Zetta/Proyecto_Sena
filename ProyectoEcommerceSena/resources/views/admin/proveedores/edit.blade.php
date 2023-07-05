@@ -75,7 +75,7 @@
                  
             
                   <div>
-                    {{-- <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a> --}}
+                    <a href="{{ route('proveedores.index') }}" class="btn btn-secondary">Regresar</a>
 
                       <button type="submit" class="btn btn-dark">Guardar</button>
               </div>
