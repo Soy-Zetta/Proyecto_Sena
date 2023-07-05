@@ -45,7 +45,7 @@
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
                                         <input type="hidden" value="{{ $pro->nombre }}" id="name" name="name">
-                                        <input type="hidden" value="{{ $pro->precio }}" id="price" name="price">
+                                      <input type="hidden" value="{{ $pro->precio }}" id="price" name="price"> 
                                         <input type="hidden" value="{{ $pro->imagen }}" id="img" name="img">
                                       {{-- <input type="hidden" value="{{ $pro->slug }}" id="slug" name="slug"> --}} 
                                         <input type="hidden" value="1" id="quantity" name="quantity">
