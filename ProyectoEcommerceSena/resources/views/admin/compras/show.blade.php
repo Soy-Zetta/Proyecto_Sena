@@ -96,7 +96,11 @@
     </div>
 
     <div class="text-right">
+       
         <a href="{{ route('compras.index') }}" class="btn btn-outline-secondary">Regresar</a>
-       <button class="btn btn-outline-primary" onclick="window.print()">Imprimir</button>
+
+        {{-- <a href="{{ route('informe.compra', ['id' => $reportecompra->id]) }}" class="btn btn-outline-primary" target="_blank">Imprimir Reporte</a> --}}
+
+        <button class="btn btn-outline-primary" onclick="window.print()">Imprimir pagina</button>
     </div>
 @endsection

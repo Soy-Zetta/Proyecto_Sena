@@ -114,7 +114,7 @@ class CompraController extends Controller
     {
         $compra =compra::findorfail($id);
         $proveedores = proveedore::all();
-        return view('compras.edit',compact('compra','proveedores'));
+        return view('admin.compras.edit',compact('compra','proveedores'));
     }
 
     /**
