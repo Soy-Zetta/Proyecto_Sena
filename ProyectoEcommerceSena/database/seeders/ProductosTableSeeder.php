@@ -17,7 +17,7 @@ class ProductosTableSeeder extends Seeder
         								
         $productos = [
             [
-                 // productos camila 
+                 // productos 1
                 'nombre' => 'Monitor HP 23,8',
                 'codigo' => 1234,
                 'descripcion' => 'monitor HP ultradelgado con pantalla de micro-bordes y resolución Full HD. ',
@@ -132,32 +132,57 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 3
                 
             ],
-             //productos stiven
+             //productos 2
             [
-                'nombre' => 'Monitor KALLEY',
+                'nombre' => 'RAZER BLACK ',
                 'codigo' => 12345,
-                'descripcion' => 'monitor Kalley de 24” M24FP color gris',
-                'precio' => 600000,
+                'descripcion' => 'teclado gaming retroiluminado negro clasico, con Interruptores verdes - Táctiles y Clicky',
+                'precio' => 80000,
                 'existencias' => 15,
-                'imagen' => 'Monitor KALLEY 24 Pulgadas K-M24FP .png',
+                'imagen' => 'RAZER BLACK WIDOW V3.png',
                 'disponible' => 1,
-                'categorias_id' => 1,
-                'proveedores_id' => 2
+                'categorias_id' => 3,
+                'proveedores_id' => 3
                
             ],
             [
-                'nombre' => 'Monitor Gamer ACER',
+                'nombre' => 'Redragon K580',
                 'codigo' => 123456,
-                'descripcion' => 'portatil Color Negro 16gb Cmsx16gx5m1a4800c40',
-                'precio' => 800000,
+                'descripcion' => 'teclado Gaming retroiluminado impermeable, con interuptor MX azul',
+                'precio' => 95000,
                 'existencias' => 15,
-                'imagen' => 'Monitor Gamer ACER 23.8 Pulgadas QG241Y Pbmiipx .png',
+                'imagen' => 'Redragon K580 VATA RGB.png',
                 'disponible' => 1,
                 'categorias_id' => 3,
                 'proveedores_id' => 3
                 
             ],
-            // produ
+            [
+                'nombre' => 'VSG Gemini',
+                'codigo' => 12345,
+                'descripcion' => 'audifonos VSG Omnidirecional,Rango de frecuencia 20-20 KHz
+                ',
+                'precio' => 80000,
+                'existencias' => 15,
+                'imagen' => 'VSG Gemini.png',
+                'disponible' => 1,
+                'categorias_id' => 4,
+                'proveedores_id' => 3
+               
+            ],
+            [
+                'nombre' => 'Logitech G733',
+                'codigo' => 123456,
+                'descripcion' => 'audifonos Logitech G modelo G733 LIGHTSPEED Color Negro conectividad Bluetooth',
+                'precio' => 95000,
+                'existencias' => 15,
+                'imagen' => 'Logitech G733 Lightspeed.png',
+                'disponible' => 1,
+                'categorias_id' => 4,
+                'proveedores_id' => 3
+                
+            ],
+           
 
             // Agrega más productos aquí si es necesario
         ];
