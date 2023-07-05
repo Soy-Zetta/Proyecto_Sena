@@ -38,7 +38,7 @@ Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () 
     //buscador de productos panel de Categorias
     Route::get('/buscador/categories', [BuscadorController::class, 'searchCategories'])->name('buscador.searchCategories');
     //Buscador de productos panel de Proveedores
-    Route::get('/buscador_proveedores', [BuscadorController::class, 'searchproveedor'])->name('buscador.searchproveedor');
+    Route::get('/buscador/proveedores', [BuscadorController::class, 'searchproveedor'])->name('buscador.searchproveedor');
     //Buscador de productos panel de Clientes
     Route::get('/buscador_clientes', [BuscadorController::class, 'searchclientes'])->name('buscador.searchclientes');
     //Panel de administración, Ruta CRUD de Clientes

@@ -14,7 +14,7 @@
         </div>
     @endif
         @can('admin.users.create')
-        <a href="{{ route('admin.users.create') }}" class="btn btn-success">Crear Usuario</a>
+        <a href="{{ route('admin.users.create') }}" class="btn btn-outline-success">Crear Usuario</a>
         @endcan
     <br><br>
 
@@ -33,7 +33,7 @@
                             placeholder="Buscar por numero de identificación o correo electronico">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="submit" class="btn btn-outline-primary">Buscar</button>
                     </div>
 
                     <thead>
@@ -65,7 +65,7 @@
                                 <td>
                                     @can('admin.users.edit')
                                     <a href="{{ route('admin.users.edit', $usuario->id) }}"
-                                        class="btn btn-primary">editar</a>
+                                        class="btn btn-outline-primary">editar</a>
                                     @endcan
                                 </td>
                                 <td>
@@ -73,7 +73,7 @@
                                     <form action="{{ route('admin.users.destroy', $usuario->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">eliminar</button>
+                                        <button type="submit" class="btn btn-outline-danger">eliminar</button>
                                     </form>
                                     @endcan
 

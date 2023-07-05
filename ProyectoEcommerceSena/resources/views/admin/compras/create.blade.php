@@ -150,7 +150,7 @@
                     <input type="number" name="total" class="form-control" value="{{ old('total') }}" readonly>
                 </div> --}}
 
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-outline-warning">Guardar</button>
             </form>
         </div>
     </div>

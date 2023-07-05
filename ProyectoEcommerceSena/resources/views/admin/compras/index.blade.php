@@ -137,7 +137,7 @@
                     <td>{{ $compra->estado }}</td>
                    
                     <td style="width: 280px;">
-                        <a href="{{ route('compras.show', $compra->id) }}" class="btn btn-info">Ver</a>
+                        <a href="{{ route('compras.show', $compra->id) }}" class="btn btn-outline-info">Ver</a>
                         
                         <a class="jsfrid-button btn-btn-info jsgrid-edit-button" href="{
                         {route('compras.edit', $compras)}}"title="editar"><i class="fas fa-edit" style="font-size: 28px;"></i></a>
