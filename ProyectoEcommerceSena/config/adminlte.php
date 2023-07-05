@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Ram Service',
+    'title' => 'Servi Tech',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -112,8 +112,8 @@ return [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 80,
-            'height' => 80,
+            'width' => 100,
+            'height' => 40,
         ],
     ],
 
@@ -192,7 +192,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-light-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-info elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
