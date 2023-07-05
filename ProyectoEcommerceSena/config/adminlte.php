@@ -374,7 +374,7 @@ return [
         [
             'text' => 'Reportes',
             'icon' => 'fas fa-file-invoice',
-            'url'  => 'admin/blog',
+            'url'  => '#',
         ],
 
         [
