@@ -10,9 +10,9 @@
 
 @section('content')
 
-@if (session('delete'))
-    <div class="alert alert-success">
-        {{ session('delete') }}
+@if (session('success'))
+    <div id="success-message" class="alert alert-success">
+        {{ session('success') }}
     </div>
 @endif
 
@@ -104,3 +104,4 @@
     @section('css')
         <link rel="stylesheet" href="{{ asset('css/products.css') }}">
     @stop
+    

@@ -88,7 +88,7 @@ class ProductoController extends Controller
             $producto->save();
         
             // Redirige a la vista de detalles del producto o a donde desees
-            return redirect()->route('products.index');
+            return redirect()->route('products.index')->with('success','producto creado exitosamente');
         
         
     }
@@ -199,7 +199,7 @@ class ProductoController extends Controller
         if ($nombreImagen && file_exists(public_path('images/' . $nombreImagen))) {
             unlink(public_path('images/' . $nombreImagen));
         }
-            return redirect()->route('products.index')->with('delete','datos eliminados');
+            return redirect()->route('products.index')->with('success','producto eliminado');
         }
 }
 
