@@ -60,12 +60,13 @@ body::before {
     padding: 10px 10px 10px 10px;
     color: gray;
     text-shadow: 2px 2px 5px black;
-   border-style: solid;
-   border-radius: 6px;
+    border-style: solid;
+    border-radius: 6px;
 
 
 
 }
+
 .contenedor{
     height: 1700px;
     width:1250px;
@@ -87,11 +88,13 @@ body::before {
     cursor: pointer;
     transition: all 400ms ease;
 }
+
 .empresa:hover{
     box-shadow: 5px 5px 20px aqua;
     transform: translateY(-3%);
 
 }
+
 .mision{
     background-color: gainsboro;
     height: 400px;
@@ -105,10 +108,12 @@ body::before {
     cursor: pointer;
     transition: all 400ms ease;
 }
+
 .mision:hover{
     box-shadow: 5px 5px 20px aqua;
     transform: translateY(-3%);
 }
+
 .vision{
     background-color: gainsboro;
     height: 400px;
@@ -122,6 +127,7 @@ body::before {
     cursor: pointer;
     transition: all 400ms ease;
 }
+
 .vision:hover{
     box-shadow: 5px 5px 20px aqua;
     transform: translateY(-3%);
@@ -133,6 +139,7 @@ span{
        /* font-weight: 100; */
 
 }
+
 span::before{
     content: --;
     border: red solid;
@@ -140,34 +147,37 @@ span::before{
     bottom: 0;
     left: 0;
 }
+
 .textempresa{
 text-align: justify;
 padding: 5px;
 font-size: 19px;
 }
+
 .textmision{
     text-align: justify;
     padding: 5px;
     font-size: 22px;
 }
+
 .textvision{
     text-align: justify;
     padding: 5px;
     font-size: 22px;
 }
 .equipo{
-
     margin-top: 20px;
     font-size: 20px;
     height: 600px;
     background-image: url(../img/imgSobre-nosotros/fgrupal.jpeg);
     background-position: top center;
-   background-size:cover;
-   background-repeat: no-repeat;
-   border: 5px solid grey;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border: 5px solid grey;
 
 
 }
+
 .imgempresa{
     background-image: url(../img/imgSobre-nosotros/logo.jpeg);
     background-position: center;
@@ -176,6 +186,7 @@ font-size: 19px;
     height: 150px;
     width: 90%;
 }
+
 .imgmision{
     background-image: url(../img/imgSobre-nosotros/mision.png);
     background-position: center;
@@ -184,6 +195,7 @@ font-size: 19px;
     height: 150px;
     width: 90%;
 }
+
 .imgvision{
     background-image: url(../img/imgSobre-nosotros/vision2.png);
     background-position: center;
@@ -192,6 +204,7 @@ font-size: 19px;
     height: 150px;
     width: 90%;
 }
+
 .tequipo{
     background-color:black;
     margin: 520px 10px 10px 10px;
@@ -199,8 +212,5 @@ font-size: 19px;
     height: 40px;
     text-align: center;
     color: aqua;
-
-
-
 
 }
