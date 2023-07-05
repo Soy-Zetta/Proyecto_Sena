@@ -61,7 +61,7 @@
                     <div class="item">
                         <img src="{{ asset('images/msi  B85-G43.png') }}" alt="producto1">
                         <div>
-                            <h3>TITLE PRODUCT</h3>
+                            <h3>msi lga 1150</h3>
                             <p>price</p>
                         </div>
                     </div>
@@ -70,16 +70,16 @@
                         <div class="item">
                             <img src="{{ asset('images/gigabyte-x670-gaming-x.png') }}" alt="producto1">
                             <div>
-                                <h3>TITLE PRODUCT</h3>
+                                <h3>gigabyte-x671</h3>
                                 <p>price</p>
                             </div>
                         </div>
                     </a>
                         <a class="destacado-item" href="">
                         <div class="item">
-                            <img src="{{ asset('images/Torre 10.png') }}" alt="producto1">
+                            <img src="{{ asset('images/gigabyte-x670-gaming- 2x.png') }}" alt="producto1">
                             <div>
-                                <h3>TITLE PRODUCT</h3>
+                                <h3>lian li pc-011 Dynamic</h3>
                                 <p>price</p>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="item">
                             <img src="{{ asset('images/tarjeta-madre-board-asrock-itx-ac-wifi copia.png') }}" alt="producto1">
                             <div>
-                                <h3>TITLE PRODUCT</h3>
+                                <h3>board asrock-itx</h3>
                                 <p>price</p>
                             </div>
                         </div>
@@ -97,40 +97,40 @@
                 </div>
             </div>
             <div class="container-destacados">
-                <h2>CATEGORIAS DESTACADAS</h2>
+                <h2>GABINETES DESTACADOS</h2>
                 <div class="container-items">
                     <a class="destacado-item" href="">
                     <div class="item">
-                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <img src="{{ asset('images/Torre 4.png') }}" alt="producto1">
                         <div>
-                            <h3>TITLE PRODUCT</h3>
+                            <h3>NZXT H510</h3>
                             <p>price</p>
                         </div>
                     </div>
                     </a>
                     <a class="destacado-item" href="">
                     <div class="item">
-                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <img src="{{ asset('images/Torre 6.png') }}" alt="producto1">
                         <div>
-                            <h3>TITLE PRODUCT</h3>
+                            <h3>fractal design Meshify C </h3>
                             <p>price</p>
                         </div>
                     </div>
                     </a>
                     <a class="destacado-item" href="">
                     <div class="item">
-                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <img src="{{ asset('images/Torre 7.png') }}" alt="producto1">
                         <div>
-                            <h3>TITLE PRODUCT</h3>
+                            <h3>phantks Eclipse p400S</h3>
                             <p>price</p>
                         </div>
                     </div>
                     </a>
                     <a class="destacado-item" href="">
                     <div class="item">
-                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <img src="{{ asset('images/Torre 8.png') }}" alt="producto1">
                         <div>
-                            <h3>TITLE PRODUCT</h3>
+                            <h3>thermaltake Versa H18</h3>
                             <p>price</p>
                         </div>
                     </div>
