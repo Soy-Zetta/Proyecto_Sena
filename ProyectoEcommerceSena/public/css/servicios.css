@@ -1,9 +1,24 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+body {
+  background: url(../img/fondo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background-color: #000a;
+  z-index: -10;
+}
+
+h3, p {
+  color: #ffffff !important;
 }
 
 /* Tarjetas */
@@ -74,19 +89,6 @@
   }
 }
 
-body {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
-  background: linear-gradient(
-      117deg,
-      rgba(6, 66, 103, 0.948),
-      rgb(11, 11, 11) 70.60%
-    ),
-    linear-gradient(127deg, rgba(97, 97, 100, 0.995), rgba(26, 121, 180, 0.977) 100%),
-    linear-gradient(336deg, rgba(17, 17, 17, 0.378), rgb(51, 73, 94) 100%);
-}
 
 /* Tarjetas */
 
@@ -158,14 +160,12 @@ body {
 }
 
 .container-boton {
-  background-color: #2e6329;
-  border: 1px solid #fff;
   position: fixed;
   z-index: 999;
   border-radius: 50%;
   bottom: 20px;
   right: 25px;
-  padding: 5px;
+  padding: 2px;
   transition: ease 0.3s;
   animation: efecto 1.2s infinite;
 }
@@ -189,19 +189,28 @@ body {
   }
 }
 
+
+/* SUB PAGINAS
+================================================================= */
+
+
+
+
+
+
 .container-servicios {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #63a39362;
+  background-color: #ffffff39;
+  margin: 100px 200px;
+  padding: 30px;
+  border-radius: 20px;
+
 }
 
-h1 {
+h1, figcaption {
   text-align: center;
-  font-family: 'Exo 2', Arial, sans-serif;
   font-size: 25px;
-  margin-bottom: 15px;
-  color: #7ef622;
+  margin-bottom: 50px;
+  color: #ffffff;
 }
 
 p {
@@ -232,7 +241,7 @@ p {
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 30px;
-  color: #7ef622;
+  color: #ffffff;
 }
 
 .informacion {
@@ -289,7 +298,7 @@ p {
   font-style: italic;
   font-weight: bold;
   font-size: 30px;
-  color: #7ef622;
+  color: #ffffff;
   margin-bottom: -5px;
   margin-top: 20px;
 }

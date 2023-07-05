@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\CompraController;
 use App\Http\Controllers\Admin\PedidoController;
+use App\Http\Controllers\Admin\ReporteController;
 use Spatie\Permission\Middlewares\RoleMiddleware;
 
 
@@ -25,6 +26,10 @@ Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () 
     Route::resource('roles', RoleController::class)->names('admin.roles')->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
     //Panel de administración, Ruta CRUD de los Productos.
     Route::resource('/products', ProductoController::class)->names('products');
+
+    //Panel de administración, Ruta CRUD de los Reportes.
+    // Route::get('/reporte/{id}', [ReporteController::class, 'generarReporte'])->name('reporte.compra');
+
     //Panel de administración, Ruta CRUD de los Proveedores.
     Route::resource('/proveedores', ProveedorController::class)->names('proveedores');
     //Panel de administración, Ruta de las Categorias.
