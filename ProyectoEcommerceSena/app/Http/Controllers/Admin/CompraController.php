@@ -11,6 +11,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+
 class CompraController extends Controller
 {
     /**
@@ -140,4 +142,15 @@ class CompraController extends Controller
 
         return redirect()->route('compras.index');
     }
+
+    // public function pdf (string $id)
+    // {
+    //     Generar el contenido del PDF utilizando la librería Dompdf
+    //    $pdf = PDF::loadView('admin.compras.pdf', compact('compras','detallecompras'));
+
+    //     Devolver el PDF como una respuesta descargable
+    //    return $pdf->download('Reporte_de_compra.pdf');
+
+    // }
+
 }

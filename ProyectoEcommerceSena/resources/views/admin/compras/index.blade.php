@@ -141,7 +141,8 @@
                         
                         <a class="jsfrid-button btn-btn-info jsgrid-edit-button" href="{
                         {route('compras.edit', $compras)}}"title="editar"><i class="fas fa-edit" style="font-size: 28px;"></i></a>
-                        {{-- <a href="{{ route('compras.edit', $compra->id) }}" class="btn btn-primary">Editar</a> --}}
+                       
+                        <a href="#" class="jsgrid-button jsgrid-edit-button"><i class="fas fa-print"></i></a>
                         
                         <form action="{{ route('compras.destroy', $compra->id) }}" method="POST" style="display: inline-block;">
                             @csrf

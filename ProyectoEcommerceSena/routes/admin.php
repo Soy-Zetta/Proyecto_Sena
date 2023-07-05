@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\CompraController;
 use App\Http\Controllers\Admin\PedidoController;
-use App\Http\Controllers\Admin\ReporteController;
+// use App\Http\Controllers\Admin\ReporteController;
 use Spatie\Permission\Middlewares\RoleMiddleware;
 
 
@@ -28,7 +28,7 @@ Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () 
     Route::resource('/products', ProductoController::class)->names('products');
 
     //Panel de administración, Ruta CRUD de los Reportes.
-    // Route::get('/reporte/{id}', [ReporteController::class, 'generarReporte'])->name('reporte.compra');
+    // Route::get('compras/pdf/compras', 'CompraController@pdf'::class)->name('compras.pdf');
 
     //Panel de administración, Ruta CRUD de los Proveedores.
     Route::resource('/proveedores', ProveedorController::class)->names('proveedores');

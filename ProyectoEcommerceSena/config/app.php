@@ -168,7 +168,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+       
+        //Dompdf
+        // Barryvdh\donpdf\RouteServiceProvider::class,
+        
         //Spatie
         Spatie\Permission\PermissionServiceProvider::class,
     ])->toArray(),
@@ -189,8 +192,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        // 'PDF'=>Barryvdh\donpdf\Facade::class,
     ])->toArray(),
-
+        
     // Darryldecode\Cart
     'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 

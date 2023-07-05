@@ -31,5 +31,5 @@
         </tbody>
     </table>
     {{-- <a href="{{ route('reporte.compra') }}" class="btn btn-outline-primary" target="_blank">Imprimir Reporte</a> --}}
-</body>
-</html> --}}
+{{-- </body>
+</html>  --}}
