@@ -6,9 +6,9 @@
   <title>Mantenimiento General</title>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+  <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
   <link rel="stylesheet" href="{{ asset('css/servicios.css') }}">
 </head>
-<body>
   <main>
     <div class="container-servicios">
       <section class="carrusel-servicios">
