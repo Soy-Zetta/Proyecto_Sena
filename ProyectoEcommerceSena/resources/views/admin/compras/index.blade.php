@@ -146,7 +146,7 @@
                         <form action="{{ route('compras.destroy', $compra->id) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="jsgrid-button btn btn-danger jsgrid-delete-button" onclick="return confirm('¿Estás seguro de eliminar esta compra?')" title="Eliminar">
+                            <button type="summit" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar esta compra?')" title="Eliminar">
                                 <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
                             </button>
                         </form>

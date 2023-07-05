@@ -48,7 +48,9 @@
 
                             <!-- Modal de confirmación de eliminación -->
                             @can('categories.destroy')
-                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"  data-target="#confirmDeleteModal{{ $categoria->id }}">  Eliminar  </button>
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"  data-target="#confirmDeleteModal{{ $categoria->id }}"title="Eliminar">  <i class="fas fa-trash-alt" style="font-size: 12spx;"></i> 
+                                    
+                               </button>
                             @endcan
 
                             <!-- Modal de confirmación de eliminación -->

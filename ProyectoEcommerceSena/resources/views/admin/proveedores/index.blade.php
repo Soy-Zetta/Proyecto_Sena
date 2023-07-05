@@ -73,7 +73,9 @@
                             <form action="{{ route('proveedores.destroy', $proveedor->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger">eliminar</button>
+                                <button type="summit" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar este proveedor?')" title="Eliminar">
+                                    <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>

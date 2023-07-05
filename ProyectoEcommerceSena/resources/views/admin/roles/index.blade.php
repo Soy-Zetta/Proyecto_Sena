@@ -47,7 +47,9 @@
                                         <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-outline-danger">eliminar</button>
+                                            <button type="button" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar este Rol?')" title="Eliminar">
+                                                <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                                            </button>
                                         </form>
                                     @endcan
 
