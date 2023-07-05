@@ -38,12 +38,12 @@
                             <td>{{ $pedido->cantidad }}</td>
                             <td>{{ $pedido->precio }}</td>
                            <td>
-                             <a href="{{ route('admin.pedidos.edit', $pedido->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                             <a href="{{ route('admin.pedidos.edit', $pedido->id) }}" class="btn btn-outline-primary">Editar</a>
                             <form action="{{ route('admin.pedidos.destroy', $pedido->id) }}" method="POST" class="d-inline">
                              @csrf
                              @method('DELETE')
                              <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este pedido?')">Eliminar</button>
-                                </form>
+                                </form btn-outline-primary
                                 <!-- Botón "Ver Detalles" fuera de la lista -->
             <a href="{{ route('admin.pedidos.show', $pedido->id) }}" class="btn btn-Info">Ver Detalles</a>
                             </td>
