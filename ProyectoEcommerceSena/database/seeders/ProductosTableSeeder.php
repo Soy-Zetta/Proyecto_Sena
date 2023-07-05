@@ -182,6 +182,31 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 3
                 
             ],
+            [
+                'nombre' => 'VSG Gemini',
+                'codigo' => 12345,
+                'descripcion' => 'audifonos VSG Omnidirecional,Rango de frecuencia 20-20 KHz
+                ',
+                'precio' => 80000,
+                'existencias' => 15,
+                'imagen' => 'VSG Gemini.png',
+                'disponible' => 1,
+                'categorias_id' => 4,
+                'proveedores_id' => 3
+               
+            ],
+            [
+                'nombre' => 'Logitech G733',
+                'codigo' => 123456,
+                'descripcion' => 'audifonos Logitech G modelo G733 LIGHTSPEED Color Negro conectividad Bluetooth',
+                'precio' => 95000,
+                'existencias' => 15,
+                'imagen' => 'Logitech G733 Lightspeed.png',
+                'disponible' => 1,
+                'categorias_id' => 4,
+                'proveedores_id' => 3
+                
+            ],
            
 
             // Agrega más productos aquí si es necesario
