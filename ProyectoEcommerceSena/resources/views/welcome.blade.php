@@ -59,7 +59,7 @@
                 <div class="container-items">
                     <a class="destacado-item" href="">
                     <div class="item">
-                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <img src="{{ asset('images/msi  B85-G43.png') }}" alt="producto1">
                         <div>
                             <h3>TITLE PRODUCT</h3>
                             <p>price</p>
@@ -68,7 +68,7 @@
                     </a>
                     <a class="destacado-item" href="">
                         <div class="item">
-                            <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                            <img src="{{ asset('images/gigabyte-x670-gaming-x.png') }}" alt="producto1">
                             <div>
                                 <h3>TITLE PRODUCT</h3>
                                 <p>price</p>
@@ -77,7 +77,7 @@
                     </a>
                         <a class="destacado-item" href="">
                         <div class="item">
-                            <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                            <img src="{{ asset('images/Torre 10.png') }}" alt="producto1">
                             <div>
                                 <h3>TITLE PRODUCT</h3>
                                 <p>price</p>
@@ -86,7 +86,7 @@
                     </a>
                     <a class="destacado-item" href="">
                         <div class="item">
-                            <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                            <img src="{{ asset('images/tarjeta-madre-board-asrock-itx-ac-wifi copia.png') }}" alt="producto1">
                             <div>
                                 <h3>TITLE PRODUCT</h3>
                                 <p>price</p>
