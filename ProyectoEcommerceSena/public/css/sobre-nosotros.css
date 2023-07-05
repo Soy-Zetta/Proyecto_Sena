@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
 
-body{
-
-    background: url(../img/imgSobre-nosotros/img1.jpg);
+body {
+    background: url(../img/fondo.jpg);
+    background-position: center;
     background-repeat: no-repeat;
-   background-position: top center;
-   background-size:contain;
-
-
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    z-index: -10;
+}
+
+
 .titulo{
     background:rgba(5, 7, 12, 0.4);
     font-size: 60px;
@@ -24,7 +34,6 @@ body{
 }
 
 .whatsapp{
-    background-color:aqua;
     background-image: url(../img/imgSobre-nosotros/img3.png);
     background-repeat: no-repeat;
     background-position: left;
@@ -33,38 +42,39 @@ body{
     margin: 240px 30px 60px 10px;
     border-radius: 6px;
     overflow: hidden;
-
     cursor: pointer;
-    transition: all 400ms ease, width 3s;
+    transition: all 400ms ease, width .3s;
    }
-   .whatsapp:hover{
-  width: 800px;
+.whatsapp:hover{
+    width: 800px;
     transform: translateY(-3%);
-   }
- .tel{
+}
+
+.tel{
 /* background-color: black; */
     height: 40px;
     width: 600px;
     text-align: left;
-    font-size: 35px;
+    font-size: 1.1em;
     margin: 55px 05px 05px 160px;
     padding: 10px 10px 10px 10px;
     color: gray;
     text-shadow: 2px 2px 5px black;
-   border-style: solid;
-   border-radius: 6px;
+    border-style: solid;
+    border-radius: 6px;
 
 
 
 }
+
 .contenedor{
     height: 1700px;
     width:1250px;
-
-
-
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .empresa{
     background-color: gainsboro;
     height: 400px;
@@ -78,11 +88,13 @@ body{
     cursor: pointer;
     transition: all 400ms ease;
 }
+
 .empresa:hover{
     box-shadow: 5px 5px 20px aqua;
     transform: translateY(-3%);
 
 }
+
 .mision{
     background-color: gainsboro;
     height: 400px;
@@ -96,10 +108,12 @@ body{
     cursor: pointer;
     transition: all 400ms ease;
 }
+
 .mision:hover{
     box-shadow: 5px 5px 20px aqua;
     transform: translateY(-3%);
 }
+
 .vision{
     background-color: gainsboro;
     height: 400px;
@@ -113,6 +127,7 @@ body{
     cursor: pointer;
     transition: all 400ms ease;
 }
+
 .vision:hover{
     box-shadow: 5px 5px 20px aqua;
     transform: translateY(-3%);
@@ -124,6 +139,7 @@ span{
        /* font-weight: 100; */
 
 }
+
 span::before{
     content: --;
     border: red solid;
@@ -131,34 +147,37 @@ span::before{
     bottom: 0;
     left: 0;
 }
+
 .textempresa{
 text-align: justify;
 padding: 5px;
 font-size: 19px;
 }
+
 .textmision{
     text-align: justify;
     padding: 5px;
     font-size: 22px;
 }
+
 .textvision{
     text-align: justify;
     padding: 5px;
     font-size: 22px;
 }
 .equipo{
-
     margin-top: 20px;
     font-size: 20px;
     height: 600px;
     background-image: url(../img/imgSobre-nosotros/fgrupal.jpeg);
     background-position: top center;
-   background-size:cover;
-   background-repeat: no-repeat;
-   border: 5px solid grey;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border: 5px solid grey;
 
 
 }
+
 .imgempresa{
     background-image: url(../img/imgSobre-nosotros/logo.jpeg);
     background-position: center;
@@ -167,6 +186,7 @@ font-size: 19px;
     height: 150px;
     width: 90%;
 }
+
 .imgmision{
     background-image: url(../img/imgSobre-nosotros/mision.png);
     background-position: center;
@@ -175,6 +195,7 @@ font-size: 19px;
     height: 150px;
     width: 90%;
 }
+
 .imgvision{
     background-image: url(../img/imgSobre-nosotros/vision2.png);
     background-position: center;
@@ -183,6 +204,7 @@ font-size: 19px;
     height: 150px;
     width: 90%;
 }
+
 .tequipo{
     background-color:black;
     margin: 520px 10px 10px 10px;
@@ -190,8 +212,5 @@ font-size: 19px;
     height: 40px;
     text-align: center;
     color: aqua;
-
-
-
 
 }

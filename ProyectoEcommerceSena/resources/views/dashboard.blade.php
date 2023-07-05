@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Dashboard')
 
 @section ('Sweetalert2')
 @section('content_header')

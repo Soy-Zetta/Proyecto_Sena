@@ -17,9 +17,6 @@
             <div class="header__section1__title">
                 <img width="70px" src="{{ asset('img/logo.png') }}" class="header__section1__title-h2">
             </div>
-            <div class="search-container">
-                <input class="header__section1__input" type="search"><i class="fas fa-search"></i>
-            </div>
             <div class="header__section1__container-btn">
                 <button class="header__menu-mobile-btn btnNavbarOn"><i class="fas fa-bars"></i></button>
                 <input class="header__section1__input-mobile" type="search"><i id="icon-search"
