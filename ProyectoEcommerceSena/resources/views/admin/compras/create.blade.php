@@ -106,25 +106,49 @@
                     <select name="productos_id[]" id="productos_id" class="form-control" required>
                         <option value="">Seleccione un producto</option>
                         @foreach($productos as $producto)
-                            <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
+                            <option value="{{ $producto->id }}">{{ $producto->descripcion}}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="cantidad">Cantidad</label>
-                    <input type="number" name="cantidad[]" class="form-control" required>
+                    <select name="cantidad[]" id="cantidad" class="form-control" required>
+                     @foreach($productos as $producto)
+                            <option value="{{ $producto->id }}">{{ $producto->existencias}}</option>
+                        @endforeach
+                    </select>
                 </div>
+                           
+                 {{-- <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" name="cantidad[]" class="form-control" required>
+                </div> --}}
 
                 <div class="form-group">
                     <label for="precio">Precio</label>
-                    <input type="number" name="precio[]" class="form-control" required>
+                    <select name="precio[]" id="precio" class="form-control" required>
+                     @foreach($productos as $producto)
+                            <option value="{{ $producto->id }}">{{ $producto->precio }}</option>
+                        @endforeach
+                    </select>
                 </div>
+                
+                
+               {{-- <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio[]" class="form-control" required>
+                </div> --}}
 
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
                     <input type="text" name="descripcion[]" class="form-control" required>
                 </div>
+
+                {{-- <div class="form-group">
+                    <label for="total">Total</label>
+                    <input type="number" name="total" class="form-control" value="{{ old('total') }}" readonly>
+                </div> --}}
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>

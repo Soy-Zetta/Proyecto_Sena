@@ -39,24 +39,64 @@ class CompraController extends Controller
 
     public function store(Request $request)
     {
-        $compra = compra::create($request->all() + [
-            'fecha' => Carbon::now('America/Bogota'),
-            'proveedores_id' =>$request->proveedor,
-            'users_id'=>Auth::user()->id,
-        ]);
+        // $results = [];
+        // $total = 0.00;
         
-        $results = [];
-        foreach ($request->productos_id as $key => $producto) {
-            $results[] = [
-                "productos_id" => $request->productos_id[$key],
-                "cantidad" => $request->cantidad[$key],
-                "precio" => $request->precio[$key],
-                "descripcion" => $request->descripcion[$key],
-            ];
-        }
+        // foreach ($request->productos_id as $key => $producto) {
+        //     $results[] = [
+        //         "productos_id" => $request->productos_id[$key],
+        //         "cantidad" => $request->cantidad[$key],
+        //         "precio" => $request->precio[$key],
+        //         "descripcion" => $request->descripcion[$key],
+        //     ];
+        
+            
+        //     $subtotal = $request->cantidad[$key] * $request->precio[$key];
+        //     $total += $subtotal;
+        // }
+        
+        // $compra = compra::create($request->all() + [
+        //     'fecha' => Carbon::now('America/Bogota'),
+        //     'proveedores_id' => $request->proveedor,
+        //     'users_id' => Auth::user()->id,
+        //     'total' => $total,
+        // ]);
+        
+        
+        // $compra->detallecompra()->createMany($results);
+        
+        // return redirect()->route('compras.index');       
+        
+        
+        
+        
+        
+        
+        
+        
+         $compra = compra::create($request->all() + [
+              'fecha' => Carbon::now('America/Bogota'),
+              'proveedores_id' =>$request->proveedor,
+              'users_id'=>Auth::user()->id,
+          ]);
+          
+        //   $total = $request->cantidad * $request->precio;
+        
+          $results = [];
+          foreach ($request->productos_id as $key => $producto) {
+              $results[] = [
+                  "productos_id" => $request->productos_id[$key],
+                  "cantidad" => $request->cantidad[$key],
+                  "precio" => $request->precio[$key],
+                  "descripcion" => $request->descripcion[$key],
+                //   "total"=> $total
+
+              ];
+
+          }
        
-        $compra->detallecompra()->createMany($results);
-        return redirect()->route('compras.index');
+          $compra->detallecompra()->createMany($results);
+          return redirect()->route('compras.index');
     }
 
     
@@ -64,7 +104,7 @@ class CompraController extends Controller
     public function show(string $id)
     {
         $compra = compra::findOrFail($id);
-        return view('compras.show', compact('compra'));
+        return view('admin.compras.show', compact('compra'));
     }
 
     /**
@@ -74,7 +114,7 @@ class CompraController extends Controller
     {
         $compra =compra::findorfail($id);
         $proveedores = proveedore::all();
-        return view('admin.compras.edit',compact('compra','proveedores'));
+        return view('compras.edit',compact('compra','proveedores'));
     }
 
     /**

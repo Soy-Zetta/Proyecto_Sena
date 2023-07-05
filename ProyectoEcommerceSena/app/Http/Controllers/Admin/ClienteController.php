@@ -106,7 +106,7 @@ class ClienteController extends Controller
             'email' => 'required',
             'contraseña' => 'required',
             'telefono' => 'required',
-            'tipop_documento' => 'required',
+            'tipo_documento' => 'required',
             'numero_documento' => 'required',
             
         ]);
@@ -116,7 +116,7 @@ class ClienteController extends Controller
         $cliente->email = $validarDatos['email'];
         $cliente->contraseña = $validarDatos['contraseña'];
         $cliente->telefono = $validarDatos['telefono '];
-        $cliente->tipo_documento = $validarDatos['ttipo_documento'];
+        $cliente->tipo_documento = $validarDatos['tipo_documento'];
         $cliente->numero_documento = $validarDatos['numero_documento'];
         $cliente->update();
         

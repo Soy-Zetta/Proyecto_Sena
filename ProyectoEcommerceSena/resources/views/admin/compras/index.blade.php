@@ -105,6 +105,9 @@
     </div>
 @endif
 
+
+
+
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Compras Registradas</h3>
@@ -113,29 +116,39 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Proveedor</th>
-                    <th>Total</th>
-                    <th>Fecha</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
+                    <th>ID</th>                
+                    <th>TOTAL</th>
+                    <th>FECHA</th>
+                    <th>ESTADO</th>
+                    <th style="width:280px; ">ACCIONES</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($compras as $compra)
                 <tr>
-                    <td>{{ $compra->id }}</td>
-                    <td>{{ $compra->proveedor->nombre }}</td>
+                    <th scope="row">
+                        {{ $compra->id}}           
+                    </th>
+
+                    {{-- <td>{{ $compra->proveedor->nombre }}</td> --}}
+                    {{-- <td>{{ $compra->producto->descripcion}}</td> --}}
                     <td>{{ $compra->total }}</td>
                     <td>{{ $compra->fecha }}</td>
                     <td>{{ $compra->estado }}</td>
-                    <td>
+                   
+                    <td style="width: 280px;">
                         <a href="{{ route('compras.show', $compra->id) }}" class="btn btn-info">Ver</a>
-                        <a href="{{ route('compras.edit', $compra->id) }}" class="btn btn-primary">Editar</a>
+                        
+                        <a class="jsfrid-button btn-btn-info jsgrid-edit-button" href="{
+                        {route('compras.edit', $compras)}}"title="editar"><i class="fas fa-edit" style="font-size: 28px;"></i></a>
+                        {{-- <a href="{{ route('compras.edit', $compra->id) }}" class="btn btn-primary">Editar</a> --}}
+                        
                         <form action="{{ route('compras.destroy', $compra->id) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta compra?')">Eliminar</button>
+                            <button type="submit" class="jsgrid-button btn btn-danger jsgrid-delete-button" onclick="return confirm('¿Estás seguro de eliminar esta compra?')" title="Eliminar">
+                                <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                            </button>
                         </form>
                     </td>
                 </tr>

@@ -47,7 +47,7 @@ Route::middleware([RoleMiddleware::class.':Admin|Empleado'])->group(function () 
     //Panel de administración, Ruta CRUD Compras
     Route::resource('/compras',CompraController::class)->names('compras');
 });
-// POR AQUI ESTUVO ZETTA ORGANIZANDO LAS RUTAS :)
+// POR AQUI ESTUVO ZETTA ORGANIZANDO LAS RUTAS .l.
 
 
 
