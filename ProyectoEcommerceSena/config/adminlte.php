@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' => 'Servi Tech',
+    'title' => '',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => '| Servi Tech',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,8 +30,8 @@ return [
     |
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -374,7 +374,7 @@ return [
         [
             'text' => 'Reportes',
             'icon' => 'fas fa-file-invoice',
-            'url'  => 'admin/blog',
+            'url'  => '#',
         ],
 
         [
