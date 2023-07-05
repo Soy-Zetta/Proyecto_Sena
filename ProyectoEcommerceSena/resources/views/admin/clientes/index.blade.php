@@ -14,7 +14,7 @@
     <a href="#" class="container-profile">
         <i class="fas fa-user"></i>
         <div class="container-profile__container-text">
-            <h1>nombre del usuario xD</h1>
+            <h1>Nombre del usuario</h1>
             <p>Estas en el nivel 3 <span>Mercado puntos</span></p>
         </div>
     </a>

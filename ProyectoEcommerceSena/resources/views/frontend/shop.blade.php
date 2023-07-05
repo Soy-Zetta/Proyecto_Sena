@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tienda</title>
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
 </head>
 <body>
 @include('header')
@@ -24,8 +25,11 @@
         <div class="">
             <div class="">
                 <div class="">
-                    <div class="">
+                    <div class="container-shop-srch">
                         <h4>Productos</h4>
+                        <div class="search-container">
+                            <input placeholder="Buscar" class="header__section1__input" type="search"><i class="fas fa-search"></i>
+                        </div>
                     </div>
                 </div>
                 <hr>
@@ -40,7 +44,7 @@
                                 
                                 <div class="card-body">
                                     <a href=""><h6 class="card-title">{{ $pro->nombre }}</h6></a>
-                                    <p>${{ $pro->precio }}</p>
+                                    <p class="precio">${{ $pro->precio }}</p>
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $pro->id }}" id="id" name="id">

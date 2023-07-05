@@ -1,7 +1,21 @@
-
 body {
-    background-color: #d5d5d5;
+    background: url(../img/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    z-index: -10;
+}
+
 
 .container-profile {
     background-color: rgb(255, 255, 255);
@@ -73,6 +87,12 @@ body {
     margin-top: 20px;
 }
 
-.container-profile__container-text p, .container-dates__container-date--modify p {
+.container-profile__container-text p, 
+.container-dates__container-date--modify p {
     margin-top: 5px;
 }
+
+.container-profile__container-text p span {
+    color: #ff9100;
+}
+
