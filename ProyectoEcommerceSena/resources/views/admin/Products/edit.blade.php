@@ -61,8 +61,8 @@
         </select>
     </div>
 
-    <a href="{{ route('products.index') }}" class="btn btn-secondary">Regresar</a>
-      <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Regresar</a>
+      <button type="submit" class="btn btn-outline-primary">Guardar</button>
     </div>
  </div>
 </form>
