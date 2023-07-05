@@ -13,7 +13,7 @@
     <div class="grupo-1">
         <div class="box">
             <figure>
-                <a href="#"><img src="{{ asset('img/logo.png') }}" alt="Logo-ram-servis"></a>
+                <a href="#"><img src="{{ asset('img/logoCompleto.png') }}" alt="Logo-ram-servis"></a>
             </figure>
         </div>
 

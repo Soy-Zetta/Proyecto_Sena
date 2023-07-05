@@ -52,29 +52,10 @@
             </div>
         </div>
 
-
-
-        <div class="container-destacados">
-            <h2>PRODUCTOS DESTACADOS</h2>
-            <div class="container-items">
-                <a class="destacado-item" href="">
-                <div class="item">
-                    <img src="{{ asset('img/logo.png') }}" alt="producto1">
-                    <div>
-                        <h3>TITLE PRODUCT</h3>
-                        <p>price</p>
-                    </div>
-                </div>
-                </a>
-                <a class="destacado-item" href="">
-                    <div class="item">
-                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
-                        <div>
-                            <h3>TITLE PRODUCT</h3>
-                            <p>price</p>
-                        </div>
-                    </div>
-                </a>
+        <div class="content-destacados">
+            <div class="container-destacados">
+                <h2>PRODUCTOS DESTACADOS</h2>
+                <div class="container-items">
                     <a class="destacado-item" href="">
                     <div class="item">
                         <img src="{{ asset('img/logo.png') }}" alt="producto1">
@@ -83,8 +64,41 @@
                             <p>price</p>
                         </div>
                     </div>
-                </a>
-                <a class="destacado-item" href="">
+                    </a>
+                    <a class="destacado-item" href="">
+                        <div class="item">
+                            <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                            <div>
+                                <h3>TITLE PRODUCT</h3>
+                                <p>price</p>
+                            </div>
+                        </div>
+                    </a>
+                        <a class="destacado-item" href="">
+                        <div class="item">
+                            <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                            <div>
+                                <h3>TITLE PRODUCT</h3>
+                                <p>price</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="destacado-item" href="">
+                        <div class="item">
+                            <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                            <div>
+                                <h3>TITLE PRODUCT</h3>
+                                <p>price</p>
+                            </div>
+                        </div>
+                    </a>
+    
+                </div>
+            </div>
+            <div class="container-destacados">
+                <h2>CATEGORIAS DESTACADAS</h2>
+                <div class="container-items">
+                    <a class="destacado-item" href="">
                     <div class="item">
                         <img src="{{ asset('img/logo.png') }}" alt="producto1">
                         <div>
@@ -92,51 +106,38 @@
                             <p>price</p>
                         </div>
                     </div>
-                </a>
+                    </a>
+                    <a class="destacado-item" href="">
+                    <div class="item">
+                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <div>
+                            <h3>TITLE PRODUCT</h3>
+                            <p>price</p>
+                        </div>
+                    </div>
+                    </a>
+                    <a class="destacado-item" href="">
+                    <div class="item">
+                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <div>
+                            <h3>TITLE PRODUCT</h3>
+                            <p>price</p>
+                        </div>
+                    </div>
+                    </a>
+                    <a class="destacado-item" href="">
+                    <div class="item">
+                        <img src="{{ asset('img/logo.png') }}" alt="producto1">
+                        <div>
+                            <h3>TITLE PRODUCT</h3>
+                            <p>price</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-            </div>
-        </div>
-        <div class="container-destacados">
-            <h2>CATEGORIAS DESTACADAS</h2>
-            <div class="container-items">
-                <a class="destacado-item" href="">
-                <div class="item">
-                    <img src="{{ asset('img/logo.png') }}" alt="producto1">
-                    <div>
-                        <h3>TITLE PRODUCT</h3>
-                        <p>price</p>
-                    </div>
-                </div>
-                </a>
-                <a class="destacado-item" href="">
-                <div class="item">
-                    <img src="{{ asset('img/logo.png') }}" alt="producto1">
-                    <div>
-                        <h3>TITLE PRODUCT</h3>
-                        <p>price</p>
-                    </div>
-                </div>
-                </a>
-                <a class="destacado-item" href="">
-                <div class="item">
-                    <img src="{{ asset('img/logo.png') }}" alt="producto1">
-                    <div>
-                        <h3>TITLE PRODUCT</h3>
-                        <p>price</p>
-                    </div>
-                </div>
-                </a>
-                <a class="destacado-item" href="">
-                <div class="item">
-                    <img src="{{ asset('img/logo.png') }}" alt="producto1">
-                    <div>
-                        <h3>TITLE PRODUCT</h3>
-                        <p>price</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-        </div>
     </main>
     @include('footer')
 </body>

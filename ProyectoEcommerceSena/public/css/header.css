@@ -1,9 +1,7 @@
 @import "normalize.css";
 
 .header {
-    background-color: #0007;
-    box-shadow: 1px 3px 30px #686868;
-    border-bottom: 1px solid #686868;
+    background-color: rgba(0, 0, 0, 0.249);
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -49,6 +47,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .header__section1__container-btn {
@@ -72,6 +71,7 @@
 .header__section1__input {
     width: 100%;
     border-radius: 20px;
+    padding: 5px 10px;
 }
 
 .fa-search {
@@ -104,6 +104,20 @@
     transition: top 1s;
 }
 
+.nav__ul div {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav__ul div span {
+    margin: 0 10px;
+}
+
+.nav__ul form button {
+    background: none;
+}
+
+
 .nav__li-act__ul {
     display: none;
     background-color: var(--fondoHeader);
@@ -124,7 +138,7 @@
     color: #fff;
 }
 
-.nav__li {
+.nav__li, span {
     margin: 50px 20px;
     list-style: none;
     transform: scale(1);
@@ -142,8 +156,7 @@
 }
 
 .nav__li:hover {
-    transform: scale(1.3);
-    transition: transform 1s;
+    transform: scale(1.1);
 }
 
 .header__section1__btn2 a {
@@ -275,7 +288,8 @@
         position: relative;
         width: 100%;
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .header__section1__input {
