@@ -37,6 +37,24 @@ class CategoriesSeeder extends Seeder
             'nombre' => 'camaras',
             'descripcion' => 'camaras'
         ]);
+        categoria::create([
+            'nombre' => 'microfonos',
+            'descripcion' => 'microfonos'
+        ]);
+        categoria::create([
+            'nombre' => 'board',
+            'descripcion' => 'board'
+        ]);
+        categoria::create([
+            'nombre' => 'gabinestes',
+            'descripcion' => 'gabinetes'
+        ]);
+        categoria::create([
+            'nombre' => 'almacenamiento',
+            'descripcion' => 'almacenamiento'
+        ]);
+
+
 
 
     }

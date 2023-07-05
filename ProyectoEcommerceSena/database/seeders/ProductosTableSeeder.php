@@ -132,7 +132,15 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 3
                 
             ],
+
+
+
+
+
+
              //productos 2
+
+             //teclados
             [
                 'nombre' => 'RAZER BLACK ',
                 'codigo' => 12345,
@@ -157,31 +165,10 @@ class ProductosTableSeeder extends Seeder
                 'proveedores_id' => 3
                 
             ],
-            [
-                'nombre' => 'VSG Gemini',
-                'codigo' => 12345,
-                'descripcion' => 'audifonos VSG Omnidirecional,Rango de frecuencia 20-20 KHz
-                ',
-                'precio' => 80000,
-                'existencias' => 15,
-                'imagen' => 'VSG Gemini.png',
-                'disponible' => 1,
-                'categorias_id' => 4,
-                'proveedores_id' => 3
-               
-            ],
-            [
-                'nombre' => 'Logitech G733',
-                'codigo' => 123456,
-                'descripcion' => 'audifonos Logitech G modelo G733 LIGHTSPEED Color Negro conectividad Bluetooth',
-                'precio' => 95000,
-                'existencias' => 15,
-                'imagen' => 'Logitech G733 Lightspeed.png',
-                'disponible' => 1,
-                'categorias_id' => 4,
-                'proveedores_id' => 3
-                
-            ],
+
+
+
+            //audifonos
             [
                 'nombre' => 'VSG Gemini',
                 'codigo' => 12345,
@@ -208,6 +195,364 @@ class ProductosTableSeeder extends Seeder
                 
             ],
            
+
+
+                // mouse
+            [
+                'nombre' => 'Redragon',
+                'codigo' => 123456,
+                'descripcion' => 'mouse Marca Redragon, Color Negro- conectividad USB, 12 botones laterales, Pesos extra, Ratón MMO preciso, Diseño ergonómico ',
+                'precio' => 100000,
+                'existencias' => 15,
+                'imagen' => 'Redragon M908 Impact RGB.png',
+                'disponible' => 1,
+                'categorias_id' => 2,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Razer Basilisk',
+                'codigo' => 12345,
+                'descripcion' => ' mouse Color Negro clásico,Cable Razer Speedflex con cable Tecnología de detección de movimiento Óptica   ',
+                'precio' => 80000,
+                'existencias' => 15,
+                'imagen' => 'Razer Basilisk V3.jpg',
+                'disponible' => 1,
+                'categorias_id' => 2,
+                'proveedores_id' => 3
+               
+            ],
+           
+
+
+                //micronofono
+
+            [
+                'nombre' => 'NBPOWER',
+                'codigo' => 123456,
+                'descripcion' => 'camara NBPOWER, conectividad USB, Tipo de memoria Memory Stick Color Negro - Tamaño de pantalla 2,7 Pulgadas ',
+                'precio' => 160000,
+                'existencias' => 15,
+                'imagen' => 'NBPOWER Cámara web.jpg',
+                'disponible' => 1,
+                'categorias_id' => 5,
+                'proveedores_id' => 3
+                
+            ],
+
+            // camaras
+            [
+                'nombre' => 'WMT ',
+                'codigo' => 123456,
+                'descripcion' => 'microfono con conectividad USB, USB tipo C, conector de auriculares de 0.138, Dispositivos compatibles Portátil, PS4, PS5, PC ',
+                'precio' => 160000,
+                'existencias' => 15,
+                'imagen' => 'WMT Micrófono USB.jpg',
+                'disponible' => 1,
+                'categorias_id' => 6,
+                'proveedores_id' => 3
+                
+            ],
+
+
+
+            // productos board
+
+            [
+                'nombre' => 'board rog strix',
+                'codigo' => 123456,
+                'descripcion' => 'Board Asus Rog Strix B650E-I Wifi Ddr5',
+                'precio' => 1843000,
+                'existencias' => 15,
+                'imagen' => 'board rog strix z790.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'gigabite b450m ',
+                'codigo' => 123456,
+                'descripcion' => 'gigabite b450m',
+                'precio' => 785000,
+                'existencias' => 15,
+                'imagen' => 'gigabite b450m ds3h.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+
+
+            [
+                'nombre' => 'gigabyte-x670',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD ROG MAXIMUS Z790 HERO WIFI',
+                'precio' => 2150000,
+                'existencias' => 19,
+                'imagen' => 'gigabyte-x670-gaming- 2x.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'gigabyte-x671 ',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD ROG MAXIMUS Z790 HERO WIFI',
+                'precio' => 2500000,
+                'existencias' => 15,
+                'imagen' => 'gigabyte-x670-gaming-x.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Intel vPro Motherboard',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD ASROCK A620M PRO RS WIFI',
+                'precio' => 762000,
+                'existencias' => 14,
+                'imagen' => 'Intel vPro Motherboard LGA 1155 microATX.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'msi ',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD ASROCK A520M ITX/AC',
+                'precio' => 556000,
+                'existencias' => 15,
+                'imagen' => 'msi  B85-G43.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'msi lga 1150',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD ASROCK Z790M ITX WIFI',
+                'precio' => 1200000,
+                'existencias' => 14,
+                'imagen' => 'msi lga 1150.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'MSI lga 11-55 ',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD ASROCK H610M-ITX/AC',
+                'precio' => 556000,
+                'existencias' => 15,
+                'imagen' => 'MSI lga 11-55 gamin.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'board-asrock-a520m',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD GIGABYTE Z790 GAMING X AX (REV. 1.0) LGA 1700',
+                'precio' => 1315000,
+                'existencias' => 14,
+                'imagen' => 'tarjeta-madre-board-asrock-a520m-itx-ac.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'board-asrock-itx',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD GIGABYTE B450M DS3H WIFI',
+                'precio' => 548000,
+                'existencias' => 15,
+                'imagen' => 'tarjeta-madre-board-asrock-itx-ac-wifi copia.png',
+                'disponible' => 1,
+                'categorias_id' => 7,
+                'proveedores_id' => 3
+                
+            ],
+
+
+            // gabinetes 
+
+            [
+                'nombre' => ' SPEC-DELTA',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete de tamaño medio con diseño angular y ventilación óptima.',
+                'precio' => 350000,
+                'existencias' => 14,
+                'imagen' => 'Torre 1.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'NZXT H510',
+                'codigo' => 123456,
+                'descripcion' => 'BOARD GIGABYTE B450M DS3H WIFI',
+                'precio' => 450000,
+                'existencias' => 15,
+                'imagen' => 'Torre 4.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'MasterBox Q300L',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete mini torre con diseño versátil y buena capacidad de refrigeración',
+                'precio' => 350000,
+                'existencias' => 14,
+                'imagen' => 'Torre 5.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Fractal Design Meshify C',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete de alto flujo de aire con paneles de malla y diseño elegante.',
+                'precio' => 450000,
+                'existencias' => 15,
+                'imagen' => 'Torre 6.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Phanteks Eclipse P400S',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete de tamaño medio con iluminación LED ajustable y silencioso funcionamiento',
+                'precio' => 555000,
+                'existencias' => 14,
+                'imagen' => 'Torre 7.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Thermaltake Versa H18',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete compacto con ventilación optimizada y panel lateral acrílico..',
+                'precio' => 590000,
+                'existencias' => 15,
+                'imagen' => 'Torre 8.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Deepcool Matrexx 55',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete con paneles de vidrio templado en el frente y lateral, y capacidad para refrigeración líquida.',
+                'precio' => 320000,
+                'existencias' => 14,
+                'imagen' => 'Torre 9.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'Lian Li PC-O11 Dynamic',
+                'codigo' => 123456,
+                'descripcion' => 'Gabinete premium con un diseño elegante y amplias opciones de enfriamiento y personalización.',
+                'precio' => 580000,
+                'existencias' => 15,
+                'imagen' => 'Torre 10.png',
+                'disponible' => 1,
+                'categorias_id' => 8,
+                'proveedores_id' => 3
+                
+            ],
+
+
+
+            // almacenamiento AMD
+
+
+            [
+                'nombre' => 'AMD R9 390',
+                'codigo' => 123456,
+                'descripcion' => 'tarjeta grafica Tiene una cantidad generosa de memoria de video y soporta tecnologías avanzadas como DirectX 12',
+                'precio' => 800000,
+                'existencias' => 14,
+                'imagen' => 'amd___r9_390-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 3
+                
+            ],
+            [
+                'nombre' => 'AMD R7 360',
+                'codigo' => 123456,
+                'descripcion' => ' tarjeta gráfica de nivel de entrada que ofrece un rendimiento adecuado para juegos de menor exigencia y aplicaciones multimedia.',
+                'precio' => 750000,
+                'existencias' => 15,
+                'imagen' => 'amd_r7_360-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 3
+                
+            ],
+
+
+
+
+
+
+            
+            [
+                'nombre' => 'AMD R7 370',
+                'codigo' => 123456,
+                'descripcion' => 'tarjeta gráfica de gama media que ofrece un rendimiento sólido en juegos y aplicaciones gráficamente intensivas',
+                'precio' => 650000,
+                'existencias' => 14,
+                'imagen' => 'amd_r7_370-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 2
+                
+            ],
+            [
+                'nombre' => 'ASUS 39 380',
+                'codigo' => 123456,
+                'descripcion' => 'tarjeta gráfica de gama alta que ofrece un buen rendimiento para juegos y aplicaciones exigentes',
+                'precio' => 550000,
+                'existencias' => 15,
+                'imagen' => 'amd_r7_360-removebg-preview.png',
+                'disponible' => 1,
+                'categorias_id' => 9,
+                'proveedores_id' => 3
+                
+            ],
+
+
+
+
+
+
+
+
+
+
+
+
 
             // Agrega más productos aquí si es necesario
         ];
