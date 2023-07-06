@@ -10,14 +10,9 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-
-
-
-    Route::resource('/perfil', ClienteController::class)->names('perfil')->only(['index', 'show', 'edit', 'update']);
-    //Ruta Servicios
-    Route::prefix('servicios')->group(function () {
+Route::resource('/perfil', ClienteController::class)->names('perfil')->only(['index', 'show', 'edit', 'update']);
+//Ruta Servicios
+Route::prefix('servicios')->group(function () {
     Route::get('/', [ServicesController::class, 'index']);
     Route::get('/mantenimiento-general', [ServicesController::class, 'mantenimiento']);
     Route::get('/programacion', [ServicesController::class, 'programacion']);
@@ -26,7 +21,7 @@ Route::get('/', function () {
     Route::get('/EnsambleEquipos', [ServicesController::class, 'EnsambleEquipos']);
     Route::get('/ReparacionBisagras', [ServicesController::class, 'ReparacionBisagras']);
 });
-
+// A quí estuvo Zetta
 //Ruta Productos
 Route::get('/shop', [CartController::class, 'shop'])->name('shop');
 
@@ -45,4 +40,3 @@ Route::get('/nosotros', function () {
 Route::get('/ayuda-y-soporte', function () {
     return view('help');
 });
-
