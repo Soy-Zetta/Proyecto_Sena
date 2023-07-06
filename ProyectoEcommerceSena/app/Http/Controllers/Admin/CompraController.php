@@ -4,8 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\compra;
+use App\Models\Admin\producto;
 use App\Models\Admin\proveedore;
+use App\Models\Admin\detallecompra;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class CompraController extends Controller
 {
@@ -17,7 +23,7 @@ class CompraController extends Controller
         //Con Paginación
 
         $compras = compra::paginate(10);
-        return view('frontend/compras.index',compact('compras'));
+        return view('admin.compras.index',compact('compras'));
 
     }
 
@@ -27,22 +33,72 @@ class CompraController extends Controller
     public function create()
     {
        $proveedores = proveedore::get();
-       return view('admin.compras.create',compact('proveedores'));
+       $productos= producto::get();
+       return view('admin.compras.create',compact('proveedores','productos'));
     }
 
    
 
     public function store(Request $request)
     {
-     
-        $compra = compra::create($request->all());
+        // $results = [];
+        // $total = 0.00;
         
-        foreach($request->producto_id as $key => $producto){
-            $results = array("productos_id" =>$request->productos_id[$key],"cantidad"=>$request->cantidad[$key],"precio"=>$request->precio[$key],"total"=>$request->total[$key]);
-        }
-        $compra->detallecompra()->createMany($results);
-        return redirect()->route('frontend/compras.index');
-  
+        // foreach ($request->productos_id as $key => $producto) {
+        //     $results[] = [
+        //         "productos_id" => $request->productos_id[$key],
+        //         "cantidad" => $request->cantidad[$key],
+        //         "precio" => $request->precio[$key],
+        //         "descripcion" => $request->descripcion[$key],
+        //     ];
+        
+            
+        //     $subtotal = $request->cantidad[$key] * $request->precio[$key];
+        //     $total += $subtotal;
+        // }
+        
+        // $compra = compra::create($request->all() + [
+        //     'fecha' => Carbon::now('America/Bogota'),
+        //     'proveedores_id' => $request->proveedor,
+        //     'users_id' => Auth::user()->id,
+        //     'total' => $total,
+        // ]);
+        
+        
+        // $compra->detallecompra()->createMany($results);
+        
+        // return redirect()->route('compras.index');       
+        
+        
+        
+        
+        
+        
+        
+        
+         $compra = compra::create($request->all() + [
+              'fecha' => Carbon::now('America/Bogota'),
+              'proveedores_id' =>$request->proveedor,
+              'users_id'=>Auth::user()->id,
+          ]);
+          
+        //   $total = $request->cantidad * $request->precio;
+        
+          $results = [];
+          foreach ($request->productos_id as $key => $producto) {
+              $results[] = [
+                  "productos_id" => $request->productos_id[$key],
+                  "cantidad" => $request->cantidad[$key],
+                  "precio" => $request->precio[$key],
+                  "descripcion" => $request->descripcion[$key],
+                //   "total"=> $total
+
+              ];
+
+          }
+       
+          $compra->detallecompra()->createMany($results);
+          return redirect()->route('compras.index');
     }
 
     
@@ -50,7 +106,7 @@ class CompraController extends Controller
     public function show(string $id)
     {
         $compra = compra::findOrFail($id);
-        return view('compras.show', compact('compra'));
+        return view('admin.compras.show', compact('compra'));
     }
 
     /**
@@ -68,7 +124,11 @@ class CompraController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       //
+        $compra = compra::findOrFail($id);
+        $compra->update($request->all());
+
+        return redirect()->route('compras.index');
+
     }
 
     /**
@@ -76,10 +136,21 @@ class CompraController extends Controller
      */
     public function destroy(string $id)
     {
-        // $compra = compra::findOrFail($id);
-        // $compra->productos()->delete();
-        // $compra->delete();
+        $compra = compra::findOrFail($id);
+        $compra->detallecompra()->delete();
+        $compra->delete();
 
-        // return redirect()->route('compras.index');
+        return redirect()->route('compras.index');
     }
+
+    // public function pdf (string $id)
+    // {
+    //     Generar el contenido del PDF utilizando la librería Dompdf
+    //    $pdf = PDF::loadView('admin.compras.pdf', compact('compras','detallecompras'));
+
+    //     Devolver el PDF como una respuesta descargable
+    //    return $pdf->download('Reporte_de_compra.pdf');
+
+    // }
+
 }

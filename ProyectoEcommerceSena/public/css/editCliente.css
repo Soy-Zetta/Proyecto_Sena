@@ -1,0 +1,98 @@
+body {
+    background: url(../img/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    z-index: -10;
+}
+
+
+.container-profile {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px 20%;
+    text-decoration: none;
+    color: #000;
+    transition: border .5s;
+}
+
+.container-profile i, .container-dates__container-date--modify i {
+    color: #0099ff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e2e2e2;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 2em;
+
+}
+
+
+.container-dates {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 30px 20%;
+}
+
+
+.container-dates__container-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    padding-right: 80px;
+    text-decoration: none;
+    color: #000;
+    transition: border .5s;
+}
+
+.container-dates__container-date:hover .container-dates__container-date--modify i,
+.container-profile:hover i {
+    border: 2px solid #0099ff;
+    transition: border .5s;
+}
+
+.container-dates__container-date__container-arrow {
+    transition: transform .5s;
+}
+
+.container-dates__container-date:focus .container-dates__container-date__container-arrow {
+    transform: rotate(180deg);
+    transition: transform .5s;
+}
+
+.container-dates__container-date--modify {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-dates__container-date--modify div {
+    margin-top: 20px;
+}
+
+.container-profile__container-text p, 
+.container-dates__container-date--modify p {
+    margin-top: 5px;
+}
+
+.container-profile__container-text p span {
+    color: #ff9100;
+}
+

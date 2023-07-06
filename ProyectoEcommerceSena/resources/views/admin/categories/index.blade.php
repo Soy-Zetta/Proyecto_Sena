@@ -8,15 +8,15 @@
 
 @section('content')
     @can('categories.create')
-        <a href="{{ route('categories.create') }}" class="btn btn-primary">Crear categoría</a>
+        <a href="{{ route('categories.create') }}" class="btn btn-outline-primary">Crear categoría</a>
     @endcan
 
     <br><br>
     <form action="{{ route('buscador.searchCategories') }}" method="GET">
         @csrf
         <div class="input-group">
-            <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de categoria" required>
+            <button type="submit" class="btn btn-outline-primary">Buscar</button>
         </div>
     </form>
 
@@ -43,15 +43,14 @@
                         <td>{{ $categoria->descripcion }}</td>
                         <td>
                             @can('categories.edit')
-                                <a href="{{ route('categories.edit', $categoria->id) }}" class="btn btn-primary">Editar</a>
+                                <a href="{{ route('categories.edit', $categoria->id) }}" class="btn btn-outline-primary">Editar</a>
                             @endcan
 
                             <!-- Modal de confirmación de eliminación -->
                             @can('categories.destroy')
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#confirmDeleteModal{{ $categoria->id }}">
-                                    Eliminar
-                                </button>
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"  data-target="#confirmDeleteModal{{ $categoria->id }}"title="Eliminar">  <i class="fas fa-trash-alt" style="font-size: 12spx;"></i> 
+                                    
+                               </button>
                             @endcan
 
                             <!-- Modal de confirmación de eliminación -->
@@ -78,7 +77,7 @@
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                                             </form>
                                         </div>
                                     </div>

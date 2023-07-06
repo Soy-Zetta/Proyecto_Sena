@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
             $table->enum('estado',['enviado','en proceso','entregado']);
-            $table->string('descripcion');
-            $table->integer('cantidad');
-            $table->dateTime('fecha');
-            $table->string('imagen');
-            $table->integer('proveedores_id')->index('fk_compras_proveedores_id')->onDelete('cascada');
-            $table->integer('users_id')->index('fk_compras_users_id');
+            $table->decimal('total',8,2)->default(0.00);
+            $table->date('fecha');
+            $table->string('imagen')->nullable();
+            $table->integer('proveedores_id')->index('fk_compras_proveedores_idx')->onDelete('cascade');
+            $table->integer('users_id')->index('fk_compras_users_idx');
             $table->timestamps();
 
           

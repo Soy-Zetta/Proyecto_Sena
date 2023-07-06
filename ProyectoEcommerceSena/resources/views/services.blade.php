@@ -1,12 +1,13 @@
 @include('header')
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERVICIOS</title>
+     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
      <link rel="stylesheet" href="{{ asset('css/servicios.css') }}">
  </head>
  <body>
@@ -20,11 +21,11 @@
             <div class="container_info">
                 <h1>CATALOGO</h1>
                 <h2>DE SERVICIOS</h2>
-                <p>En ram-servis contamos con un gran portafolio de servicios</p>
+                <p>En SERVI TECH contamos con un gran portafolio de servicios</p>
             </div>
 
             <div class="container_vector">
-                <img src="{{ asset('img/imgServices/servicios/logo-ram.png') }}" >
+                <img src="{{ asset('img/logoCompleto.png') }}" >
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ class ProveedorController extends Controller
     public function create()
     {
         $proveedores =proveedore::all();
-        return view('admin.proveedores.create',compact('proveedores'));
+        return view('admin.proveedores.create',compact('proveedores'))->with('success', 'El rproveedor se eliminó correctamente.');
     }
 
     
@@ -58,7 +58,7 @@ class ProveedorController extends Controller
         
             
             // Redirige a la vista de detalles del producto o a donde desees
-           return redirect()->route('admin.proveedores.index');
+           return redirect()->route('proveedores.index');
     }
 
    
@@ -99,7 +99,7 @@ class ProveedorController extends Controller
         $proveedor->correo = $validarDatos['correo'];
         $proveedor->update();
         
-        return redirect()->route('proveedores.index')->with('success', 'El rol se ha actualizado correctamente.');
+        return redirect()->route('proveedores.index')->with('success', 'El proveedor se ha actualizado correctamente.');
     }
 
     /**
@@ -110,6 +110,6 @@ class ProveedorController extends Controller
         $proveedor = proveedore::findOrFail($id);
         $proveedor->delete();
 
-        return redirect()->route('admin.proveedores.index')->with('success', 'El rol se eliminó correctamente.');
+        return redirect()->route('proveedores.index')->with('success', 'El rproveedor se eliminó correctamente.');
     }
 }

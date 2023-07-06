@@ -9,6 +9,6 @@ class DetallecompraController extends Controller
 {
     public function index()
     {
-        
+        //
     }
 }

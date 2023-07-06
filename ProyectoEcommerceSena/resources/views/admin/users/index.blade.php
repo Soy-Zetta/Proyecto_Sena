@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Usuarios')
 
 @section('content_header')
     <h1 class="m-0 text-dark">Lista de Usuarios</h1>
@@ -14,7 +14,7 @@
         </div>
     @endif
         @can('admin.users.create')
-        <a href="{{ route('admin.users.create') }}" class="btn btn-success">Crear Usuario</a>
+        <a href="{{ route('admin.users.create') }}" class="btn btn-outline-success">Crear Usuario</a>
         @endcan
     <br><br>
 
@@ -33,7 +33,7 @@
                             placeholder="Buscar por numero de identificación o correo electronico">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="submit" class="btn btn-outline-primary">Buscar</button>
                     </div>
 
                     <thead>
@@ -65,7 +65,7 @@
                                 <td>
                                     @can('admin.users.edit')
                                     <a href="{{ route('admin.users.edit', $usuario->id) }}"
-                                        class="btn btn-primary">editar</a>
+                                        class="btn btn-outline-primary">editar</a>
                                     @endcan
                                 </td>
                                 <td>
@@ -73,7 +73,9 @@
                                     <form action="{{ route('admin.users.destroy', $usuario->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">eliminar</button>
+                                        <button type="summit" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar este usuario?')" title="Eliminar">
+                                            <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                                        </button>
                                     </form>
                                     @endcan
 

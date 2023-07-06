@@ -3,24 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\CartController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Auth;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
 
-//Ruta Servicios
-Route::prefix('servicios')->group(function () {
+
+
+
+
+    Route::resource('/perfil', ClienteController::class)->names('perfil')->only(['index', 'show', 'edit', 'update']);
+    //Ruta Servicios
+    Route::prefix('servicios')->group(function () {
     Route::get('/', [ServicesController::class, 'index']);
     Route::get('/mantenimiento-general', [ServicesController::class, 'mantenimiento']);
     Route::get('/programacion', [ServicesController::class, 'programacion']);
@@ -48,3 +45,4 @@ Route::get('/nosotros', function () {
 Route::get('/ayuda-y-soporte', function () {
     return view('help');
 });
+

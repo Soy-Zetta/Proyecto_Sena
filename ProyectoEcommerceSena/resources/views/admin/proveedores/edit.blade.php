@@ -12,7 +12,22 @@
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-@endif
+    @endif
+
+    @push('scripts')
+    <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $('#success-alert').fadeOut('slow', function() {
+                        $(this).remove();
+                    });
+                }, 5000);
+            });
+        </script>
+    @endpush
+
+
 
    <form action="{{route('proveedores.update',$proveedor->id)}}" method="POST">
       @csrf
@@ -60,7 +75,7 @@
                  
             
                   <div>
-                    {{-- <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Regresar</a> --}}
+                    <a href="{{ route('proveedores.index') }}" class="btn btn-secondary">Regresar</a>
 
                       <button type="submit" class="btn btn-dark">Guardar</button>
               </div>

@@ -16,18 +16,45 @@ class CategoriesSeeder extends Seeder
         
         categoria::create([
             'nombre' => 'monitores',
-            'descripcion' => 'monitores samsung'
+            'descripcion' => 'monitores'
         ]);
 
         categoria::create([
             'nombre' => 'mouse',
-            'descripcion' => 'mouse gamer'
+            'descripcion' => 'mouse'
         ]);
 
         categoria::create([
-            'nombre' => 'portatil',
-            'descripcion' => 'portatil acer'
+            'nombre' => 'teclado',
+            'descripcion' => 'teclados'
         ]);
+        categoria::create([
+            'nombre' => 'audifonos',
+            'descripcion' => 'audifonos'
+        ]);
+
+        categoria::create([
+            'nombre' => 'camaras',
+            'descripcion' => 'camaras'
+        ]);
+        categoria::create([
+            'nombre' => 'microfonos',
+            'descripcion' => 'microfonos'
+        ]);
+        categoria::create([
+            'nombre' => 'board',
+            'descripcion' => 'board'
+        ]);
+        categoria::create([
+            'nombre' => 'gabinestes',
+            'descripcion' => 'gabinetes'
+        ]);
+        categoria::create([
+            'nombre' => 'almacenamiento',
+            'descripcion' => 'almacenamiento'
+        ]);
+
+
 
 
     }

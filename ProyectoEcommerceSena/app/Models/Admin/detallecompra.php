@@ -12,8 +12,8 @@ class detallecompra extends Model
         'compras_id',
         'productos_id',
         'precio',
-         'cantidad',
-          'total', 
+        'cantidad',
+        'descripcion', 
          
         ];
     protected $table = 'detallecompras';
@@ -29,4 +29,9 @@ class detallecompra extends Model
     {
         return $this->belongsTo(producto::class, 'productos_id');
     }
+
+    // public function getTotal()
+    // {
+    //     return $this->cantidad * $this->precio;
+    // }
 }

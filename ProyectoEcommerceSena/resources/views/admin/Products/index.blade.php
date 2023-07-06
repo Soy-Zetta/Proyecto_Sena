@@ -10,20 +10,20 @@
 
 @section('content')
 
-@if (session('delete'))
-    <div class="alert alert-success">
-        {{ session('delete') }}
+@if (session('success'))
+    <div id="success-message" class="alert alert-success">
+        {{ session('success') }}
     </div>
 @endif
 
-<a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
+<a href="{{ route('products.create') }}" class="btn btn-outline-primary">Crear producto</a>
 <br><br>
 
 <form action="{{ route('buscador.search') }}" method="GET" class="mb-3">
     @csrf
     <div class="input-group">
         <input type="text" class="form-control" name="buscador" placeholder="Buscar por Código de producto" required>
-        <button type="submit" class="btn btn-primary">Buscar</button>
+        <button type="submit" class="btn btn-outline-primary">Buscar</button>
     </div>
 </form>
 
@@ -62,10 +62,12 @@
                     </td>
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-primary btn-sm mr-2">Editar</a>
-
-                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDeleteModal{{ $producto->id }}">Eliminar</button>
-
+                            <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-outline-primary btn-sm mr-2">Editar</a>
+                            @can('products.destroy')
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteModal{{ $producto->id }}"title="Eliminar">
+                                <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                            </button>
+                            @endcan
                             <!-- Modal de confirmación de eliminación -->
                             <div class="modal fade" id="confirmDeleteModal{{ $producto->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel{{ $producto->id }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -81,11 +83,10 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                            <form action="{{ route('products.destroy', $producto->id) }}" method="POST"
                                                 <form action="{{ route('products.destroy', $producto->id) }}" method="POST" id="deleteForm{{ $producto->id }}">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                    <button type="submit" class="btn btn-outline-danger">eliminar</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -105,3 +106,4 @@
     @section('css')
         <link rel="stylesheet" href="{{ asset('css/products.css') }}">
     @stop
+    

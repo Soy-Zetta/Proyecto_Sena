@@ -30,7 +30,7 @@ class BuscadorController extends Controller
     {
         
         $buscador = $request->input('buscador');
-        $proveedores = proveedore::where('id', 'LIKE', "%$buscador%")->orWhere('nombre', 'LIKE', "%$buscador%")->orWhere('tipo_documento', 'LIKE', "%$buscador%") ->get();
+        $proveedores = proveedore::where('id', 'LIKE', "%$buscador%")->orWhere('correo', 'LIKE', "%$buscador%")->orWhere('tipo_documento', 'LIKE', "%$buscador%") ->get();
         return view('admin.proveedores.index', compact('proveedores'));
     }
 

@@ -14,7 +14,7 @@
         </div>
     @endif
     @can('admin.roles.create')
-        <a href="{{ route('admin.roles.create') }}" class="btn btn-success">Crear Rol</a>
+        <a href="{{ route('admin.roles.create') }}" class="btn btn-outline-success">Crear Rol</a>
     @endcan
 
     <br><br>
@@ -38,7 +38,7 @@
                                 <td>{{ $role->name }}</td>
                                 <td width="10px">
                                     @can('admin.roles.edit')
-                                        <a href="{{ route('admin.roles.edit', $role->id) }}"class="btn btn-primary">editar</a>
+                                        <a href="{{ route('admin.roles.edit', $role->id) }}"class="btn btn-outline-primary">editar</a>
                                     @endcan
                                 </td>
 
@@ -47,7 +47,9 @@
                                         <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger">eliminar</button>
+                                            <button type="button" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar este Rol?')" title="Eliminar">
+                                                <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                                            </button>
                                         </form>
                                     @endcan
 

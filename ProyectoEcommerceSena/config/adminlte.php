@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' => 'master mamon',
+    'title' => '',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => '| Servi Tech',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,8 +30,8 @@ return [
     |
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -63,9 +63,9 @@ return [
     |
     */
 
-    'logo' => 'administrador <b>LTE</b>',
+    'logo' => '',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin Logo',
@@ -112,8 +112,8 @@ return [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 100,
+            'height' => 40,
         ],
     ],
 
@@ -187,12 +187,12 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-white',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-info elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -333,7 +333,6 @@ return [
                     'icon' => 'fas fa-fw fa-users',
                     'can' => 'admin.users.index',
                 ],
-    
                 [
                     'text' => 'Roles',
                     'route'  => 'admin.roles.index',
@@ -342,16 +341,15 @@ return [
                 ],
             ],
         ],
-
         [
             'text'    => 'Gestion de Productos',
             'icon'    => 'fas fa-fw fa-users',
             'submenu' => [
                 [
                     'text' => 'Productos',
-                    'route'  => 'admin.users.index',
-                    'icon' => 'fas fa-tools',
                     'route'  => 'products.index',
+                    'icon' => 'fas fa-tools',
+                    'can'  => 'products.index',
                 ],
     
                 [
@@ -360,100 +358,29 @@ return [
                     'icon' => 'fas fa-user-friends',
                     'can' => 'proveedores.index',
                 ],
-
                 [
                     'text' => 'Categorias',
-                    'route'  => 'admin.roles.index',
+                    'route' => 'categories.index',
                     'icon' => 'fas fa-procedures',
-                    'route'  => 'categories.index',
+                    'can'  => 'categories.index',
                 ],
             ],
         ],
-
-        // [
-        //     'text' => 'Usuarios',
-        //     'route'  => 'admin.users.index',
-        //     'icon' => 'fas fa-fw fa-users',
-        //     'can' => 'admin.users.index',
-  
-        // ],
-
-        // [
-        //     'text' => 'Roles',
-        //     'route'  => 'admin.roles.index',
-        //     'icon' => 'fas fa-users-cog fa-fw',
-        //     'can' => 'admin.roles.index',
-  
-        // ],
-
-        [
-            'text' => 'Cambiar Contraseña',
-            'can'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'clientes',
-            'icon' => 'fas fa-user-tag',
-            'route'  => 'customers.index',
-        ],
-
         [
             'text' => 'Pedidos',
             'icon' => 'fas fa-luggage-cart',
             'route'  => 'pedidos.index',
         ],
-
-        [
-            'text' => 'Productos',
-            'icon' => 'fas fa-tools',
-            'route'  => 'products.index',
-             'can' => 'admin.products.index',
-        ],
-        [
-            'text' => 'proveedores',
-            'icon' => 'fas fa-user-friends',
-            'route'  => 'proveedores.index',
-             'can' => 'admin.proveedores.index',
-            
-         
-
-        ],
-        [
-            'text' => 'categorias',
-            'icon' => 'fas fa-procedures',
-            'route'  => 'categories.index',
-        ],
-        // [
-        //     'text' => 'Productos',
-        //     'icon' => 'fas fa-tools',
-        //     'route'  => 'products.index',
-        // ],
-        // [
-        //     'text' => 'proveedores',
-        //     'icon' => 'fas fa-user-friends',
-        //     'route'  => 'proveedores.index',
-        //     'can' => 'proveedores.index',
-        // ],
-        // [
-        //     'text' => 'categorias',
-        //     'icon' => 'fas fa-procedures',
-        //     'route'  => 'categories.index',
-        // ],
-        [
-            'text' => 'Empleados',
-            'icon' => 'fas fa-tachometer-alt',
-            'url'  => 'admin/blog',
-        ],
         [
             'text' => 'Reportes',
             'icon' => 'fas fa-file-invoice',
-            'url'  => 'admin/blog',
+            // 'route'  => 'compras.pdf',
         ],
 
         [
             'text' => 'Compras',
             'icon' => 'fas fa-shopping-basket',
-            'url'  => 'admin/blog',
+            'route'  => 'compras.index',
         ],
 
 

@@ -12,9 +12,23 @@
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-@endif
+    @endif
+
+    @push('scripts')
+    <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $('#success-alert').fadeOut('slow', function() {
+                        $(this).remove();
+                    });
+                }, 5000);
+            });
+        </script>
+    @endpush
+
  
-<a href="{{route('proveedores.create')}}" class="btn btn-primary">CREAR PROVEEDORES</a>
+<a href="{{route('proveedores.create')}}" class="btn btn-outline-primary">CREAR PROVEEDORES</a>
 <br><br>
 
     
@@ -27,7 +41,7 @@
             </div>
             <div class="mb-3">
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit" class="btn btn-outline-info">Buscar</button>
         </fieldset>
     </form>
 
@@ -43,6 +57,7 @@
                     <th>nombre</th>
                     <th>Tipo Documento</th>
                     <th>Numero de Documento</th>
+                    <th>Telefono</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,12 +67,15 @@
                         <td>{{ $proveedor->nombre }}</td>
                         <td>{{ $proveedor->tipo_documento }}</td>
                         <td>{{ $proveedor->numero_documento }}</td>
-                        <td><a href="{{ route('proveedores.edit', $proveedor->id) }}"class="btn btn-primary">editar</a></td>
+                         <td>{{ $proveedor->telefono}}</td>
+                        <td><a href="{{ route('proveedores.edit', $proveedor->id) }}"class="btn btn-outline-primary">editar</a></td>
                         <td>
                             <form action="{{ route('proveedores.destroy', $proveedor->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">eliminar</button>
+                                <button type="summit" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de eliminar este proveedor?')" title="Eliminar">
+                                    <i class="fas fa-trash-alt" style="font-size: 12spx;"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>

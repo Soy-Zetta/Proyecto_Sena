@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tienda</title>
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
 </head>
 <body>
 @include('header')
@@ -24,8 +25,11 @@
         <div class="">
             <div class="">
                 <div class="">
-                    <div class="">
+                    <div class="container-shop-srch">
                         <h4>Productos</h4>
+                        <div class="search-container">
+                            <input placeholder="Buscar" class="header__section1__input" type="search"><i class="fas fa-search"></i>
+                        </div>
                     </div>
                 </div>
                 <hr>
@@ -40,12 +44,12 @@
                                 
                                 <div class="card-body">
                                     <a href=""><h6 class="card-title">{{ $pro->nombre }}</h6></a>
-                                    <p>${{ $pro->precio }}</p>
+                                    <p class="precio">${{ $pro->precio }}</p>
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
                                         <input type="hidden" value="{{ $pro->nombre }}" id="name" name="name">
-                                        <input type="hidden" value="{{ $pro->precio }}" id="price" name="price">
+                                      <input type="hidden" value="{{ $pro->precio }}" id="price" name="price"> 
                                         <input type="hidden" value="{{ $pro->imagen }}" id="img" name="img">
                                       {{-- <input type="hidden" value="{{ $pro->slug }}" id="slug" name="slug"> --}} 
                                         <input type="hidden" value="1" id="quantity" name="quantity">
