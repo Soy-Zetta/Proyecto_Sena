@@ -31,7 +31,7 @@ Route::post('/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
-//Ruta Nosotros
+//Ruta de nuestro equipo de trabajo
 Route::get('/nosotros', function () {
     return view('sobre-nosotros');
 });
