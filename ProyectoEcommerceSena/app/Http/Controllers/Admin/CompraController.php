@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 class CompraController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.....
      */
     public function index()
     {
