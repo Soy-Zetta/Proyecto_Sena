@@ -32,6 +32,7 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     * zetta estuvo aqui
      */
     public function down(): void
     {
